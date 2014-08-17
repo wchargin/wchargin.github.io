@@ -17,16 +17,24 @@
 .icon-container:first-child {
     margin-right: 2em;
 }
+.project-container:not(:first-child) h2 {
+    text-align: right;
+}
 
 // When content is before icon
 .icon-container:not(:first-child) {
     margin-left: 2em;
+}
+.project-container:first-child h2 {
+    text-align: left;
 }
 
 .project-container {
     width: 70%;
     text-align: justify;
 }
+
+
 h2 {
     color: rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
