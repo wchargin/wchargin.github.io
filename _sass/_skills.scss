@@ -1,0 +1,44 @@
+.skill-category {
+    margin-bottom: 2em;
+}
+.skill-explanation {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    width: 80%;
+    margin: 0 auto;
+
+
+    // Hidden when not active-skill
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    transition: padding $transition-time ease-out, margin-top $transition-time ease-out;
+    
+    &.active-skill {
+        visibility: visible;
+        height: auto;
+        padding: 1em;
+        margin-top: 1em;
+    }
+
+    // Don't have a space after the last paragraph
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+.skill-line {
+    display: block;
+    width: 100%;
+    text-align: center;
+    img {
+        height: 8em;
+        padding: 0 1em;
+        opacity: 0.6;
+        transition: opacity $transition-time linear;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    margin-bottom: 0.5em;
+}
