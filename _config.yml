@@ -8,6 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wchargin.github.io" # the base hostname & protocol for your site
 highlighter: pygments
 github_username: wchargin
+linkedin_username: wchargin
 
 # Build settings
 markdown: kramdown
