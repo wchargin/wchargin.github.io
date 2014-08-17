@@ -8,4 +8,7 @@
 
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    {% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="{{ css_name | prepend: site.baseurl }}">
+    {% endfor %}
 </head>

@@ -1,0 +1,37 @@
+---
+---
+
+.project {
+    margin-bottom: 2em;
+}
+.icon-container, .project-container {
+    display: inline-block;
+}
+.icon-container {
+    width: 25%;
+    vertical-align: top;
+    img {
+        border-radius: 100%;
+        box-shadow: 0 0 16pt 0 rgba(0, 0, 0, 0.2), 0 0 4pt 0 rgba(0, 0, 0, 0.1) inset;
+    }
+}
+
+// When icon is before content
+.icon-container:first-child {
+    margin-right: 2em;
+}
+
+// When content is before icon
+.icon-container:not(:first-child) {
+    margin-left: 2em;
+}
+
+.project-container {
+    width: 70%;
+    text-align: justify;
+}
+h2 {
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
