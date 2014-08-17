@@ -1,10 +1,10 @@
-.project {
+.description {
     margin-bottom: 2em;
 }
-.icon-container, .project-container {
+.description-icon, .description-content {
     display: inline-block;
 }
-.icon-container {
+.description-icon {
     width: 25%;
     vertical-align: top;
     img {
@@ -14,22 +14,22 @@
 }
 
 // When icon is before content
-.icon-container:first-child {
+.description-icon:first-child {
     margin-right: 2em;
 }
-.project-container:not(:first-child) h2 {
+.description-content:not(:first-child) h2 {
     text-align: right;
 }
 
 // When content is before icon
-.icon-container:not(:first-child) {
+.description-icon:not(:first-child) {
     margin-left: 2em;
 }
-.project-container:first-child h2 {
+.description-content:first-child h2 {
     text-align: left;
 }
 
-.project-container {
+.description-content {
     width: 70%;
     text-align: justify;
 }
@@ -42,10 +42,10 @@ h2 {
 }
 
 @include media-query($on-palm) {
-    .icon-container {
+    .description-icon {
         display: none;
     }
-    .project-container {
+    .description-content {
         display: block;
         width: 100%;
         text-align: left;
