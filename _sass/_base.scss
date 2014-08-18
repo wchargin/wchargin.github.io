@@ -8,7 +8,12 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+/**
+ * Always scroll to prevent page jumping
+ */
+html {
+    overflow-y: scroll;
+}
 
 /**
  * Basic styling
@@ -221,4 +226,8 @@ pre {
         }
     }
 
+}
+
+.inline-image {
+    height: 1em;
 }
