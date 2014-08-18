@@ -1,8 +1,7 @@
 # Site settings
 title: William Chargin
 description: > # this means to ignore newlines until "baseurl:"
-    This is my personal website and portfolio.
-    It's currently under construction.
+    My personal website and portfolio.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wchargin.github.io" # the base hostname & protocol for your site
 highlighter: pygments
