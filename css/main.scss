@@ -40,11 +40,17 @@ $transition-time:  0.2s;
     }
 }
 
+@mixin circled-image {
+    border-radius: 100%;
+    box-shadow: 0 0 16pt 0 rgba(0, 0, 0, 0.2), 0 0 4pt 0 rgba(0, 0, 0, 0.1) inset;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
         "syntax-highlighting",
+        "home",
         "descriptions",
         "skills"
 ;

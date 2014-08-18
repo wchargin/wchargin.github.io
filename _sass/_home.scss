@@ -1,0 +1,55 @@
+.portrait-holder {
+    display: inline-block;
+    float: right;
+    margin-left: 1em;
+    img {
+        @include circled-image;
+    }
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+.clearfix { @extend %clearfix; }
+
+.quicknav {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    > a {
+        vertical-align: top;
+
+        width: 30%;
+        color: $text-color;
+        margin: 0 1%;
+        display: inline-block;
+        text-align: center;
+        border-radius: 1em;
+        background: rgba(0, 0, 0, 0.1);
+        transition: background 0.1s, box-shadow 0.1s;
+        box-shadow: none;
+
+        &:hover {
+            text-decoration: none;
+            background: white;
+            box-shadow: 0 0 4pt rgba(0, 0, 0, 0.5);
+        }
+        
+        @include media-query($on-palm) {
+            display: block;
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 0.5em;
+    }
+    img {
+        height: 4em;
+        margin-bottom: 0.5em;
+    }
+}

@@ -8,8 +8,7 @@
     width: 25%;
     vertical-align: top;
     img {
-        border-radius: 100%;
-        box-shadow: 0 0 16pt 0 rgba(0, 0, 0, 0.2), 0 0 4pt 0 rgba(0, 0, 0, 0.1) inset;
+        @include circled-image;
     }
 }
 

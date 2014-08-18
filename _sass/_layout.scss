@@ -236,3 +236,10 @@
         }
     }
 }
+
+/**
+ * Images
+ */
+.circled-image {
+    @include circled-image;
+}

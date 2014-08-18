@@ -215,6 +215,9 @@ pre {
 
         path {
             fill: $text-color;
+            &:hover {
+                fill: $grey-color;
+            }
         }
     }
 
