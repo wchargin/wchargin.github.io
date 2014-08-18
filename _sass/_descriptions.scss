@@ -30,7 +30,6 @@
 
 .description-content {
     width: 70%;
-    text-align: justify;
 }
 
 
@@ -47,6 +46,6 @@ h2 {
     .description-content {
         display: block;
         width: 100%;
-        text-align: left;
+        text-align: left !important;
     }
 }
