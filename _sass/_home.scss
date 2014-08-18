@@ -25,14 +25,13 @@
         display: inline-block;
         text-align: center;
         border-radius: 1em;
-        background: rgba(0, 0, 0, 0.1);
-        transition: background 0.1s, box-shadow 0.1s;
+        background: rgba(0, 0, 0, 0.05);
+        transition: background 0.1s;
         box-shadow: none;
 
         &:hover {
             text-decoration: none;
-            background: white;
-            box-shadow: 0 0 4pt rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.15);
         }
         
         @include media-query($on-palm) {
