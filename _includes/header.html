@@ -21,10 +21,11 @@
             </svg>
           </span>
         </a>
-        {% for p in site.pages %}
-          {% if p.title %}
-          <a class="page-link{% if page.title == p.title %} current-page{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-          {% endif %}
+
+        <!-- Use a manual navbar for custom ordering. -->
+        {% assign page_titles = "Experience Skills Projects" | split: ' ' %}
+        {% for p in page_titles %}
+        <a class="page-link{% if page.title == p %} current-page{% endif %}" href="{{ "/" | prepend: site.baseurl }}{{ p | downcase }}/">{{ p }}</a>
         {% endfor %}
       </div>
     </nav>
