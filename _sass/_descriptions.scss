@@ -17,7 +17,7 @@
 .description-icon:first-child {
     margin-right: 2em;
 }
-.description-content:not(:first-child) h2 {
+.description-content:not(:first-child) {
     text-align: right;
 }
 
@@ -25,7 +25,7 @@
 .description-icon:not(:first-child) {
     margin-left: 2em;
 }
-.description-content:first-child h2 {
+.description-content:first-child {
     text-align: left;
 }
 
