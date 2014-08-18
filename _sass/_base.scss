@@ -204,3 +204,18 @@ pre {
         }
     }
 }
+
+.home-icon {
+
+    > svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: text-bottom;
+
+        path {
+            fill: $text-color;
+        }
+    }
+
+}

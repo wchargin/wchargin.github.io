@@ -40,6 +40,9 @@
             margin-left: 20px;
         }
     }
+    .current-page {
+        font-weight: bold;
+    }
 
     @include media-query($on-palm) {
         position: absolute;

@@ -14,10 +14,16 @@
       </a>
 
       <div class="trigger">
-        <a class="page-link" href="/">Home</a>
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <a class="page-link" href="/">
+          <span class="home-icon">
+              <svg viewBox="0 0 16 16">
+                <path d="M 16,9.48148 13,5.925927 V 0.5925933 H 11 V 3.555553 L 8,0 0,9.48148 v 0.592593 H 2 V 16 H 7 V 12.444447 H 9 V 16 h 5 v -5.925927 h 2 V 9.48148 z" />
+              </svg>
+            </span>
+        </a>
+        {% for p in site.pages %}
+          {% if p.title %}
+          <a class="page-link{% if page.title == p.title %} current-page{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
