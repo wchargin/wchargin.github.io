@@ -1,6 +1,17 @@
 .skill-category {
     margin-bottom: 2em;
 }
+.skill-helptext {
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+.skill-helptext-mobile {
+    display: none;
+    @include media-query($on-palm) {
+        display: block;
+    }
+}
 .skill-explanation {
     text-align: center;
     background: rgba(0, 0, 0, 0.1);
@@ -32,12 +43,16 @@
     width: 100%;
     text-align: center;
     img {
-        height: 8em;
+        width: 8em;
         padding: 0 1em;
         opacity: 0.4;
         transition: opacity $transition-time linear;
         &:hover {
             opacity: 1;
+        }
+        @include media-query($on-palm) {
+            width: 25%;
+            padding: 0;
         }
     }
     margin-bottom: 0.5em;
