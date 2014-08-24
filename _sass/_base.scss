@@ -233,3 +233,21 @@ pre {
 .inline-image {
     height: 1em;
 }
+
+/**
+ * Help text
+ */
+.helptext, .helptext-mobile {
+    font-style: italic;
+}
+.helptext {
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+.helptext-mobile {
+    display: none;
+    @include media-query($on-palm) {
+        display: block;
+    }
+}

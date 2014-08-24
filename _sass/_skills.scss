@@ -1,17 +1,6 @@
 .skill-category {
     margin-bottom: 2em;
 }
-.skill-helptext {
-    @include media-query($on-palm) {
-        display: none;
-    }
-}
-.skill-helptext-mobile {
-    display: none;
-    @include media-query($on-palm) {
-        display: block;
-    }
-}
 .skill-explanation {
     text-align: center;
     background: rgba(0, 0, 0, 0.1);
