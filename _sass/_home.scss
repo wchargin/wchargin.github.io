@@ -19,12 +19,13 @@
     > a {
         vertical-align: top;
 
-        $num-boxes: 3;
+        $num-boxes: 2;
         $margin: 1%;
 
         width: calc((100% - #{$margin} * (#{$num_boxes} + 1 /* ??? */) * 2) / #{$num-boxes});
         color: $text-color;
         margin: 0 $margin;
+        margin-bottom: 1em;
         display: inline-block;
         text-align: center;
         border-radius: 1em;
@@ -40,6 +41,7 @@
         @include media-query($on-palm) {
             display: block;
             width: 100%;
+            margin-bottom: 0;
             &:not(:last-child) {
                 margin-bottom: 1em;
             }
