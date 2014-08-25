@@ -23,7 +23,7 @@
         </a>
 
         <!-- Use a manual navbar for custom ordering. -->
-        {% assign page_titles = "Experience Skills Projects" | split: ' ' %}
+        {% assign page_titles = "Skills Projects Experience" | split: ' ' %}
         {% for p in page_titles %}
         <a class="page-link{% if page.title == p %} current-page{% endif %}" href="{{ "/" | prepend: site.baseurl }}{{ p | downcase }}/">{{ p }}</a>
         {% endfor %}
