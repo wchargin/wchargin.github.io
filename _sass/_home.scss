@@ -29,13 +29,17 @@
         display: inline-block;
         text-align: center;
         border-radius: 1em;
-        background: rgba(0, 0, 0, 0.05);
-        transition: background 0.1s;
+        background: rgba(0, 0, 0, 0.07);
+        transition: background $transition-time;
         box-shadow: none;
 
         &:hover {
             text-decoration: none;
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.03);
+            img {
+                filter: none; -webkit-filter: none;
+                opacity: 1.0;
+            }
         }
         
         @include media-query($on-palm) {
@@ -54,7 +58,10 @@
         padding-top: 0.5em;
     }
     img {
+        filter: brightness(0); -webkit-filter: brightness(0);
+        opacity: 0.5;
         height: 4em;
         margin-bottom: 0.5em;
+        transition: filter $transition-time, -webkit-filter $transition-time, opacity $transition-time;
     }
 }
