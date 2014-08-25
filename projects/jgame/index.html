@@ -1,0 +1,56 @@
+---
+layout: project
+title: JGame
+anchor: jgame
+---
+
+<h2>Overview</h2>
+<p>
+My high school used to teach game development courses for beginning programmers in ActionScript 3, the primary language used by Adobe Flash.
+Because of ActionScript's nature (as an ECMAScript derivative), students had difficulty adjusting to the more advanced programming courses.
+Using Java for game development would have been optimal, except that none of the Java game libraries available were easy enough to learn.
+</p>
+<p>
+So I made one.
+JGame is a Java GUI library designed with two overarching goals in mind: remove barriers to entry and encourage good programming practices.
+As a consequence, JGame follows a few general rules:
+<ul>
+  <li><p>
+  Developers shouldn't have to worry about details relating to drawing graphics, matrix transformations, etc.
+  The point of the course is to teach programming and programming concepts through game design, so implementation details and complicated math only pose a barrier to entry.
+  </p></li>
+  <li><p>
+  The framework should encourage object-oriented programming and general best practices.
+  Setting up a good class hierarchy should be the <em>natural</em> way to structure the program.
+  </p></li>
+  <li><p>
+  Applications should run as both desktop applications and web applets with little modification.
+  </p></li>
+</ul>
+
+<h2>Features</h2>
+<p>
+Here are some of the features that JGame provides out of the box.
+</p>
+<ul>
+  <li><p>
+  Basic actions, such as "this character should be controlled with the mouse" or "this enemy should move along a given path," are provided in the form of listeners and controllers that can easily be added to objects.
+  For example, to make an object <code>character</code> follow the mouse, the code is simply: <pre><code>character.addController(new MouseLocationController());</code></pre>
+  Once they feel comfortable, students are encouraged to look "under the hood" to see how these functions work.
+  </p></li>
+  <li><p>
+  All graphics transformations are done automatically.
+  Objects can be translated, scaled, and rotated about a given anchor point.
+  Once these parameters are set by the developer, JGame automatically performs the trigonometric and matrix computations required to draw the object as desired.
+  </p></li>
+  <li><p>
+  Loading resources from files&mdash;loading and displaying images, loading and playing sounds&mdash;is all automatic.
+  This means that students don't have to worry about filesystem input and output to be able to write their games.
+  (As a technical note: this is all implemented using weak references, so it's friendly to the garbage collector.)
+  </li></p>
+</ul>
+
+<h2>Impact</h2>
+
+Two classes at my high school currently use JGame to teach beginning programmers: Web Design and Animation.
+Some student work is available on my teacher's website <a href="http://mrumrocks.org/portfolio#java-games">here</a>.

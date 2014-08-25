@@ -1,0 +1,43 @@
+---
+layout: project
+title: Physics simulations
+anchor: physbam
+---
+
+<h2>Overview</h2>
+<p>
+In this project, I implemented a variety of physical simulations on a low-powered Android tablet.
+The main goal of this project was to look for ways to increase the algorithmic efficiency of the simulations.
+The temptation with physics simulations is generally to purchase more or better hardware, so limiting myself to a low-powered tablet made more out-of-the-box thinking necessary.
+Additionally, it was always a goal to be entirely physically accurate, never sacrificing accuracy for speed.
+</p>
+<p>
+The simulations implemented in the application include:
+<ul>
+  <li>Articulated rigid body</li>
+  <li>Cloth simulation</li>
+  <li>Smoke simulation (voxel density)</li>
+  <li>Dynamic paint via displacement</li>
+</ul>
+</p>
+<p>
+My research writeup is available <a href="/files/ahpcrc_writeup.pdf">here</a>.
+</p>
+
+<h2>Accomplishments</h2>
+<p>
+Some things accomplished during the course of this project include:
+<ul>
+  <li>Efficient collision detection for rigid bodies, by setting manual collision groups.</li>
+  <li>Efficient collision detection scheme for arbitrarily dense urban environments, using a <i>k</i>d-tree and two-dimensional bitfield.</li>
+  <li>Efficient joint constraint solving for arbitrarily structured articulated rigid bodies.</li>
+  <li>Novel algorithm for distributing points on the surface of an arbitrary 3D triangulated mesh with UV map and corresponding density function, based in part on concepts from the Metropolis algorithm.</li>
+  <li>Inclusion of partially or fully pre-baked expensive simulations such as cloth and smoke (based in finite element analysis), modified for current environment.</li>
+  <li>Support for realistic rendering features, such as camera-dependent fog and UV-mapped textures on both height maps and triangulated meshes.</li>
+</ul>
+</p>
+
+<h2>Demonstration</h2>
+<p>
+I've prepared <a href="https://vimeo.com/103361487">this demonstration reel</a> to exhibit some of the features described above.
+</p>
