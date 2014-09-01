@@ -107,6 +107,11 @@ a {
         color: $text-color;
         text-decoration: underline;
     }
+
+    img {
+        /* remove borders from IE */
+        border: none;
+    }
 }
 
 
