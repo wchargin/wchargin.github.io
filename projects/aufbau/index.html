@@ -1,0 +1,65 @@
+---
+layout: project
+title: Automated grading
+anchor: aufbau
+---
+
+<h2>Overview</h2>
+<p>
+When I was offered the position of student grader, I was disappointed to find that the existing grading system was a jumble of giant, monolithic Bash scripts.
+The scripts <em>worked</em>, but just barely, and trying to add any kind of new functionality would have been asking for trouble.
+</p>
+<p>
+To fix this, I designed a modular grading system, based on the premise that any grading process can be broken down into a sequence of discrete steps.
+For example, the process for grading a Java assignment might be as follows:
+<ul>
+  <li>Copy student's source files to the grading directory.</li>
+  <li>Copy the test driver to the grading directory.</li>
+  <li>Compile the source files with <code>javac</code>.</li>
+  <li>Run the test driver, and make sure that it passes.</li>
+  <li>Deduct points for overly long lines.</li>
+  <li>Deduct points for tab characters.</li>
+  <li>Deduct points for incomplete documentation.</li>
+  <li>Email scores to students.</li>
+</ul>
+Most of these steps are not specific to any one assignment, or even any one programming language.
+By writing each of these steps as its own function, it becomes trivially easy to create assignment specifications that can be automatically executed.
+</p>
+
+<h2>Features</h2>
+
+<ul>
+  <li><p>
+  Support for multiple grading periods, and penalties for late submissions or repeated submissions (partial credit).
+  This includes a tool to extract each student's best score and export the results as CSV for easy input into a gradebook.
+  </p></li>
+  <li><p>
+  Integration with <code>cron</code> via a configurable schedule file that lists upcoming assignments, grading periods, and parameters.
+  </p></li>
+  <li><p>
+  Language bindings for steps written in Bash and Python, with the possibility of easy expansion to other languages.
+  </p></li>
+  <li><p>
+  Wide variety of built-in steps, including:
+  <ul>
+    <li>simple file manipulation scripts;</li>
+    <li>custom Javadoc doclet to automatically check and score documentation;</li>
+    <li>style checking tools for long lines, tab characters, etc.;</li>
+    <li>Java test driver runner;</li>
+    <li>utility to mail scores and deduction explanations to students.</li>
+  </ul>
+  </p></li>
+  <li><p>
+  And, of course, comprehensive documentation for instructors and new student graders.
+  </p></li>
+</ul>
+
+<h2>Deployment</h2>
+
+<p>
+My system is in use by Computer Science&nbsp;102 classes at Cal&nbsp;Poly.
+</p>
+<p>
+Due to confidentiality, the source code for this project is private.
+Sorry.
+</p>
