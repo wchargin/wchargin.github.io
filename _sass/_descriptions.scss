@@ -49,3 +49,35 @@ h2 {
         text-align: left !important;
     }
 }
+
+/* navbar at top */
+.description-nav {
+    text-align: center;
+    margin-top: -8pt;
+    margin-bottom: 24pt;
+    .title {
+        font-size: smaller;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 4pt;
+    }
+    a {
+        border-radius: 4pt;
+        border: thin rgba(0, 0, 0, 0.25) solid;
+        padding: 4pt 8pt;
+        margin: 0;
+        &:not(:first-of-type) {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-left: none;
+        }
+        &:not(:last-of-type) {
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        text-decoration: none;
+    }
+}
