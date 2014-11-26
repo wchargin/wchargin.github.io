@@ -31,8 +31,6 @@
         transition: color $transition-time, padding-left $transition-time;
         box-shadow: none;
 
-        overflow: hidden;
-
         .item-title {
             text-transform: uppercase;
             font-weight: bold;
@@ -41,10 +39,10 @@
         }
 
         .item-description {
-            top: 3em;
+            left: 3em;
             opacity: 0;
             position: relative;
-            transition: top $transition-time, opacity $transition-time;
+            transition: left $transition-time, opacity $transition-time;
         }
 
         &:hover {
@@ -55,9 +53,9 @@
                 opacity: 1.0;
             }
             .item-description {
-                top: 0;
+                left: 0;
                 opacity: 1;
-                transition: top $transition-time, opacity $transition-time;
+                transition: left $transition-time, opacity $transition-time;
             }
             padding-left: 1em;
             transition: padding-left $transition-time;
