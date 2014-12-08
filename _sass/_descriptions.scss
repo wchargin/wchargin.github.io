@@ -18,6 +18,7 @@
 }
 .description-content:not(:first-child) {
     text-align: right;
+    list-style-position: inside;
 }
 
 // When content is before icon
