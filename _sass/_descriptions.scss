@@ -16,17 +16,10 @@
 .description-icon:first-child {
     margin-right: 2em;
 }
-.description-content:not(:first-child) {
-    text-align: right;
-    list-style-position: inside;
-}
 
 // When content is before icon
 .description-icon:not(:first-child) {
     margin-left: 2em;
-}
-.description-content:first-child {
-    text-align: left;
 }
 
 .description-content {
