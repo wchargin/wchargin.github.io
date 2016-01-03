@@ -16,7 +16,7 @@
     width: 100%;
     text-align: left;
 
-    > a {
+    a {
         vertical-align: top;
 
         $num-boxes: 2;
@@ -26,9 +26,9 @@
         color: rgba(0, 0, 0, 0.5);
         margin: 0;
         margin-bottom: 1em;
-        margin-left: $margin;
+        margin-left: 0;
         display: inline-block;
-        transition: color $transition-time, padding-left $transition-time;
+        transition: color $transition-time, margin-left $transition-time;
         box-shadow: none;
 
         .item-title {
@@ -57,8 +57,8 @@
                 opacity: 1;
                 transition: left $transition-time, opacity $transition-time;
             }
-            padding-left: 1em;
-            transition: padding-left $transition-time;
+            margin-left: 1em;
+            transition: margin-left $transition-time;
         }
 
         @include media-query($on-palm) {
