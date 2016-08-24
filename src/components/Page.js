@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
-import {Link} from '../Components';
+import {Link, MailLink} from '../Components';
 
 const links = [
     {
@@ -40,7 +40,8 @@ export default class Page extends Component {
             </article>
             <footer className={css(styles.footer)}>
                 <div className={css(styles.centered)}>
-                    <span>William Chargin</span>
+                    <span>William Chargin</span><br />
+                    <MailLink>Get my email address</MailLink>
                 </div>
             </footer>
         </div>;

@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
-import {Heading, Link} from '../../Components';
+import {Heading, Link, MailLink} from '../../Components';
 
 export default class HomePage extends Component {
 
@@ -45,9 +45,7 @@ export default class HomePage extends Component {
                 </li>
                 <li>
                     If you&rsquo;d like to contact me,{" "}
-                    <Link href="#" onClick={this._handleMailClick}>
-                        request my email!
-                    </Link>
+                    <MailLink>request my email!</MailLink>
                 </li>
             </ul>
             <p>
@@ -55,10 +53,6 @@ export default class HomePage extends Component {
                 with&nbsp;<i>bargain</i>, not&nbsp;<i>barge&nbsp;in</i>.
             </p>
         </div>;
-    }
-
-    _handleMailClick() {
-        // TODO
     }
 
 }
