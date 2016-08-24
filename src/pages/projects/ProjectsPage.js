@@ -8,6 +8,13 @@ import {StyleSheet, css} from 'aphrodite';
 import {Heading, Link} from '../../Components';
 import Colors from '../../data/Colors';
 
+Link.registerPreloadResources('/projects', () => [
+    require('./aufbau.png'),
+    require('./physbam.png'),
+    require('./kiosk.png'),
+    require('./jgame.png'),
+]);
+
 export default class ProjectsPage extends Component {
 
     render() {

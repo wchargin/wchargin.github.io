@@ -7,6 +7,10 @@ import {StyleSheet, css} from 'aphrodite';
 
 import {Heading, Link, MailLink} from '../../Components';
 
+Link.registerPreloadResources('/', () => [
+    require('./me.png'),
+]);
+
 export default class HomePage extends Component {
 
     render() {
