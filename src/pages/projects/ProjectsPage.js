@@ -18,7 +18,7 @@ export default class ProjectsPage extends Component {
     render() {
         const urls = {
             ahpcrc: "https://ahpcrc.stanford.edu/",
-            ahpcrcPaper: require("./ahpcrc_writeup.pdf"),
+            ahpcrcPaper: require("../../shared_files/ahpcrc_writeup.pdf"),
             kiosk: "https://github.com/wchargin/kiosk",
             jgame: "https://github.com/wchargin/jgame",
             jgameGallery: "http://www.mrumrocks.org/portfolio#java-games",
