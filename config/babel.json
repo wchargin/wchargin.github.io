@@ -1,0 +1,25 @@
+/*
+ * Babel configuration, as a JSON-with-comments file (not JavaScript).
+ * This is used for both the server and client, and for both
+ * development and production.
+ */
+
+{
+    "presets": [
+        "es2015",
+        "es2016",
+        "react"
+    ],
+    "plugins": [
+        "syntax-trailing-function-commas",
+        "transform-class-properties",
+        "transform-object-rest-spread"
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                "transform-react-constant-elements"
+            ]
+        }
+    }
+}
