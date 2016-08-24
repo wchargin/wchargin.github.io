@@ -2,11 +2,9 @@
  * The main component for the projects page.
  */
 
-import React, {Component, PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import React, {Component} from 'react';
 
-import {Heading, Link} from '../../Components';
-import Colors from '../../data/Colors';
+import {Blurb, Heading, Link} from '../../Components';
 
 Link.registerPreloadResources('/projects', () => [
     require('./aufbau.png'),
@@ -27,10 +25,10 @@ export default class ProjectsPage extends Component {
         };
         return <div>
             <Heading level={1}>Projects</Heading>
-            <ProjectView
+            <Blurb
                 name="Automated grading"
                 image={require('./aufbau.png')}
-                imagePosition={ProjectView.IMAGE_RIGHT}
+                imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
                     I&nbsp;designed, implemented, and documented a
@@ -42,11 +40,11 @@ export default class ProjectsPage extends Component {
                     any assignment. My system is used in CS&nbsp;102
                     classes at Cal&nbsp;Poly.
                 </p>
-            </ProjectView>
-            <ProjectView
+            </Blurb>
+            <Blurb
                 name="Physics simulations"
                 image={require('./physbam.png')}
-                imagePosition={ProjectView.IMAGE_LEFT}
+                imagePosition={Blurb.IMAGE_LEFT}
             >
                 <p>
                     During June&ndash;August of&nbsp;2014, I&nbsp;worked
@@ -62,11 +60,11 @@ export default class ProjectsPage extends Component {
                         href={urls.ahpcrcPaper}>my research paper</Link>
                     {" "}for more information.
                 </p>
-            </ProjectView>
-            <ProjectView
+            </Blurb>
+            <Blurb
                 name="Kiosk"
                 image={require('./kiosk.png')}
-                imagePosition={ProjectView.IMAGE_RIGHT}
+                imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
                     Technology problems often plague debate conferences.
@@ -80,11 +78,11 @@ export default class ProjectsPage extends Component {
                     students. It's open-source and
                     {" "}<Link href={urls.kiosk}>available on GitHub</Link>.
                 </p>
-            </ProjectView>
-            <ProjectView
+            </Blurb>
+            <Blurb
                 name="JGame"
                 image={require('./jgame.png')}
-                imagePosition={ProjectView.IMAGE_LEFT}
+                imagePosition={Blurb.IMAGE_LEFT}
             >
                 <p>
                     My high school wanted to teach game development to
@@ -103,83 +101,8 @@ export default class ProjectsPage extends Component {
                         available on GitHub
                     </Link>.
                 </p>
-            </ProjectView>
+            </Blurb>
         </div>;
     }
 
 }
-
-class ProjectView extends Component {
-    static IMAGE_RIGHT = "r";
-    static IMAGE_LEFT = "l";
-
-    static propTypes = {
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,  // url
-        imagePosition: PropTypes.oneOf([
-            ProjectView.IMAGE_LEFT,
-            ProjectView.IMAGE_RIGHT,
-        ]).isRequired,
-        children: PropTypes.node.isRequired,
-    }
-
-    render() {
-        const body = this._renderBody();
-        const image = this._renderImage();
-        const components = {
-            [ProjectView.IMAGE_RIGHT]: [body, image],
-            [ProjectView.IMAGE_LEFT]: [image, body],
-        }[this.props.imagePosition];
-
-        return <section className={css(styles.description)}>
-            {components}
-        </section>;
-    }
-
-    _renderBody() {
-        return <div className={css(styles.descriptionContent)} key="body">
-            <Heading level={2}>{this.props.name}</Heading>
-            {this.props.children}
-        </div>;
-    }
-
-    _renderImage() {
-        const margin = {
-            [ProjectView.IMAGE_RIGHT]: 'marginLeft',
-            [ProjectView.IMAGE_LEFT]: 'marginRight',
-        }[this.props.imagePosition];
-        return <div
-            className={css(styles.descriptionIconContainer)}
-            style={{[margin]: 24}}
-            key="image"
-        >
-            <img
-                className={css(styles.descriptionIcon)}
-                src={this.props.image}
-                role="presentation"
-                onDragStart={e => e.preventDefault()}
-            />
-        </div>;
-    }
-}
-
-const styles = StyleSheet.create({
-    description: {
-        marginBottom: 15,
-    },
-    descriptionContent: {
-        display: 'inline-block',
-        width: '70%',
-        verticalAlign: 'top',
-    },
-    descriptionIconContainer: {
-        display: 'inline-block',
-        width: '25%',
-        verticalAlign: 'top',
-    },
-    descriptionIcon: {
-        width: '100%',
-        borderRadius: '100%',
-        border: `thin ${Colors.gray.medium} solid`,
-    },
-});
