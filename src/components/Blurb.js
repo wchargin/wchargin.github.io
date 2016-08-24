@@ -14,7 +14,7 @@ export default class Blurb extends Component {
     static IMAGE_LEFT = "l";
 
     static propTypes = {
-        name: PropTypes.node.isRequired,
+        name: PropTypes.node,
         image: PropTypes.string.isRequired,  // url
         imagePosition: PropTypes.oneOf([
             Blurb.IMAGE_LEFT,
@@ -36,7 +36,7 @@ export default class Blurb extends Component {
 
     _renderBody() {
         return <div className={css(styles.body)} key="body">
-            <Heading level={2}>{this.props.name}</Heading>
+            {this.props.name && <Heading level={2}>{this.props.name}</Heading>}
             {this.props.children}
         </div>;
     }
