@@ -22,6 +22,10 @@ const links = [
         path: '/experience',
         text: 'Experience',
     },
+    {
+        path: '/education',
+        text: 'Education',
+    },
 ];
 
 export default class Page extends Component {
