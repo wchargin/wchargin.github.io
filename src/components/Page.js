@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
-import Link from './Link';
+import {Link} from '../Components';
 
 const links = [
     {

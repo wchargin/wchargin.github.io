@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 
-import Heading from '../../components/Heading';
+import {Heading} from '../../Components';
 
 export default class HomePage extends Component {
 

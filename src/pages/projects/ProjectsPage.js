@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
-import Heading from '../../components/Heading';
+import {Heading} from '../../Components';
 
 export default class ProjectsPage extends Component {
 
