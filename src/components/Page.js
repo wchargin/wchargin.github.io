@@ -3,11 +3,11 @@
  * application. Includes a header (with navigation bar) and footer.
  */
 
-import {Link} from 'react-router';
 import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
+import Link from './Link';
 
 const links = [
     {
