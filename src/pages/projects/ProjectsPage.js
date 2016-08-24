@@ -5,11 +5,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
+import Heading from '../../components/Heading';
+
 export default class ProjectsPage extends Component {
 
     render() {
         const fancy = <em className={css(styles.fancy)}>fancy</em>;
-        return <h1>Here are some {fancy} projects.</h1>;
+        return <Heading level={1}>Here are some {fancy} projects.</Heading>;
     }
 
 }
