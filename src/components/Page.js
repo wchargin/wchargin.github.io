@@ -18,6 +18,10 @@ const links = [
         path: '/projects',
         text: 'Projects',
     },
+    {
+        path: '/experience',
+        text: 'Experience',
+    },
 ];
 
 export default class Page extends Component {
