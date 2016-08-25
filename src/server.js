@@ -9,7 +9,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 
-import {createRoutes} from './data/Routes';
+import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
 export default function renderStaticPage(locals, callback) {
     const url = locals.path;
@@ -34,7 +34,7 @@ export default function renderStaticPage(locals, callback) {
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <link rel="shortcut icon" href="/favicon.ico" />
-                <title>wchargin:${url}</title>
+                <title>${resolveTitleFromPath(url)}</title>
                 <style>${require("normalize.css")}</style>
                 <style data-aphrodite>${css.content}</style>
                 </head>

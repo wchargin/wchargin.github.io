@@ -6,6 +6,7 @@
  *   - path (String, required): the path associated with the route
  *   - component (React class, required): the page component to render
  *     for the route
+ *   - title (String, required): the <title /> for the page
  *   - navbarTitle (string, defaults to null): if present, the string
  *     that should be used for the link in the navbar; if absent,
  *     indicates that the route should not appear in the navbar
@@ -43,6 +44,9 @@ function route(data) {
     if (!data.component) {
         throw new Error("route missing component");
     }
+    if (!data.title) {
+        throw new Error("route missing title");
+    }
     const defaults = {
         isIndex: false,
         navbarTitle: null,
@@ -57,30 +61,36 @@ export const routeData = [
     route({
         path: '/',
         component: HomePage,
+        title: "William Chargin",
         navbarTitle: "Home",
         isIndex: true,
     }),
     route({
         path: '/projects',
         component: ProjectsPage,
+        title: "Projects",
         navbarTitle: "Projects",
     }),
     route({
         path: '/projects/aufbau',
         component: AufbauProjectPage,
+        title: "Automated grading",
     }),
     route({
         path: '/projects/physbam',
         component: PhysBAMProjectPage,
+        title: "Physics simulations",
     }),
     route({
         path: '/experience',
         component: ExperiencePage,
+        title: "Experience",
         navbarTitle: "Experience",
     }),
     route({
         path: '/education',
         component: EducationPage,
+        title: "Education",
         navbarTitle: "Education",
     }),
 ];
@@ -92,6 +102,22 @@ export function createRoutes() {
                 <IndexRoute key={i} component={component} /> :
                 <Route key={i} path={path} component={component} />)}
     </Route>;
+}
+
+export function resolveRouteFromPath(path) {
+    const matches = (candidateRoute) => {
+        const candidatePath = candidateRoute.path;
+        const start = path.substring(0, candidatePath.length);
+        const end = path.substring(candidatePath.length);
+        return start === candidatePath && (end.length === 0 || end === '/');
+    };
+    return routeData.filter(matches)[0] || null;
+}
+
+export function resolveTitleFromPath(path) {
+    const route = resolveRouteFromPath(path);
+    const fallback = "William Chargin";
+    return (route && route.title) || fallback;
 }
 
 export const staticPaths = routeData.map(x => x.path);

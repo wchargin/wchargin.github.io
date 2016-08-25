@@ -5,16 +5,25 @@
 import React, {Component} from 'react';
 import {Router, browserHistory} from 'react-router';
 
-import {createRoutes} from './data/Routes';
+import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
 export default class App extends Component {
 
     render() {
+        const app = this;
         return <Router
             history={browserHistory}
-            onUpdate={() => window.scrollTo(0, 0)}
+            onUpdate={function() {
+                const router = this;
+                app._handleUpdate(router.state.location.pathname);
+            }}
             routes={createRoutes()}
         />;
+    }
+
+    _handleUpdate(path) {
+        window.scrollTo(0, 0);
+        document.title = resolveTitleFromPath(path);
     }
 
 }
