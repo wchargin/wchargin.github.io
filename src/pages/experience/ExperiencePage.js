@@ -89,12 +89,14 @@ export default class ExperiencePage extends Component {
                     and engineering, such as numerical optimization, PDEs, and
                     computational mesh generation. I&nbsp;also worked on
                     research, developing real-time physics simulations on
-                    low-powered Android tablets.
-                    {/* TODO: Link to project page here. */}{" "}
-                    As part of this research, I&nbsp;developed an algorithm for
-                    distribution of points on a 3D&nbsp;triangulated mesh in
-                    accordance with a given UV&nbsp;density function.
-                    I&nbsp;received a verbal commendation on the excellence of
+                    low-powered Android tablets. (See
+                    {" "}<Link to="/projects/physbam">
+                        the relevant project page
+                    </Link> for more information.) As part of this research,
+                    I&nbsp;developed an algorithm for distribution of points on
+                    a 3D&nbsp;triangulated mesh in accordance with a given
+                    UV&nbsp;density function. I&nbsp;received a verbal
+                    commendation on the excellence of
                     {" "}<Link href={urls.ahpcrcPaper}>
                         my research report
                     </Link>.
