@@ -44,6 +44,7 @@ export default class ProjectsPage extends Component {
             </Blurb>
             <Blurb
                 name="Physics simulations"
+                linkTo="/projects/physbam"
                 image={require('./physbam.png')}
                 imagePosition={Blurb.IMAGE_LEFT}
             >

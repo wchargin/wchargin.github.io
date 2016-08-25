@@ -11,6 +11,7 @@ import Page from './components/Page';
 import HomePage from './pages/home/HomePage';
 import ProjectsPage from './pages/projects/ProjectsPage';
 import AufbauProjectPage from './pages/projects/AufbauProjectPage';
+import PhysBAMProjectPage from './pages/projects/PhysBAMProjectPage';
 import ExperiencePage from './pages/experience/ExperiencePage';
 import EducationPage from './pages/education/EducationPage';
 
@@ -19,6 +20,7 @@ export default (
         <IndexRoute component={HomePage} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/projects/aufbau" component={AufbauProjectPage} />
+        <Route path="/projects/physbam" component={PhysBAMProjectPage} />
         <Route path="/experience" component={ExperiencePage} />
         <Route path="/education" component={EducationPage} />
     </Route>
