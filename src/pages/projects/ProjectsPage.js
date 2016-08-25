@@ -27,6 +27,7 @@ export default class ProjectsPage extends Component {
             <Heading level={1}>Projects</Heading>
             <Blurb
                 name="Automated grading"
+                linkTo="/projects/aufbau"
                 image={require('./aufbau.png')}
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
