@@ -56,8 +56,15 @@ export default class Page extends Component {
     }
 
     _renderNavItem(path, text) {
-        const strip = x => x.replace(/\/$/, '');
-        const here = strip(path) === strip(this.props.location.pathname);
+        // Test whether the current location (from our props) either
+        // matches the route for the navbar entry we're rendering, or
+        // is a subroute thereof.
+        const currentPath = this.props.location.pathname;
+        const start = currentPath.substring(0, path.length);
+        const end = currentPath.substring(path.length);
+        const here = (start === path &&
+            (end.length === 0 || end.charAt(0) === '/'));
+
         return <li
             key={path}
             className={css(styles.navLink, here && styles.activeNavLink)}
