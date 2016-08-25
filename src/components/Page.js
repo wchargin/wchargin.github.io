@@ -8,25 +8,7 @@ import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
 import {Link, MailLink} from '../Components';
-
-const links = [
-    {
-        path: '/',
-        text: 'Home',
-    },
-    {
-        path: '/projects',
-        text: 'Projects',
-    },
-    {
-        path: '/experience',
-        text: 'Experience',
-    },
-    {
-        path: '/education',
-        text: 'Education',
-    },
-];
+import {routeData} from '../data/Routes';
 
 export default class Page extends Component {
 
@@ -38,8 +20,10 @@ export default class Page extends Component {
                         William Chargin
                     </Link>
                     <ul className={css(styles.navList)}>
-                        {links.map(({path, text}) =>
-                            this._renderNavItem(path, text))}
+                        {routeData
+                            .filter(x => x.navbarTitle)
+                            .map(({path, navbarTitle}) =>
+                                this._renderNavItem(path, navbarTitle))}
                     </ul>
                 </nav>
             </header>
@@ -55,21 +39,21 @@ export default class Page extends Component {
         </div>;
     }
 
-    _renderNavItem(path, text) {
+    _renderNavItem(linkPath, linkText) {
         // Test whether the current location (from our props) either
         // matches the route for the navbar entry we're rendering, or
         // is a subroute thereof.
         const currentPath = this.props.location.pathname;
-        const start = currentPath.substring(0, path.length);
-        const end = currentPath.substring(path.length);
-        const here = (start === path &&
+        const start = currentPath.substring(0, linkPath.length);
+        const end = currentPath.substring(linkPath.length);
+        const here = (start === linkPath &&
             (end.length === 0 || end.charAt(0) === '/'));
 
         return <li
-            key={path}
+            key={linkPath}
             className={css(styles.navLink, here && styles.activeNavLink)}
         >
-            <Link to={path}>{text}</Link>
+            <Link to={linkPath}>{linkText}</Link>
         </li>;
     }
 

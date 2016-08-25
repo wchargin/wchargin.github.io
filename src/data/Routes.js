@@ -6,8 +6,9 @@
  *   - path (String, required): the path associated with the route
  *   - component (React class, required): the page component to render
  *     for the route
- *   - inNavbar (boolean, defaults to false): true if the route should
- *     be displayed in the top-of-page navigation bar
+ *   - navbarTitle (string, defaults to null): if present, the string
+ *     that should be used for the link in the navbar; if absent,
+ *     indicates that the route should not appear in the navbar
  *   - isIndex (boolean, defaults to false): true only for the home page
  *
  * The route data is exported as `routeData`. This can be converted to
@@ -44,7 +45,7 @@ function route(data) {
     }
     const defaults = {
         isIndex: false,
-        inNavbar: false,
+        navbarTitle: null,
     };
     return {
         ...defaults,
@@ -56,13 +57,13 @@ export const routeData = [
     route({
         path: '/',
         component: HomePage,
-        inNavbar: true,
+        navbarTitle: "Home",
         isIndex: true,
     }),
     route({
         path: '/projects',
         component: ProjectsPage,
-        inNavbar: true,
+        navbarTitle: "Projects",
     }),
     route({
         path: '/projects/aufbau',
@@ -75,12 +76,12 @@ export const routeData = [
     route({
         path: '/experience',
         component: ExperiencePage,
-        inNavbar: true,
+        navbarTitle: "Experience",
     }),
     route({
         path: '/education',
         component: EducationPage,
-        inNavbar: true,
+        navbarTitle: "Education",
     }),
 ];
 
