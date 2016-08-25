@@ -4,12 +4,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, browserHistory} from 'react-router';
 
-import routes from './routes';
+import App from './App';
 
 export default function initializeClient() {
     const container = document.getElementById("container");
-    const router = <Router history={browserHistory} routes={routes} />;
-    ReactDOM.render(router, container);
+    ReactDOM.render(<App />, container);
 }
