@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {Router, browserHistory} from 'react-router';
 
-import routes from './routes';
+import {createRoutes} from './data/Routes';
 
 export default class App extends Component {
 
@@ -13,7 +13,7 @@ export default class App extends Component {
         return <Router
             history={browserHistory}
             onUpdate={() => window.scrollTo(0, 0)}
-            routes={routes}
+            routes={createRoutes()}
         />;
     }
 

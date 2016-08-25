@@ -9,13 +9,13 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 
-import routes from './routes';
+import {createRoutes} from './data/Routes';
 
 export default function renderStaticPage(locals, callback) {
     const url = locals.path;
     const pathToBundle = "/bundle.js";
     match({
-        routes,
+        routes: createRoutes(),
         location: url,
     }, (error, redirectLocation, renderProps) => {
         if (error) {

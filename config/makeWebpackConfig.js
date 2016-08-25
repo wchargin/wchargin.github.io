@@ -9,7 +9,7 @@ import reactRouterToArray from 'react-router-to-array';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 import webpack from 'webpack';
 
-import routes from '../src/routes';
+import {createRoutes} from '../src/data/Routes';
 
 export function makeDevConfig() {
     return makeWebpackConfig(false);
@@ -67,7 +67,10 @@ function makeWebpackConfig(prod) {
 function plugins(prod) {
     return [
         new CopyPlugin([{from: 'favicon.ico'}]),
-        new StaticSiteGeneratorPlugin('main', reactRouterToArray(routes), {}),
+        new StaticSiteGeneratorPlugin(
+            'main',
+            reactRouterToArray(createRoutes()),
+            {}),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': prod ? '"production"' : '"development"',
         }),
