@@ -65,6 +65,7 @@ export default class ProjectsPage extends Component {
             </Blurb>
             <Blurb
                 name="Kiosk"
+                linkTo="/projects/kiosk"
                 image={require('./kiosk.png')}
                 imagePosition={Blurb.IMAGE_RIGHT}
             >

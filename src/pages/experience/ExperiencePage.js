@@ -117,9 +117,10 @@ export default class ExperiencePage extends Component {
                 <p>
                     As Undersecretary-General of Technology and Innovation,
                     my worked included audio/visual setup, networking,
-                    communications, and the like. I developed&nbsp;Kiosk
-                    to fix some of the problems I&nbsp;observed,
-                    {/* TODO: Link to project page here. */}{" "}
+                    communications, and the like.{" "}
+                    <Link to="/projects/kiosk">
+                        I&nbsp;developed&nbsp;Kiosk
+                    </Link> to fix some of the problems that I&nbsp;observed,
                     and earned the Model Diplomat award for its creation.
                     I&nbsp;also delivered scientific and technical
                     presentations to students in preparation for debates.

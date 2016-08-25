@@ -26,6 +26,7 @@ import HomePage from '../pages/home/HomePage';
 import ProjectsPage from '../pages/projects/ProjectsPage';
 import AufbauProjectPage from '../pages/projects/AufbauProjectPage';
 import PhysBAMProjectPage from '../pages/projects/PhysBAMProjectPage';
+import KioskProjectPage from '../pages/projects/KioskProjectPage';
 import ExperiencePage from '../pages/experience/ExperiencePage';
 import EducationPage from '../pages/education/EducationPage';
 
@@ -80,6 +81,11 @@ export const routeData = [
         path: '/projects/physbam',
         component: PhysBAMProjectPage,
         title: "Physics simulations",
+    }),
+    route({
+        path: '/projects/kiosk',
+        component: KioskProjectPage,
+        title: "Kiosk",
     }),
     route({
         path: '/experience',
