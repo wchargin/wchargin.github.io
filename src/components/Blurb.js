@@ -7,7 +7,7 @@ import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
-import {Heading} from '../Components';
+import {Heading, Link} from '../Components';
 
 export default class Blurb extends Component {
     static IMAGE_RIGHT = "r";
@@ -15,6 +15,7 @@ export default class Blurb extends Component {
 
     static propTypes = {
         name: PropTypes.node,
+        linkTo: PropTypes.string,  // a route (optional)
         image: PropTypes.string.isRequired,  // url
         imagePosition: PropTypes.oneOf([
             Blurb.IMAGE_LEFT,
@@ -36,9 +37,24 @@ export default class Blurb extends Component {
 
     _renderBody() {
         return <div className={css(styles.body)} key="body">
-            {this.props.name && <Heading level={2}>{this.props.name}</Heading>}
+            {this._renderHeading()}
             {this.props.children}
         </div>;
+    }
+
+    _renderMaybeLink(x) {
+        return this.props.linkTo ?
+            <Link to={this.props.linkTo}>{x}</Link> :
+            x;
+    }
+
+    _renderHeading() {
+        if (!this.props.name) {
+            return null;
+        }
+        return <Heading level={2}>
+            {this._renderMaybeLink(this.props.name)}
+        </Heading>;
     }
 
     _renderImage() {
@@ -46,12 +62,12 @@ export default class Blurb extends Component {
             styles.iconContainerLeft,
             styles.iconContainerRight);
         return <div className={css(directionClass)} key="image">
-            <img
+            {this._renderMaybeLink(<img
                 className={css(styles.icon)}
                 src={this.props.image}
                 role="presentation"
                 onDragStart={e => e.preventDefault()}
-            />
+            />)}
         </div>;
     }
 
