@@ -27,6 +27,7 @@ import ProjectsPage from '../pages/projects/ProjectsPage';
 import AufbauProjectPage from '../pages/projects/AufbauProjectPage';
 import PhysBAMProjectPage from '../pages/projects/PhysBAMProjectPage';
 import KioskProjectPage from '../pages/projects/KioskProjectPage';
+import JGameProjectPage from '../pages/projects/JGameProjectPage';
 import ExperiencePage from '../pages/experience/ExperiencePage';
 import EducationPage from '../pages/education/EducationPage';
 
@@ -86,6 +87,11 @@ export const routeData = [
         path: '/projects/kiosk',
         component: KioskProjectPage,
         title: "Kiosk",
+    }),
+    route({
+        path: '/projects/jgame',
+        component: JGameProjectPage,
+        title: "JGame",
     }),
     route({
         path: '/experience',

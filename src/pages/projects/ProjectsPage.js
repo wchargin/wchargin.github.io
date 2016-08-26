@@ -84,6 +84,7 @@ export default class ProjectsPage extends Component {
             </Blurb>
             <Blurb
                 name="JGame"
+                linkTo="/projects/jgame"
                 image={require('./jgame.png')}
                 imagePosition={Blurb.IMAGE_LEFT}
             >
