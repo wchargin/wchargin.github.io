@@ -6,7 +6,7 @@
 import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
-import Colors from '../data/Colors';
+import Colors, {hexWithAlpha} from '../data/Colors';
 import {Link, MailLink} from '../Components';
 import {routeData} from '../data/Routes';
 
@@ -85,6 +85,60 @@ class HorizontalNav extends Component {
 }
 
 /*
+ * A navbar that shows its entries in a vertical column.
+ */
+/* eslint-disable no-unused-vars */
+class VerticalNav extends Component {
+/* eslint-enable */
+
+    static propTypes = {
+        currentPath: PropTypes.string.isRequired,
+    }
+
+    constructor() {
+        super();
+        this.state = {
+            open: false,
+        };
+    }
+
+    render() {
+        return <div className={css(styles.navColumnContainer)}>
+            <Link href="#" onClick={this._toggle.bind(this)}>
+                <HamburgerIcon />
+            </Link>
+            {this.state.open && <div className={css(styles.navColumn)}>
+                {routeData
+                    .filter(x => x.navbarTitle)
+                    .map(({path, navbarTitle}) =>
+                        this._renderNavItem(path, navbarTitle))}
+            </div>}
+        </div>;
+    }
+
+    _renderNavItem(linkPath, linkText) {
+        const here = isSubroute(this.props.currentPath, linkPath);
+        return <Link
+            to={linkPath}
+            key={linkPath}
+            className={css(styles.navColumnLink, here && styles.activeNavLink)}
+            onClick={this._close.bind(this)}
+        >
+            {linkText}
+        </Link>;
+    }
+
+    _close() {
+        this.setState({open: false});
+    }
+
+    _toggle() {
+        this.setState({open: !this.state.open});
+    }
+
+}
+
+/*
  * A simple home icon component. This icon is by Timothy Miller and is
  * released under CC-BY-SA [1] [2].
  *
@@ -105,6 +159,28 @@ class HomeIcon extends Component {
             aria-label="Home"
         >
             <path fill="currentColor" d={HomeIcon.svgPath} />
+        </svg>;
+    }
+
+}
+
+/*
+ * A simple hamburger menu icon component.
+ */
+class HamburgerIcon extends Component {
+
+    static svgPath = 'm2 0c-1.11 0-2 0.892-2 2s0.892 2 2 2h12c1.1 0 2-0.89 2-2s-0.9-2-2-2h-12zm0 6c-1.11 0-2 0.89-2 2s0.892 2 2 2h12c1.1 0 2-0.89 2-2s-0.9-2-2-2h-12zm0 6c-1.11 0-2 0.9-2 2s0.892 2 2 2h12c1.1 0 2-0.9 2-2s-0.9-2-2-2h-12z';
+
+    render() {
+        const size = 16;
+        return <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            alt="Open navigation"
+            aria-label="Open navigation"
+        >
+            <path fill="currentColor" d={HamburgerIcon.svgPath} />
         </svg>;
     }
 
@@ -142,6 +218,20 @@ const styles = StyleSheet.create({
         paddingLeft: 0,
         margin: 0,
     },
+    navColumnContainer: {
+        position: 'relative',
+    },
+    navColumn: {
+        background: 'white',
+        listStyle: 'none',
+        paddingLeft: 0,
+        margin: 0,
+        position: 'absolute',
+        border: `0.5px ${Colors.gray.medium} solid`,
+        top: '100%',
+        right: 0,
+        zIndex: 1,
+    },
     navTitle: {
         fontSize: 24,
         letterSpacing: -0.5,
@@ -150,6 +240,17 @@ const styles = StyleSheet.create({
     navLink: {
         display: 'inline',
         marginLeft: 20,
+    },
+    navColumnLink: {
+        display: 'block',
+        paddingLeft: 30,
+        paddingRight: 10,
+        paddingTop: 5,
+        paddingBottom: 5,
+        textAlign: 'right',
+        ':hover': {
+            background: hexWithAlpha(Colors.accentBlue.base, 0.1),
+        },
     },
     activeNavLink: {
         fontWeight: 'bold',
