@@ -3,7 +3,7 @@
  * application. Includes a header (with navigation bar) and footer.
  */
 
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors from '../data/Colors';
@@ -19,13 +19,9 @@ export default class Page extends Component {
                     <Link to="/" className={css(styles.navTitle)}>
                         William Chargin
                     </Link>
-                    <ul className={css(styles.navList)}>
-                        {routeData
-                            .filter(x => x.navbarTitle)
-                            .map(({path, navbarTitle, isIndex}) =>
-                                this._renderNavItem(
-                                    path, navbarTitle, isIndex))}
-                    </ul>
+                    <HorizontalNav
+                        currentPath={this.props.location.pathname}
+                    />
                 </nav>
             </header>
             <article className={css(styles.centered)}>
@@ -40,16 +36,44 @@ export default class Page extends Component {
         </div>;
     }
 
-    _renderNavItem(linkPath, linkText, isIndex) {
-        // Test whether the current location (from our props) either
-        // matches the route for the navbar entry we're rendering, or
-        // is a subroute thereof.
-        const currentPath = this.props.location.pathname;
-        const start = currentPath.substring(0, linkPath.length);
-        const end = currentPath.substring(linkPath.length);
-        const here = (start === linkPath &&
-            (end.length === 0 || end.charAt(0) === '/'));
+}
 
+/*
+ * Test whether `maybeChild` is equal to or a subroute of `parent`.
+ *
+ * @param {string} maybeChild
+ * @param {string} parent
+ * @return {boolean}
+ */
+function isSubroute(maybeChild, parent) {
+    const start = maybeChild.substring(0, parent.length);
+    const end = maybeChild.substring(parent.length);
+    const startOkay = start === parent;
+    const endOkay = end.length === 0 || end.charAt(0) === '/';
+    return startOkay && endOkay;
+}
+
+/*
+ * A navbar that shows its entries in a horizontal row.
+ */
+class HorizontalNav extends Component {
+
+    static propTypes = {
+        currentPath: PropTypes.string.isRequired,
+    }
+
+    render() {
+        return <ul className={css(styles.navList)}>
+            {routeData
+                .filter(x => x.navbarTitle)
+                .map(({path, navbarTitle, isIndex}) =>
+                    this._renderNavItem(
+                        path, navbarTitle, isIndex))}
+        </ul>;
+    }
+
+    _renderNavItem(linkPath, linkText, isIndex) {
+        const here = isSubroute(this.props.currentPath, linkPath);
         return <li
             key={linkPath}
             className={css(styles.navLink, here && styles.activeNavLink)}
