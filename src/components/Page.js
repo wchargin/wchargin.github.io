@@ -22,8 +22,9 @@ export default class Page extends Component {
                     <ul className={css(styles.navList)}>
                         {routeData
                             .filter(x => x.navbarTitle)
-                            .map(({path, navbarTitle}) =>
-                                this._renderNavItem(path, navbarTitle))}
+                            .map(({path, navbarTitle, isIndex}) =>
+                                this._renderNavItem(
+                                    path, navbarTitle, isIndex))}
                     </ul>
                 </nav>
             </header>
@@ -39,7 +40,7 @@ export default class Page extends Component {
         </div>;
     }
 
-    _renderNavItem(linkPath, linkText) {
+    _renderNavItem(linkPath, linkText, isIndex) {
         // Test whether the current location (from our props) either
         // matches the route for the navbar entry we're rendering, or
         // is a subroute thereof.
@@ -53,8 +54,34 @@ export default class Page extends Component {
             key={linkPath}
             className={css(styles.navLink, here && styles.activeNavLink)}
         >
-            <Link to={linkPath}>{linkText}</Link>
+            <Link to={linkPath}>{isIndex ? <HomeIcon /> : linkText}</Link>
         </li>;
+    }
+
+}
+
+/*
+ * A simple home icon component. This icon is by Timothy Miller and is
+ * released under CC-BY-SA [1] [2].
+ *
+ * [1]: https://commons.wikimedia.org/wiki/File:Home-icon.svg
+ * [2]: https://www.iconfinder.com/icons/126572/home_house_icon#size=128
+ */
+class HomeIcon extends Component {
+
+    static svgPath = 'M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z';
+
+    render() {
+        const size = 14;
+        return <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            alt="Home"
+            aria-label="Home"
+        >
+            <path fill="currentColor" d={HomeIcon.svgPath} />
+        </svg>;
     }
 
 }
