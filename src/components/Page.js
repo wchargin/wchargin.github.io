@@ -19,7 +19,14 @@ export default class Page extends Component {
                     <Link to="/" className={css(styles.navTitle)}>
                         William Chargin
                     </Link>
+                    {/*
+                      * One of the following navbars will be hidden by
+                      * a media query.
+                      */}
                     <HorizontalNav
+                        currentPath={this.props.location.pathname}
+                    />
+                    <VerticalNav
                         currentPath={this.props.location.pathname}
                     />
                 </nav>
@@ -87,9 +94,7 @@ class HorizontalNav extends Component {
 /*
  * A navbar that shows its entries in a vertical column.
  */
-/* eslint-disable no-unused-vars */
 class VerticalNav extends Component {
-/* eslint-enable */
 
     static propTypes = {
         currentPath: PropTypes.string.isRequired,
@@ -186,6 +191,8 @@ class HamburgerIcon extends Component {
 
 }
 
+const useHamburgerMediaQuery = '@media(max-width:600px)';
+
 const styles = StyleSheet.create({
     base: {
         fontFamily: "Helvetica, Arial, sans-serif",
@@ -217,9 +224,16 @@ const styles = StyleSheet.create({
         listStyle: 'none',
         paddingLeft: 0,
         margin: 0,
+        [useHamburgerMediaQuery]: {
+            display: 'none',
+        },
     },
     navColumnContainer: {
         position: 'relative',
+        display: 'none',
+        [useHamburgerMediaQuery]: {
+            display: 'unset',
+        },
     },
     navColumn: {
         background: 'white',
