@@ -5,7 +5,7 @@
 
 import React, {Component, PropTypes} from 'react';
 
-import {Link} from '../Components';
+import {LinkButton} from '../Components';
 
 export default class MailLink extends Component {
 
@@ -17,17 +17,12 @@ export default class MailLink extends Component {
         const props = {...this.props};
         delete props.children;
 
-        return <Link
-            href="#"
-            {...props}
-            onClick={this._handleClick.bind(this)}
-        >
+        return <LinkButton {...props} onClick={this._handleClick.bind(this)}>
             {this.props.children}
-        </Link>;
+        </LinkButton>;
     }
 
     _handleClick(e) {
-        e.preventDefault();
         openMailLink();
         if (this.props.onClick) {
             this.props.onClick(e);

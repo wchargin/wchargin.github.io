@@ -7,7 +7,7 @@ import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors, {hexWithAlpha} from '../data/Colors';
-import {Link, MailLink} from '../Components';
+import {Link, LinkButton, MailLink} from '../Components';
 import {routeData} from '../data/Routes';
 
 export default class Page extends Component {
@@ -109,9 +109,9 @@ class VerticalNav extends Component {
 
     render() {
         return <div className={css(styles.navColumnContainer)}>
-            <Link href="#" onClick={this._toggle.bind(this)}>
+            <LinkButton onClick={this._toggle.bind(this)}>
                 <HamburgerIcon />
-            </Link>
+            </LinkButton>
             {this.state.open && <div className={css(styles.navColumn)}>
                 {routeData
                     .filter(x => x.navbarTitle)
