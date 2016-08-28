@@ -23,6 +23,7 @@ import {IndexRoute, Route} from 'react-router';
 import Page from '../components/Page';
 
 import HomePage from '../pages/home/HomePage';
+import SkillsPage from '../pages/skills/SkillsPage';
 import ProjectsPage from '../pages/projects/ProjectsPage';
 import AufbauProjectPage from '../pages/projects/AufbauProjectPage';
 import PhysBAMProjectPage from '../pages/projects/PhysBAMProjectPage';
@@ -66,6 +67,12 @@ export const routeData = [
         title: "William Chargin",
         navbarTitle: "Home",
         isIndex: true,
+    }),
+    route({
+        path: '/skills',
+        component: SkillsPage,
+        title: "Skills",
+        navbarTitle: "Skills",
     }),
     route({
         path: '/projects',
