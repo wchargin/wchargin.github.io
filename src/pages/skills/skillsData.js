@@ -44,9 +44,7 @@ export const createSkillsData = () => [
         {
             name: 'Java',
             image: require('./java.png'),
-            description: <p>
-                Not really my brew.
-            </p>,
+            description: renderJavaDescription(),
         },
         {
             name: 'Haskell',
@@ -188,6 +186,52 @@ function renderJSReactDescription() {
                 should function just fine even with JavaScript disabled. After
                 rehydration, client-side routing takes over to enable instant
                 page loads, as well as interactive components like this one.
+            </p></li>
+        </ul>
+    </div>;
+}
+
+function renderJavaDescription() {
+    const urls = {
+        kiosk: "/projects/kiosk",
+        kioskSource: "https://github.com/wchargin/kiosk",
+        jgame: "/projects/jgame",
+        jgameSource: "https://github.com/wchargin/jgame",
+    };
+    return <div>
+        <p>
+            Java is the language that I&rsquo;ve used for the longest time.
+            I&rsquo;ve used Java when I&nbsp;want it to be easy to write
+            a&nbsp;GUI for a desktop application. I&nbsp;don&rsquo;t use it
+            much anymore, though, instead using React for GUIs&mdash;even more
+            portable, and&mdash;in some respects, at least&mdash;more pleasant
+            to use.
+        </p>
+        <p>
+            Some relevant projects include:
+        </p>
+        <ul>
+            <li><p>
+                <Link to={urls.kiosk}>
+                    Kiosk, an application for moderating debates.
+                </Link>{" "}
+                See <Link to={urls.kiosk}>
+                    the relevant project page
+                </Link> for more information, or jump to{" "}
+                <Link href={urls.kioskSource}>
+                    the source on GitHub
+                </Link>.
+            </p></li>
+            <li><p>
+                <Link to={urls.jgame}>
+                    JGame, a game development library for new programmers.
+                </Link>{" "}
+                See <Link to={urls.jgame}>
+                    the relevant project page
+                </Link> for more information, or jump to{" "}
+                <Link href={urls.jgameSource}>
+                    the source on GitHub
+                </Link>.
             </p></li>
         </ul>
     </div>;
