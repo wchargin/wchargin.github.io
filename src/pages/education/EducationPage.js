@@ -20,16 +20,15 @@ export default class EducationPage extends Component {
             calPoly: 'http://calpoly.edu/',
             whs: 'http://woodsidehs.org/',
         };
-
         const course = (id, description) =>
             <li>{id}{description && ": "}{description}</li>;
-
+        const alternator = Blurb.makeAlternator();
         return <div>
             <Heading level={1}>Education</Heading>
             <Blurb
                 name="Carnegie Mellon University"
                 image={require('./cmu.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 <p>
                     I&nbsp;currently attend
@@ -42,7 +41,7 @@ export default class EducationPage extends Component {
             <Blurb
                 name="Cal Poly San Luis Obispo"
                 image={require('./calpoly.png')}
-                imagePosition={Blurb.IMAGE_LEFT}
+                imagePosition={alternator()}
             >
                 <p>
                     I&nbsp;previously attended
@@ -83,7 +82,7 @@ export default class EducationPage extends Component {
             <Blurb
                 name="Woodside High School"
                 image={require('./whs.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 <p>
                 I&nbsp;attended Woodside High School in Woodside,&nbsp;CA. In

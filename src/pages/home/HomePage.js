@@ -18,7 +18,6 @@ export default class HomePage extends Component {
             resume: require("./resume.pdf"),
             github: "https://github.com/wchargin",
         };
-
         return <div>
             <Heading level={1}>Hey!</Heading>
             <Blurb

@@ -24,6 +24,24 @@ export default class Blurb extends Component {
         children: PropTypes.node.isRequired,
     }
 
+    /*
+     * Create a non-pure function whose result alternates between
+     * `Blurb.IMAGE_RIGHT` and `Blurb.IMAGE_LEFT` (in that order).
+     *
+     * Useful when laying out multiple `Blurb`s.
+     */
+    static makeAlternator() {
+        let current = Blurb.IMAGE_RIGHT;
+        return () => {
+            const result = current;
+            current = {
+                [Blurb.IMAGE_RIGHT]: Blurb.IMAGE_LEFT,
+                [Blurb.IMAGE_LEFT]: Blurb.IMAGE_RIGHT,
+            }[current];
+            return result;
+        };
+    }
+
     render() {
         const body = this._renderBody();
         const image = this._renderImage();

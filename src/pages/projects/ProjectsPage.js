@@ -23,13 +23,14 @@ export default class ProjectsPage extends Component {
             jgame: "https://github.com/wchargin/jgame",
             jgameGallery: "http://www.mrumrocks.org/portfolio#java-games",
         };
+        const alternator = Blurb.makeAlternator();
         return <div>
             <Heading level={1}>Projects</Heading>
             <Blurb
                 name="Automated grading"
                 linkTo="/projects/aufbau"
                 image={require('./aufbau.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 <p>
                     I&nbsp;designed, implemented, and documented a
@@ -46,7 +47,7 @@ export default class ProjectsPage extends Component {
                 name="Physics simulations"
                 linkTo="/projects/physbam"
                 image={require('./physbam.png')}
-                imagePosition={Blurb.IMAGE_LEFT}
+                imagePosition={alternator()}
             >
                 <p>
                     During June&ndash;August of&nbsp;2014, I&nbsp;worked
@@ -67,7 +68,7 @@ export default class ProjectsPage extends Component {
                 name="Kiosk"
                 linkTo="/projects/kiosk"
                 image={require('./kiosk.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 <p>
                     Technology problems often plague debate conferences.
@@ -86,7 +87,7 @@ export default class ProjectsPage extends Component {
                 name="JGame"
                 linkTo="/projects/jgame"
                 image={require('./jgame.png')}
-                imagePosition={Blurb.IMAGE_LEFT}
+                imagePosition={alternator()}
             >
                 <p>
                     My high school wanted to teach game development to

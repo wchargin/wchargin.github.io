@@ -23,12 +23,13 @@ export default class ExperiencePage extends Component {
             lcm: 'http://www.creativedelegates.org/content-loader.php?page_key=index',
             mun: 'http://en.wikipedia.org/wiki/Model_United_Nations',
         };
+        const alternator = Blurb.makeAlternator();
         return <div>
             <Heading level={1}>Experience</Heading>
             <Blurb
                 name="Khan Academy (2015)"
                 image={require('./khanacademy.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 During the summer of 2015, I&nbsp;worked at
                 {" "}<Link href={urls.ka}>Khan Academy</Link> on a few
@@ -77,7 +78,7 @@ export default class ExperiencePage extends Component {
             <Blurb
                 name="AHPCRC Summer Institute"
                 image={require('./ahpcrc.png')}
-                imagePosition={Blurb.IMAGE_LEFT}
+                imagePosition={alternator()}
             >
                 <p>
                     I&nbsp;conducted research and studied at the
@@ -105,7 +106,7 @@ export default class ExperiencePage extends Component {
             <Blurb
                 name="League of Creative Minds"
                 image={require('./lcm.png')}
-                imagePosition={Blurb.IMAGE_RIGHT}
+                imagePosition={alternator()}
             >
                 <p>
                     I&nbsp;worked with the
