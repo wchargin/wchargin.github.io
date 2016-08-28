@@ -6,6 +6,8 @@
 
 import React, {PropTypes} from 'react';
 
+import {Link} from '../../Components';
+
 export const skillPropType = PropTypes.shape({
     // String name as a unique identifier.
     name: PropTypes.string.isRequired,
@@ -32,9 +34,7 @@ export const createSkillsData = () => [
         {
             name: 'Python',
             image: require('./python.png'),
-            description: <p>
-                Did you know that a Python is also a kind of snake?
-            </p>,
+            description: renderPythonDescription(),
         },
         {
             name: 'JavaScript and React',
@@ -97,3 +97,34 @@ export const createSkillsData = () => [
         },
     ],
 ];
+
+function renderPythonDescription() {
+    const urls = {
+        hasattr: "https://hynek.me/articles/hasattr/",
+    };
+    return <div>
+        <p>
+            I&rsquo;ve enjoyed using Python professionally since&nbsp;2014, and
+            personally since around&nbsp;2011. It&rsquo;s my almost-exclusive
+            tool of choice for exploring a data set and for most one-off
+            scripts or tasks. I&rsquo;m consistently impressed by
+            Python&rsquo;s design: the abstractions that the language core
+            chooses to support always seem to have a deceptively high
+            power-to-weight ratio, and of course the standard libraries are
+            excellent and abundant.
+        </p>
+        <p>
+            Most of my work on the Khan&nbsp;Academy website is in&nbsp;Python.
+            Of that work, much is related to the core site infrastructure (in
+            particular, the content model), to the streaks functionality, and
+            to the thumbnails system.
+        </p>
+        <p>
+            My hobbies include chaining decorators, doing terrifying
+            things with metaclasses, and linking people to{" "}
+            <Link href={urls.hasattr}>
+                &ldquo;<tt>hasattr</tt>: a dangerous misnomer.&rdquo;
+            </Link>
+        </p>
+    </div>;
+}
