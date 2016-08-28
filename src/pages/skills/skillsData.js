@@ -49,9 +49,7 @@ export const createSkillsData = () => [
         {
             name: 'Haskell',
             image: require('./haskell.png'),
-            description: <p>
-                It&rsquo;s true. <em>All of it.</em>
-            </p>,
+            description: renderHaskellDescription(),
         },
     ],
     [
@@ -234,5 +232,38 @@ function renderJavaDescription() {
                 </Link>.
             </p></li>
         </ul>
+    </div>;
+}
+
+function renderHaskellDescription() {
+    const urls = {
+        hgo: "https://github.com/wchargin/hgo/",
+        colorgo: "https://gist.github.com/wchargin/7f8bcec0a615971a73c884d017de85ba",
+        looi: "https://github.com/wchargin/looi/",
+        graphcount: "https://github.com/wchargin/graphcount/blob/master/pdf/graphcount.pdf",
+        graphcountSource: "https://github.com/wchargin/graphcount/tree/master/src",
+    };
+    return <div>
+        <p>
+            I&rsquo;m reasonably comfortable in Haskell after having dabbled in
+            it since around&nbsp;2013. I&nbsp;use Haskell frequently for pipes
+            in Unix command lines, and also for standalone utility
+            applications.
+        </p>
+        <p>
+            I&rsquo;ve written such things as{" "}
+            <Link href={urls.hgo}>the game of Go</Link>{" "}
+            (as well as <Link href={urls.colorgo}>
+                a simpler Unix filter to colorize <tt>gnugo</tt>
+            </Link>) and{" "}
+            <Link href={urls.looi}>a Scheme-like language</Link>.
+            I&nbsp;also wrote{" "}
+            <Link href={urls.graphcount}>
+                a Haskell program to solve a graph theory problem
+            </Link>, which doubled as a Haskell tutorial for a CS-inclined
+            math-major friend of mine. (<Link href={urls.graphcountSource}>
+                The source is here.
+            </Link>)
+        </p>
     </div>;
 }
