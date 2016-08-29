@@ -7,6 +7,8 @@
 import React, {PropTypes} from 'react';
 
 import {Link} from '../../Components';
+import LaTeX, {getResourcesToPreload as getLaTeXResources}
+    from '../../components/LaTeX';
 
 export const skillPropType = PropTypes.shape({
     // String name as a unique identifier.
@@ -60,13 +62,9 @@ export const createSkillsData = () => [
         },
         {
             name: "LaTeX",
-            displayName: <img
-                src={require('./latex-inline.png')}
-                style={{height: '1em'}}
-                alt="LaTeX"
-            />,
+            displayName: <LaTeX />,
             image: require('./latex.png'),
-            extraResources: [require('./latex-inline.png')],
+            extraResources: [...getLaTeXResources()],
             description: <p>
                 Moisten your monitor.
             </p>,
