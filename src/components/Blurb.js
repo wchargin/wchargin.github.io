@@ -4,7 +4,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import {StyleSheet, css} from 'aphrodite/no-important';
 
 import Colors from '../data/Colors';
 import {Heading, Link} from '../Components';

@@ -4,7 +4,7 @@
  */
 
 import dedent from 'dedent';
-import {StyleSheetServer} from 'aphrodite';
+import {StyleSheetServer} from 'aphrodite/no-important';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
