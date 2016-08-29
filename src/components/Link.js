@@ -63,8 +63,15 @@ export default class Link extends Component {
     }
 
     _handleMouseOver(e) {
-        const resourcesToPreload = Link._preloadingResources[this.props.to];
-        if (resourcesToPreload && window.fetch) {
+        Link.preloadResourcesFor(this.props.to);
+        if (this.props.onMouseOver) {
+            this.props.onMouseOver(e);
+        }
+    }
+
+    static preloadResourcesFor(resource) {
+        const resourcesToPreload = Link._preloadingResources[resource];
+        if (resourcesToPreload) {
             for (const resource of resourcesToPreload) {
                 if (!Link._preloadedResources[resource]) {
                     Link._preloadedResources[resource] = true;
@@ -75,9 +82,6 @@ export default class Link extends Component {
                     document.body.appendChild(img);
                 }
             }
-        }
-        if (this.props.onMouseOver) {
-            this.props.onMouseOver(e);
         }
     }
 
