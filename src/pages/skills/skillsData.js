@@ -65,9 +65,7 @@ export const createSkillsData = () => [
             displayName: <LaTeX />,
             image: require('./latex.png'),
             extraResources: [...getLaTeXResources()],
-            description: <p>
-                Moisten your monitor.
-            </p>,
+            description: renderLaTeXDescription(),
         },
     ],
     [
@@ -292,6 +290,30 @@ function renderGitDescription() {
         <p>
             I&nbsp;try to post most of my work on&nbsp;GitHub,
             unless restricted by confidentiality or academic integrity.
+        </p>
+    </div>;
+}
+
+function renderLaTeXDescription() {
+    const urls = {
+        wclatex: "https://github.com/wchargin/wclatex",
+        gallery: "https://imgur.com/a/corNs",
+    };
+    return <div>
+        <p>
+            I&rsquo;ve used <LaTeX /> exclusively for all my
+            documents&mdash;notes, homework, papers,
+            presentations&mdash;since&nbsp;2013, and haven&rsquo;t looked back.
+            When I&nbsp;have the time, I&nbsp;especially enjoy creating
+            scientific diagrams with Ti<i>k</i>Z and related
+            packages&hellip;here&rsquo;s{" "}
+            <Link href={urls.gallery}>
+                a gallery of some of my favorite pages over the years
+            </Link>.
+        </p>
+        <p>
+            My <Link href={urls.wclatex}>personal style files</Link> are
+            on&nbsp;GitHub.
         </p>
     </div>;
 }
