@@ -36,10 +36,10 @@ export default class SkillsPage extends Component {
  * A component that renders the skill data as blurbs. This is suitable
  * for users that can't interact with the `SkillsMasterDetailView`
  * (which is the preferred view).
+ *
+ * All properties are forwarded to the root component.
  */
 class SkillsStaticView extends Component {
-
-    static propTypes = {}
 
     constructor() {
         super();
@@ -49,7 +49,7 @@ class SkillsStaticView extends Component {
 
     render() {
         const alternator = Blurb.makeAlternator();
-        return <div>
+        return <div {...this.props}>
             {this.flatSkills.map((skill, i) =>
                 <Blurb
                     key={i}
@@ -68,10 +68,10 @@ class SkillsStaticView extends Component {
  * A stateful component that renders the skills data by linking
  * `SkillSelector`s to `SkillView`s, showing (at most) one skill
  * description at a time.
+ *
+ * All properties are forwarded to the root component.
  */
 class SkillsMasterDetailView extends Component {
-
-    static propTypes = {}
 
     constructor() {
         super();
@@ -84,7 +84,7 @@ class SkillsMasterDetailView extends Component {
 
     render() {
         const skills = this.skills;
-        return <div>
+        return <div {...this.props}>
             <p>
                 Please select a programming language, computer system, or
                 miscellaneous skill below to get a brief description of my
