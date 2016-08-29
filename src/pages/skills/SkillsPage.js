@@ -6,7 +6,7 @@ import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors, {hexWithAlpha} from '../../data/Colors';
-import {Heading, Link, LinkButton} from '../../Components';
+import {Blurb, Heading, Link, LinkButton} from '../../Components';
 import {skillPropType, createSkillsData} from './skillsData';
 
 // Use the `image` and `extraResources` skills properties to determine
@@ -27,6 +27,38 @@ export default class SkillsPage extends Component {
         return <div>
             <Heading level={1}>Skills</Heading>
             <SkillsMasterDetailView />
+        </div>;
+    }
+
+}
+
+/*
+ * A component that renders the skill data as blurbs. This is suitable
+ * for users that can't interact with the `SkillsMasterDetailView`
+ * (which is the preferred view).
+ */
+class SkillsStaticView extends Component {
+
+    static propTypes = {}
+
+    constructor() {
+        super();
+        this.flatSkills = createSkillsData().reduce(
+            (acc, group) => [...acc, ...group], []);
+    }
+
+    render() {
+        const alternator = Blurb.makeAlternator();
+        return <div>
+            {this.flatSkills.map((skill, i) =>
+                <Blurb
+                    key={i}
+                    name={skill.displayName || skill.name}
+                    image={skill.image}
+                    imagePosition={alternator()}
+                >
+                    {skill.description}
+                </Blurb>)}
         </div>;
     }
 
