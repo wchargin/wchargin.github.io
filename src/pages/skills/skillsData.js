@@ -56,9 +56,7 @@ export const createSkillsData = () => [
         {
             name: 'Git',
             image: require('./git.png'),
-            description: <p>
-                Always. Rebase.
-            </p>,
+            description: renderGitDescription(),
         },
         {
             name: "LaTeX",
@@ -264,6 +262,38 @@ function renderHaskellDescription() {
             math-major friend of mine. (<Link href={urls.graphcountSource}>
                 The source is here.
             </Link>)
+        </p>
+    </div>;
+}
+
+function renderGitDescription() {
+    const urls = {
+        megarebase: "https://gist.github.com/wchargin/c0e37a955d7977450f5f3ff8ac10e51c",
+    };
+    return <div>
+        <p>
+            I&nbsp;tend to use git for the vast majority of my work, even if
+            I&nbsp;don&rsquo;t intend to push it to any remote. My workflow
+            is to rebase aggressively: I&nbsp;prefer to keep a clean history
+            where each commit is atomic, minimal, and has no lint errors or
+            test failures, instead of a more literal recording of my
+            keystrokes. For example, I&nbsp;recently{" "}
+            <Link href={urls.megarebase}>
+                fixed all lint errors in every commit of a (local-only)
+                repository
+            </Link>{" "}
+            easily via an interactive rebase.
+        </p>
+        <p>
+            Similarly, I&nbsp;prefer to keep coarse-grained
+            branches, corresponding more to &ldquo;project&rdquo; than
+            &ldquo;feature,&rdquo; so that I&nbsp;can more easily curate that
+            history by bouncing around in a rebase. (If I&nbsp;want a literal
+            history, I&rsquo;ll consult my persistent undo files!)
+        </p>
+        <p>
+            I&nbsp;try to post most of my work on&nbsp;GitHub,
+            unless restricted by confidentiality or academic integrity.
         </p>
     </div>;
 }
