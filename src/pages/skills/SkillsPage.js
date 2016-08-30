@@ -6,7 +6,7 @@ import React, {Component, PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
 import Colors, {hexWithAlpha} from '../../data/Colors';
-import {Blurb, Heading, Link, LinkButton} from '../../Components';
+import {Blurb, Heading, Link, LinkButton, NoScript} from '../../Components';
 import {skillPropType, createSkillsData} from './skillsData';
 
 // Use the `image` and `extraResources` skills properties to determine
@@ -26,7 +26,13 @@ export default class SkillsPage extends Component {
     render() {
         return <div>
             <Heading level={1}>Skills</Heading>
-            <SkillsMasterDetailView />
+            <NoScript>
+                <SkillsStaticView />
+            </NoScript>
+            <SkillsMasterDetailView
+                className={`yesscript ${css(styles.hideOnSmallScreen)}`}
+            />
+            <SkillsStaticView className={css(styles.showOnSmallScreen)} />
         </div>;
     }
 
@@ -180,7 +186,19 @@ class SkillView extends Component {
 
 }
 
+const smallScreenQuery = '@media(max-width:600px)';
 const styles = StyleSheet.create({
+    hideOnSmallScreen: {
+        [smallScreenQuery]: {
+            display: 'none',
+        },
+    },
+    showOnSmallScreen: {
+        display: 'none',
+        [smallScreenQuery]: {
+            display: 'unset',
+        },
+    },
     masterList: {
         textAlign: 'center',
         paddingTop: 20,

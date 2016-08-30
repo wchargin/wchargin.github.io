@@ -37,6 +37,7 @@ export default function renderStaticPage(locals, callback) {
                 <title>${resolveTitleFromPath(url)}</title>
                 <style>${require("normalize.css")}</style>
                 <style data-aphrodite>${css.content}</style>
+                <noscript><style>.yesscript{display:none;}</style></noscript>
                 </head>
                 <body style="overflow-y:scroll">
                 <div id="container">${html}</div>
