@@ -17,6 +17,7 @@ export default class ExperiencePage extends Component {
     render() {
         const urls = {
             ka: 'https://www.khanacademy.org/',
+            kaEngineering: 'http://engineering.khanacademy.org/',
             thumbnails: 'http://engineering.khanacademy.org/posts/making-thumbnails-fast.htm',
             ahpcrc: 'https://ahpcrc.stanford.edu/',
             ahpcrcPaper: require('../../shared_files/ahpcrc_writeup.pdf'),
@@ -26,6 +27,36 @@ export default class ExperiencePage extends Component {
         const alternator = Blurb.makeAlternator();
         return <div>
             <Heading level={1}>Experience</Heading>
+            <Blurb
+                name="Khan Academy (2016)"
+                image={require('./khanacademy.png')}
+                imagePosition={alternator()}
+            >
+                <p>
+                    During the summer of 2016, I&nbsp;returned to
+                    {" "}<Link href={urls.ka}>Khan Academy</Link>, working on
+                    the infrastructure team. I&nbsp;spent most of my time on a
+                    extended effort to improve our site&rsquo;s
+                    internationalization by giving translators more power to
+                    <em>curate</em> content instead of just translating it.
+                </p>
+                <p>
+                    In particular, much of this involved making changes to our
+                    content infrastructure to enable us to store and serve
+                    multiple versions of our content simultaneously. This was
+                    a somewhat tricky task, because it required changing the
+                    fundamental data structure that underlies the whole site,
+                    and so required careful attention to performance, memory
+                    usage, server costs, and reliability and resilience, among
+                    others.
+                </p>
+                <p>
+                    (Stay tuned for a relevant post on{" "}
+                    <Link href={urls.kaEngineering}>
+                        the KA engineering blog&hellip;
+                    </Link>)
+                </p>
+            </Blurb>
             <Blurb
                 name="Khan Academy (2015)"
                 image={require('./khanacademy.png')}
