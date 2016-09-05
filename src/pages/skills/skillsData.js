@@ -77,9 +77,7 @@ export const createSkillsData = () => [
         {
             name: '(Neo)vim',
             image: require('./neovim.png'),
-            description: <p>
-                You know it.
-            </p>,
+            description: renderNeovimDescription(),
         },
     ],
 ];
@@ -331,6 +329,36 @@ function renderBlenderDescription() {
             used its modeling and animation tools to mock up designs.
             It&rsquo;s a beautiful and versatile software package that many
             developers could probably benefit from learning.
+        </p>
+    </div>;
+}
+
+function renderNeovimDescription() {
+    const urls = {
+        neovim: "https://neovim.io/",
+        vimrc: "https://github.com/wchargin/compinit/blob/master/dotfiles/vimrc",
+    };
+    return <div>
+        <p>
+            (Vim users are contractually obligated to announce this, right?)
+            Anyway, I’ve used vim exclusively for a while, and have been even
+            happier after moving to <Link href={urls.neovim}>Neovim</Link>,
+            primarily because of its excellent built-in terminal emulation, its
+            significantly faster startup time, and all the little things that
+            it fixes that make me smile.
+        </p>
+        <p>
+            Many people have asked me for my <code>.vimrc</code>&nbsp;file. To new
+            users of vim, I always respond that{" "}
+            <Link href={urls.vimrc}>
+                my <code>.vimrc</code>&nbsp;file is on GitHub
+            </Link>,
+            and that they should feel totally free to <em>read</em> from it,
+            and to <em>type</em> any portions of it into their own
+            <code>.vimrc</code>&nbsp;files, but <em>not</em> to paste things in
+            directly. The point of the file is to enable you to configure vim
+            how you want it; if you don’t learn how to do that, you’ll be
+            shirking its potential.
         </p>
     </div>;
 }
