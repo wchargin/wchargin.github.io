@@ -4,6 +4,7 @@
 
 import React, {Component} from 'react';
 
+import {routeData} from '../../data/Routes';
 import {Blurb, Heading, Link, MailLink} from '../../Components';
 
 Link.registerPreloadResources('/', () => [
@@ -49,12 +50,29 @@ export default class HomePage extends Component {
                         <MailLink>request my email!</MailLink>
                     </li>
                 </ul>
-                <p>
+            </Blurb>
+            <Heading level={2}>What do you want to know?</Heading>
+            <ul>
+                <li>
                     My surname is pronounced with a hard&nbsp;<i>g</i>: it
                     rhymes with&nbsp;<i>bargain</i>,
                     not&nbsp;<i>barge&nbsp;in</i>.
-                </p>
-            </Blurb>
+                </li>
+                <li>
+                    My hobbies include learning Greek and the game of Go.
+                </li>
+                <li>
+                    Here are some more pages with information about me:
+                    <ul>
+                        {routeData.map(route =>
+                            !route.isIndex && route.navbarTitle && <li>
+                                <Link key={route.path} to={route.path}>
+                                    {route.navbarTitle}
+                                </Link>
+                            </li>)}
+                    </ul>
+                </li>
+            </ul>
         </div>;
     }
 
