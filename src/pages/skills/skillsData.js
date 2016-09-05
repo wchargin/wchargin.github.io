@@ -72,9 +72,7 @@ export const createSkillsData = () => [
         {
             name: 'Blender',
             image: require('./blender.png'),
-            description: <p>
-                One hand on the keyboard. One hand on the mouse.
-            </p>,
+            description: renderBlenderDescription(),
         },
         {
             name: '(Neo)vim',
@@ -314,6 +312,25 @@ function renderLaTeXDescription() {
         <p>
             My <Link href={urls.wclatex}>personal style files</Link> are
             on&nbsp;GitHub.
+        </p>
+    </div>;
+}
+
+function renderBlenderDescription() {
+    const urls = {
+        blender: "https://www.blender.org/",
+    };
+    return <div>
+        <p>
+            I&nbsp;enjoy using <Link href={urls.blender}>Blender</Link> for all
+            the 3D modeling that I&nbsp;do&mdash;which is not much&mdash;but
+            I&rsquo;ve also found it to be a valuable tool in many more
+            contexts than one might expect. For example, I&rsquo;ve used its
+            powerful image compositing tools to perform batch transformations,
+            used it as a simple cross-platform standalone video editor, and
+            used its modeling and animation tools to mock up designs.
+            It&rsquo;s a beautiful and versatile software package that many
+            developers could probably benefit from learning.
         </p>
     </div>;
 }
