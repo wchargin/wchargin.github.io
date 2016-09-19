@@ -4,6 +4,7 @@ set -e
 
 : "${SOURCE_BRANCH:=source}"
 : "${TARGET_BRANCH:=master}"
+: "${ORIGIN:=origin}"
 
 # Disable this if you've already run 'npm build'.
 : "${BUILD:=true}"
@@ -39,6 +40,15 @@ ensure_no_stopships() {
     fi
 }
 
+ensure_up_to_date() {
+    git fetch "$ORIGIN"
+    if [ "$(git rev-parse "$ORIGIN/$SOURCE_BRANCH")" \
+            != "$(git rev-parse "$SOURCE_BRANCH")" ]; then
+        echo >&2 "Cannot deploy: not up to date with $ORIGIN/$SOURCE_BRANCH."
+        exit 1
+    fi
+}
+
 prompt() {
     >&2 printf '%s\n' "$1"
     >&2 printf 'yes/no> '
@@ -60,6 +70,7 @@ fi
 
 ensure_clean_working_tree
 ensure_no_stopships
+ensure_up_to_date
 
 SOURCE_COMMIT="$(git rev-parse HEAD)"
 printf 'Preparing to deploy commit %s.\n' "$SOURCE_COMMIT"
