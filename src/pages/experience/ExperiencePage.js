@@ -37,8 +37,9 @@ export default class ExperiencePage extends Component {
                     {" "}<Link href={urls.ka}>Khan Academy</Link>, working on
                     the infrastructure team. I&nbsp;spent most of my time on a
                     extended effort to improve our site&rsquo;s
-                    internationalization by giving translators more power to
-                    <em>curate</em> content instead of just translating it.
+                    internationalization by giving translators more
+                    power to <em>curate</em> content instead of just
+                    translating it.
                 </p>
                 <p>
                     In particular, much of this involved{" "}
