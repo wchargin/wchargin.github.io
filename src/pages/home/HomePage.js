@@ -39,15 +39,21 @@ export default class HomePage extends Component {
                 <ul>
                     <li>
                         Pick up a copy of my{" "}
-                        <Link href={urls.resume}>r&eacute;sum&eacute;!</Link>
+                        <Link href={urls.resume}>
+                            <strong>r&eacute;sum&eacute;!</strong>
+                        </Link>
                     </li>
                     <li>
                         Feel free to check out{" "}
-                        <Link href={urls.github}>my GitHub profile!</Link>
+                        <Link href={urls.github}>
+                            <strong>my GitHub profile!</strong>
+                        </Link>
                     </li>
                     <li>
                         If you&rsquo;d like to contact me,{" "}
-                        <MailLink>request my email!</MailLink>
+                        <MailLink>
+                            <strong>request my email!</strong>
+                        </MailLink>
                     </li>
                 </ul>
             </Blurb>
