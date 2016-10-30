@@ -37,6 +37,23 @@ export default class EducationPage extends Component {
                     </Link>, seeking a degree in Computer Science with a minor
                     in Mathematics.
                 </p>
+                <p>
+                    Relevant coursework:
+                </p>
+                <ul>
+                    {course('15-150',
+                        'functional programming')}
+                    {course('15-210',
+                        'parallel and sequential data structures and algorithms')}
+                    {course('15-251',
+                        'selected topics in theoretical computer science')}
+                    {course('15-359',
+                        'probability in computing (honors)')}
+                    {course('15-411',
+                        'compiler design and implementation')}
+                    {course('15-816',
+                        'substructural logics')}
+                </ul>
             </Blurb>
             <Blurb
                 name="Cal Poly San Luis Obispo"
