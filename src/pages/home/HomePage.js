@@ -71,11 +71,12 @@ export default class HomePage extends Component {
                     Here are some more pages with information about me:
                     <ul>
                         {routeData.map(route =>
-                            !route.isIndex && route.navbarTitle && <li>
-                                <Link key={route.path} to={route.path}>
-                                    {route.navbarTitle}
-                                </Link>
-                            </li>)}
+                            !route.isIndex && route.navbarTitle &&
+                                <li key={route.path}>
+                                    <Link to={route.path}>
+                                        {route.navbarTitle}
+                                    </Link>
+                                </li>)}
                     </ul>
                 </li>
             </ul>
