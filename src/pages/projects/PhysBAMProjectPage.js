@@ -66,12 +66,6 @@ export default class PhysBAMProjectPage extends Component {
                     structured articulated rigid bodies;
                 </li>
                 <li>
-                    a (to my knowledge) novel algorithm for distributing points
-                    on the surface of an arbitrary UV-mapped 3D
-                    triangulated mesh and corresponding density function,
-                    based in part on concepts from the Metropolis algorithm;
-                </li>
-                <li>
                     inclusion of partially or fully pre-baked expensive
                     simulations such as cloth and smoke (based in finite
                     element analysis), modified for current environment;
