@@ -29,6 +29,7 @@ import AufbauProjectPage from '../pages/projects/AufbauProjectPage';
 import PhysBAMProjectPage from '../pages/projects/PhysBAMProjectPage';
 import KioskProjectPage from '../pages/projects/KioskProjectPage';
 import JGameProjectPage from '../pages/projects/JGameProjectPage';
+import CMU15214ProjectPage from '../pages/projects/CMU15214ProjectPage';
 import ExperiencePage from '../pages/experience/ExperiencePage';
 import EducationPage from '../pages/education/EducationPage';
 
@@ -99,6 +100,11 @@ export const routeData = [
         path: '/projects/jgame',
         component: JGameProjectPage,
         title: "JGame",
+    }),
+    route({
+        path: '/projects/cmu-15-214',
+        component: CMU15214ProjectPage,
+        title: "CMU 15-214 projects",
     }),
     route({
         path: '/experience',

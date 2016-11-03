@@ -181,6 +181,7 @@ function renderJSReactDescription() {
 
 function renderJavaDescription() {
     const urls = {
+        cmu15214: "/projects/cmu-15-214",
         kiosk: "/projects/kiosk",
         kioskSource: "https://github.com/wchargin/kiosk",
         jgame: "/projects/jgame",
@@ -189,16 +190,26 @@ function renderJavaDescription() {
     return <div>
         <p>
             Java is the language that I&rsquo;ve used for the longest time.
-            I&rsquo;ve used Java when I&nbsp;want it to be easy to write
-            a&nbsp;GUI for a desktop application. I&nbsp;don&rsquo;t use it
-            much anymore, though, instead using React for GUIs&mdash;even more
-            portable, and&mdash;in some respects, at least&mdash;more pleasant
-            to use.
+            I&rsquo;ve often used Java when I&nbsp;want it to be easy to write
+            a&nbsp;GUI for a desktop application. (These days,
+            I&nbsp;also use React for the same purpose.)
         </p>
         <p>
             Some relevant projects include:
         </p>
         <ul>
+            <li>
+                <Link to={urls.cmu15214}>
+                    My projects for CMU&rsquo;s&nbsp;15-214 software
+                    engineering course,
+                </Link>{" "}
+                including a Scrabble game and a general-purpose data
+                analysis framework. I&nbsp;can&rsquo;t publish the
+                source for these due to academic integrity restrictions,
+                but I&nbsp;do have <Link to={urls.cmu15214}>
+                    overviews and screenshots
+                </Link>.
+            </li>
             <li><p>
                 <Link to={urls.kiosk}>
                     Kiosk, an application for moderating debates.
@@ -209,7 +220,10 @@ function renderJavaDescription() {
                 <Link href={urls.kioskSource}>
                     the source on GitHub
                 </Link>.
-            </p></li>
+                (If examining the source, please note that I&nbsp;wrote
+                this a long time ago, and the implementation does not
+                reflect my current skills!)
+        </p></li>
             <li><p>
                 <Link to={urls.jgame}>
                     JGame, a game development library for new programmers.
