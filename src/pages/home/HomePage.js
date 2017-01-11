@@ -60,8 +60,9 @@ export default class HomePage extends Component {
             <Heading level={2}>What do you want to know?</Heading>
             <ul>
                 <li>
-                    My surname is pronounced with a hard&nbsp;<i>g</i>: it
-                    rhymes with&nbsp;<i>bargain</i>,
+                    My surname is pronounced /'ʧɑɹgɪn/, with a
+                    hard&nbsp;<i>g</i>: it rhymes
+                    with&nbsp;<i>bargain</i>,
                     not&nbsp;<i>barge&nbsp;in</i>.
                 </li>
                 <li>
