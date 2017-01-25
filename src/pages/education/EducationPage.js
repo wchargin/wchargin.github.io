@@ -51,8 +51,16 @@ export default class EducationPage extends Component {
                         'probability in computing (honors)')}
                     {course('15-411',
                         'compiler design and implementation')}
+                    {course('15-451',
+                        'algorithm design and analysis')}
+                    {course('15-455',
+                        'complexity theory')}
                     {course('15-816',
                         'substructural logics')}
+                    {course('21-355',
+                        'real analysis')}
+                    {course('21-484',
+                        'graph theory')}
                 </ul>
             </Blurb>
             <Blurb
