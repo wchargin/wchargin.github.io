@@ -2,7 +2,8 @@
  * A generic component for an individual project page.
  */
 
-import React, {Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
 import {Heading, Link} from '../../Components';
 

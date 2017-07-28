@@ -2,7 +2,8 @@
  * A reusable component to display a styled heading.
  */
 
-import React, {Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite/no-important';
 
 export default class Heading extends Component {

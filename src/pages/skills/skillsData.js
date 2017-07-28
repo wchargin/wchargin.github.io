@@ -4,7 +4,8 @@
  * all the skill groups.
  */
 
-import React, {PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import {Link} from '../../Components';
 import LaTeX, {getResourcesToPreload as getLaTeXResources}

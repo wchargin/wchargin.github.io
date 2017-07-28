@@ -2,7 +2,8 @@
  * The main component for the skills page.
  */
 
-import React, {Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite/no-important';
 
 import Colors, {hexWithAlpha} from '../../data/Colors';

@@ -7,7 +7,8 @@
  * (Among other things, tota11y has no complaints.)
  */
 
-import React, {Component, PropTypes} from 'react';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
 import {Link} from '../Components';
 
