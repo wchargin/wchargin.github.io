@@ -3,12 +3,12 @@
  * used by the static-site-generator-webpack-plugin.
  */
 
-import dedent from 'dedent';
 import {StyleSheetServer} from 'aphrodite/no-important';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 
+import dedent from './dedent';
 import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
 export default function renderStaticPage(locals, callback) {
@@ -27,7 +27,7 @@ export default function renderStaticPage(locals, callback) {
             const component = <RouterContext {...renderProps} />;
             const {html, css} = StyleSheetServer.renderStatic(() =>
                 ReactDOMServer.renderToString(component));
-            const page = dedent`
+            const page = dedent`\
                 <!DOCTYPE html>
                 <html>
                 <head>
