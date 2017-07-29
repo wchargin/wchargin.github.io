@@ -153,7 +153,7 @@ class SkillSelector extends Component {
                     onClick={() => onSelect(
                         isActive(skillIndex) ? null : skillIndex)}
                     aria-pressed={isActive(skillIndex)}
-                    aria-role="button"
+                    role="button"
                 >
                     <img
                         alt={name}
