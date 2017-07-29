@@ -36,6 +36,7 @@ export default function renderStaticPage(locals, callback) {
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <title>${resolveTitleFromPath(url)}</title>
                 <style>${require("normalize.css")}</style>
+                <style>${require("./extern/prism-styles.css")}</style>
                 <style data-aphrodite>${css.content}</style>
                 <noscript><style>.yesscript{display:none;}</style></noscript>
                 </head>

@@ -1,0 +1,12 @@
+code .comment {
+    color: #6e6e6e;
+}
+code:not([data-hide-strings]) .string {
+    color: #6e6e6e;
+}
+code .important {
+    font-style: italic;
+}
+code .keyword {
+    font-weight: bold;
+}
