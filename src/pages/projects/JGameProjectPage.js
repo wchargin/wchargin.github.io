@@ -4,7 +4,8 @@
 
 import React, {Component} from 'react';
 
-import {Heading, Link} from '../../Components';
+import dedent from '../../dedent';
+import {Code, CodeBlock, Heading, Link} from '../../Components';
 import Project from './Project';
 
 Link.registerPreloadResources('/projects/jgame', () => [
@@ -54,10 +55,10 @@ export default class JGameProjectPage extends Component {
             <ul>
                 <li>
                     Common actions and declarations, such as “this character should be controlled with the mouse” or “this enemy should move along a given path,” are provided in the form of listeners and controllers that can easily be added to objects.
-                    For example, to make an object <code>character</code> follow the mouse, the code is simply
-                    <pre><code>
+                    For example, to make an object <Code code="character" /> follow the mouse, the code is simply
+                    <CodeBlock code={dedent`\
                         character.addController(new MouseLocationController());
-                    </code></pre>
+                    `} />
                     Once students feel comfortable, they are encouraged to look under the hood to see how these functions work, and to implement their own.
                 </li>
                 <li>

@@ -7,7 +7,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Link} from '../../Components';
+import Prism from '../../extern/Prism';
+import {Code, Link} from '../../Components';
 import LaTeX, {getResourcesToPreload as getLaTeXResources}
     from '../../components/LaTeX';
 
@@ -98,7 +99,7 @@ function renderPythonDescription() {
             Of that work, much is related to the core site infrastructure (in particular, the content model), to the streaks functionality, and to the thumbnails system.
         </p>
         <p>
-            My hobbies include chaining decorators, doing terrifying things with metaclasses, and linking people to <Link href={urls.hasattr}>“<tt>hasattr</tt>: a dangerous misnomer.”</Link>
+            My hobbies include chaining decorators, doing terrifying things with metaclasses, and linking people to <Link href={urls.hasattr}>“<Code language={Prism.languages.python} code="hasattr" />: a dangerous misnomer.”</Link>
         </p>
     </div>;
 }
@@ -189,7 +190,7 @@ function renderHaskellDescription() {
             I&nbsp;use Haskell frequently for pipes in Unix command lines, and also for standalone utility applications.
         </p>
         <p>
-            I’ve written such things as <Link href={urls.hgo}>the game of Go</Link> (as well as <Link href={urls.colorgo}>a simpler Unix filter to colorize <tt>gnugo</tt></Link>) and <Link href={urls.looi}>a Scheme-like language</Link>.
+            I’ve written such things as <Link href={urls.hgo}>the game of Go</Link> (as well as <Link href={urls.colorgo}>a simpler Unix filter to colorize <Code code="gnugo" /></Link>) and <Link href={urls.looi}>a Scheme-like language</Link>.
             I&nbsp;also wrote <Link href={urls.graphcount}>a Haskell program to solve a graph theory problem</Link>, which doubled as a Haskell tutorial for a CS-inclined math-major friend of mine.
             (<Link href={urls.graphcountSource}>The source is here.</Link>)
         </p>
@@ -256,8 +257,8 @@ function renderNeovimDescription() {
             Anyway, I’ve used vim exclusively for a while, and have been even happier after moving to <Link href={urls.neovim}>Neovim</Link>, primarily because of its excellent built-in terminal emulation, its significantly faster startup time, and all the little things that it fixes that make me smile.
         </p>
         <p>
-            Many people have asked me for my <code>.vimrc</code>&nbsp;file.
-            To new users of vim, I always respond that{" "} <Link href={urls.vimrc}>my <code>.vimrc</code>&nbsp;file is on GitHub</Link>, and that they should feel totally free to <em>read</em> from it, and to <em>type</em> any portions of it into their own <code>.vimrc</code>&nbsp;files, but <em>not</em> to paste things in directly.
+            Many people have asked me for my <Code code=".vimrc" />&nbsp;file.
+            To new users of vim, I always respond that{" "} <Link href={urls.vimrc}>my <Code code=".vimrc" />&nbsp;file is on GitHub</Link>, and that they should feel totally free to <em>read</em> from it, and to <em>type</em> any portions of it into their own <Code code=".vimrc" />&nbsp;files, but <em>not</em> to paste things in directly.
             The point of the file is to enable you to configure vim how you want it; if you don’t learn how to do that, you’ll be shirking its potential.
         </p>
     </div>;

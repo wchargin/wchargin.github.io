@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 
-import {Heading, Link} from '../../Components';
+import {Code, Heading, Link} from '../../Components';
 import Project from './Project';
 
 Link.registerPreloadResources('/projects/aufbau', () => [
@@ -30,7 +30,7 @@ export default class AufbauProjectPage extends Component {
             <ol>
                 <li>Copy student's source files to the grading directory.</li>
                 <li>Copy the test driver to the grading directory.</li>
-                <li>Compile the source files with <tt>javac</tt>.</li>
+                <li>Compile the source files with <Code code="javac" />.</li>
                 <li>Run the test driver, and make sure that it passes.</li>
                 <li>Deduct points for overly long lines.</li>
                 <li>Deduct points for tab characters.</li>

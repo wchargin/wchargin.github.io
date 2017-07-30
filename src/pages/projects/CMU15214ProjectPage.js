@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 
-import {Heading, Link} from '../../Components';
+import {Code, Heading, Link} from '../../Components';
 import Project from './Project';
 
 Link.registerPreloadResources('/projects/cmu-15-214', () => [
@@ -66,7 +66,7 @@ export default class CMU15214ProjectPage extends Component {
                 </p></li>
                 <li><p>
                     The GUI is written in a functinoally reactive style.
-                    Unlike the traditional technique of using heavy events that contain information about the new state as instructions about mutations, my design uses a single source of truth (the&nbsp;<code>GameState</code>), and simply asks components to update themselves whenver an action is performed.
+                    Unlike the traditional technique of using heavy events that contain information about the new state as instructions about mutations, my design uses a single source of truth (the&nbsp;<Code code="GameState" />), and simply asks components to update themselves whenver an action is performed.
                     This design helps tremendously with encapsulation: components only need to know how to render themselves, and controllers don’t need to worry about what data to pass to what component.
                     Most importantly, it is much easier to show that the views are correct, as they depend only on a single state object and not on a history of past mutations.
                 </p></li>
