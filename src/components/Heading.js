@@ -9,7 +9,7 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 export default class Heading extends Component {
 
     static propTypes = {
-        level: PropTypes.oneOf([1, 2]).isRequired,
+        level: PropTypes.oneOf([1, 2, 3]).isRequired,
     }
 
     render() {
@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
     h2: {
         marginTop: 14,
         fontSize: 24,
+        fontWeight: 'normal',
+    },
+    h3: {
+        marginTop: 12,
+        fontSize: 20,
         fontWeight: 'normal',
     },
 });
