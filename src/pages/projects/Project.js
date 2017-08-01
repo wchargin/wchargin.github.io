@@ -20,7 +20,7 @@ export default class Project extends Component {
             to="/projects"
             style={{marginBottom: 10, marginTop: 10}}
         >
-            <i>&laquo;&nbsp;back to projects</i>
+            <i>«&nbsp;back to projects</i>
         </Link>;
         return <div>
             <Heading level={1}>{this.props.name}</Heading>

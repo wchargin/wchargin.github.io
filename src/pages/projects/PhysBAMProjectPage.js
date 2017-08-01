@@ -64,7 +64,7 @@ export default class PhysBAMProjectPage extends Component {
             </ul>
             <Heading level={2}>Demonstration</Heading>
             <p>
-                I&rsquo;ve prepared <Link href={urls.demo}>a demonstration reel</Link> to exhibit some of the features described above.
+                I’ve prepared <Link href={urls.demo}>a demonstration reel</Link> to exhibit some of the features described above.
             </p>
             <Heading level={2}>Source</Heading>
             <p>

@@ -34,7 +34,7 @@ export default class ExperiencePage extends Component {
             >
                 <p>
                     During the summer of 2016, I&nbsp;returned to <Link href={urls.ka}>Khan Academy</Link>, working on the infrastructure team.
-                    I&nbsp;spent most of my time on a extended effort to improve our site&rsquo;s internationalization by giving translators more power to <em>curate</em> content instead of just translating it.
+                    I&nbsp;spent most of my time on a extended effort to improve our site’s internationalization by giving translators more power to <em>curate</em> content instead of just translating it.
                 </p>
                 <p>
                     In particular, much of this involved <Link href={urls.chameleon}>making changes to our content infrastructure to enable us to store and serve multiple versions of our content simultaneously</Link>.
@@ -56,13 +56,13 @@ export default class ExperiencePage extends Component {
                         productionized and rolled out a new video player, both to grant users more immediate control over the playback (e.g., with a prominent speed selector whose value persists across page loads) and also to lay the ground work for more in-video content in the future;
                     </li>
                     <li>
-                        implemented streaks (&agrave;&nbsp;la Duolingo) to encourage deep, exploratory learning as opposed to just-in-time test prep, and to increase user engagement;
+                        implemented streaks (à;&nbsp;la Duolingo) to encourage deep, exploratory learning as opposed to just-in-time test prep, and to increase user engagement;
                     </li>
                     <li>
                         implemented hot loading of&nbsp;JSX and&nbsp;CSS/Less files to dramatically improve developer productivity by cutting down on iteration time; and
                     </li>
                     <li>
-                        improved our content publish process performance by&nbsp;17%, and then by another&nbsp;48% by decreasing the complexity of one expensive step from <i>O</i>(<i>n</i>&nbsp;&middot;&nbsp;<i>m</i>) to <i>O</i>(<i>n</i>&nbsp;+&nbsp;<i>m</i>).
+                        improved our content publish process performance by&nbsp;17%, and then by another&nbsp;48% by decreasing the complexity of one expensive step from <i>O</i>(<i>n</i>&nbsp;·&nbsp;<i>m</i>) to <i>O</i>(<i>n</i>&nbsp;+&nbsp;<i>m</i>).
                     </li>
                 </ul>
                 <p>

@@ -26,22 +26,22 @@ export default class HomePage extends Component {
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
-                    I&rsquo;m pursuing a computer science major and math minor at <Link href={urls.cmu}>Carnegie Mellon</Link>.
+                    I’m pursuing a computer science major and math minor at <Link href={urls.cmu}>Carnegie Mellon</Link>.
                     I&nbsp;love computer science because it unites math, logic, and critical thinking into a powerful toolset that I&nbsp;can use to solve real-world problems.
-                    You&rsquo;ve landed on my personal website and portfolio.
+                    You’ve landed on my personal website and portfolio.
                 </p>
                 <p>
                     Helpful info and links:
                 </p>
                 <ul>
                     <li>
-                        Pick up a copy of my <Link href={urls.resume}><strong>r&eacute;sum&eacute;!</strong></Link>
+                        Pick up a copy of my <Link href={urls.resume}><strong>résumé!</strong></Link>
                     </li>
                     <li>
                         Feel free to check out <Link href={urls.github}><strong>my GitHub profile!</strong></Link>
                     </li>
                     <li>
-                        If you&rsquo;d like to contact me, <MailLink><strong>request my email!</strong></MailLink>
+                        If you’d like to contact me, <MailLink><strong>request my email!</strong></MailLink>
                     </li>
                 </ul>
             </Blurb>

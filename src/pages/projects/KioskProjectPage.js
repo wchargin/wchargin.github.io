@@ -24,7 +24,7 @@ export default class KioskProjectPage extends Component {
         >
             <Heading level={2}>Overview</Heading>
             <p>
-                While debate conferences excel on a number of levels&mdash;education, awareness, inspiration&mdash;one area where conferences commonly fall short is the use of technology.
+                While debate conferences excel on a number of levels—education, awareness, inspiration—one area where conferences commonly fall short is the use of technology.
                 Chairs (debate moderators) attempt to use assortments of independent tools, like online stopwatches for timing, text documents for note-taking, and Windows Notepad for projecting a speakers list.
                 This often results in slow, error-prone workflows that either leave delegates uninformed or subject them to information overload.
             </p>
@@ -33,7 +33,7 @@ export default class KioskProjectPage extends Component {
             </p>
             <p>
                 Kiosk is an application suite that integrates everything a chair could need into a single application for the main chair, and companion applications for assistant chairs, rapporteurs, and other dais members.
-                This includes timing of speeches and caucuses, automatic management of speakers&rsquo; lists and queues, motion management and voting facilitation, crisis creation and deployment, speech analysis and graphs, and more.
+                This includes timing of speeches and caucuses, automatic management of speakers’ lists and queues, motion management and voting facilitation, crisis creation and deployment, speech analysis and graphs, and more.
             </p>
             <Heading level={2}>Features</Heading>
             <ul>
@@ -45,7 +45,7 @@ export default class KioskProjectPage extends Component {
                 </li>
                 <li>
                     <strong>Crisis management.</strong>{" "}
-                    Chairs of stagnant or one-sided debates often manufacture and introduce &ldquo;crises&rdquo; to spur the committee onward.
+                    Chairs of stagnant or one-sided debates often manufacture and introduce “crises” to spur the committee onward.
                     Kiosk integrates the process of creating, assigning, and deploying crises, complete with opportunities for projected fake (or real) news articles, guest speakers, and Q&amp;A&nbsp;sessions.
                 </li>
                 <li>
@@ -63,7 +63,7 @@ export default class KioskProjectPage extends Component {
                 <li>
                     <strong>Transparency.</strong>{" "}
                     To mitigate information overload or sparsity, Kiosk provides a separate Public Panel that can be projected for the delegates to see, while Kiosk's controls remain visible to the chairs only.
-                    The public panel adjusts its view according to the current context, and always displays exactly what delegates need to know at any given time&mdash;no more, no less&mdash;in a clear and elegant format.
+                    The public panel adjusts its view according to the current context, and always displays exactly what delegates need to know at any given time—no more, no less—in a clear and elegant format.
                 </li>
             </ul>
             <Heading level={2}>Technical goodies</Heading>
@@ -72,7 +72,7 @@ export default class KioskProjectPage extends Component {
                     Full documentation, with Javadoc and <Link href={urls.kioskManual}>user manual</Link>
                 </li>
                 <li>
-                    Networking (over&nbsp;TCP) for communication between main Kiosk and co-chairs&rsquo; computers
+                    Networking (over&nbsp;TCP) for communication between main Kiosk and co-chairs’ computers
                 </li>
                 <li>
                     Networking (over&nbsp;UDP) with conference-wide master computer

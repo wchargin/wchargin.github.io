@@ -34,7 +34,7 @@ export default class ProjectsPage extends Component {
             >
                 <p>
                     I&nbsp;designed, implemented, and documented a modular automated grading system.
-                    It&rsquo;s designed to be simple and highly reusable, breaking up the assignment grading process into a sequence of self-contained &ldquo;steps&rdquo; that can be rearranged and configured to represent just about any assignment.
+                    It’s designed to be simple and highly reusable, breaking up the assignment grading process into a sequence of self-contained “steps” that can be rearranged and configured to represent just about any assignment.
                     My system is used in CS&nbsp;102 classes at Cal&nbsp;Poly.
                 </p>
             </Blurb>
@@ -45,7 +45,7 @@ export default class ProjectsPage extends Component {
                 imagePosition={alternator()}
             >
                 <p>
-                    During June&ndash;August of&nbsp;2014, I&nbsp;worked at the <Link href={urls.ahpcrc}>Army High Performance Computing Research Center</Link>, conducting research on physics simulations on low-powered tablets.
+                    During June–August of&nbsp;2014, I&nbsp;worked at the <Link href={urls.ahpcrc}>Army High Performance Computing Research Center</Link>, conducting research on physics simulations on low-powered tablets.
                     I&nbsp;developed an application capable of performing various types of physically accurate simulations in real time, including articulated rigid body, cloth, smoke, and dynamic paint simulations. See <Link href={urls.ahpcrcPaper}>my research paper</Link> for more information.
                 </p>
             </Blurb>

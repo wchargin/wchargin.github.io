@@ -36,7 +36,7 @@ export default class JGameProjectPage extends Component {
             </p>
             <ul>
                 <li>
-                    Developers shouldn&rsquo;t have to worry about details relating to drawing graphics, matrix transformations, etc.
+                    Developers shouldn’t have to worry about details relating to drawing graphics, matrix transformations, etc.
                     The point of the course is to teach programming and programming concepts through game design, so implementation details and complicated math only pose a barrier to entry.
                 </li>
                 <li>
@@ -53,7 +53,7 @@ export default class JGameProjectPage extends Component {
             </p>
             <ul>
                 <li>
-                    Common actions and declarations, such as &ldquo;this character should be controlled with the mouse&rdrquo; or &ldquo;this enemy should move along a given path,&rdquo; are provided in the form of listeners and controllers that can easily be added to objects.
+                    Common actions and declarations, such as “this character should be controlled with the mouse” or “this enemy should move along a given path,” are provided in the form of listeners and controllers that can easily be added to objects.
                     For example, to make an object <code>character</code> follow the mouse, the code is simply
                     <pre><code>
                         character.addController(new MouseLocationController());
@@ -66,9 +66,9 @@ export default class JGameProjectPage extends Component {
                     Once these parameters are set by the developer, JGame automatically performs the trigonometric and matrix computations required to draw the object as desired.
                 </li>
                 <li>
-                    Loading resources from files&mdash;loading and displaying images, loading and playing sounds&mdash;is all automatic.
-                    This means that students don&rsquo;t have to worry about filesystem input and output to be able to write their games.
-                    (As a technical note: this is all implemented using weak references, so it&rsquo;s friendly to the garbage collector.)
+                    Loading resources from files—loading and displaying images, loading and playing sounds—is all automatic.
+                    This means that students don’t have to worry about filesystem input and output to be able to write their games.
+                    (As a technical note: this is all implemented using weak references, so it’s friendly to the garbage collector.)
                 </li>
                 <li>
                     And, of course, <Link href={urls.jgameDocumentation}>extensive top-level documentation</Link> as well as <Link href={urls.jgameGithub}>in-code comments</Link>, which students are encouraged to explore.
@@ -77,7 +77,7 @@ export default class JGameProjectPage extends Component {
             <Heading level={2}>Impact</Heading>
             <p>
                 Two classes at my high school currently use JGame to teach beginning programmers: a web design course and an animation course.
-                As an example, <Link href={urls.jgameGallery}>a gallery of student work work is available on my teacher&rsquo;s website</Link>.
+                As an example, <Link href={urls.jgameGallery}>a gallery of student work work is available on my teacher’s website</Link>.
             </p>
         </Project>;
     }

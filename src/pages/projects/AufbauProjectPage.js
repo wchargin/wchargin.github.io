@@ -45,7 +45,7 @@ export default class AufbauProjectPage extends Component {
             <ul>
                 <li>
                     Support for multiple grading periods, and penalties for late submissions or repeated submissions (partial credit).
-                    This includes a tool to extract each student&rsquo;s best score and export the results as CSV for easy input into a gradebook.
+                    This includes a tool to extract each student’s best score and export the results as CSV for easy input into a gradebook.
                 </li>
                 <li>
                     Integration with cron via a configurable schedule file that lists upcoming assignments, grading periods, and parameters.
@@ -57,7 +57,7 @@ export default class AufbauProjectPage extends Component {
                     <span>Wide variety of built-in steps, including:</span>
                     <ul>
                         <li>
-                            simple file manipulation scripts (e.g., &ldquo;copy files from the student directory to the testing directory&rdquo;);
+                            simple file manipulation scripts (e.g., “copy files from the student directory to the testing directory”);
                         </li>
                         <li>
                             a custom Javadoc doclet to automatically check and score documentation;
