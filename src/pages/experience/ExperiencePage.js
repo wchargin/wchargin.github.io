@@ -69,6 +69,7 @@ export default class ExperiencePage extends Component {
                     We use Python with Google App&nbsp;Engine for our backend, and the wonderful React for our frontend.
                 </p>
             </Blurb>
+            {/*
             <Blurb
                 name="AHPCRC Summer Institute"
                 image={require('./ahpcrc.png')}
@@ -83,6 +84,7 @@ export default class ExperiencePage extends Component {
                     I&nbsp;received a verbal commendation on the excellence of <Link href={urls.ahpcrcPaper}>my research report</Link>.
                 </p>
             </Blurb>
+            */}
             <Blurb
                 name="League of Creative Minds"
                 image={require('./lcm.png')}

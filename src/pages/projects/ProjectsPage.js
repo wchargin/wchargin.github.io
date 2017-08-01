@@ -8,7 +8,8 @@ import {Blurb, Heading, Link} from '../../Components';
 
 Link.registerPreloadResources('/projects', () => [
     require('./aufbau.png'),
-    require('./physbam.png'),
+    require('./cmu-15-214.png'),
+    // require('./physbam.png'),
     require('./kiosk.png'),
     require('./jgame.png'),
 ]);
@@ -27,6 +28,19 @@ export default class ProjectsPage extends Component {
         return <div>
             <Heading level={1}>Projects</Heading>
             <Blurb
+                name="Assorted Java course projects"
+                linkTo="/projects/cmu-15-214"
+                image={require('./cmu-15-214.png')}
+                imagePosition={alternator()}
+            >
+                <p>
+                    For a software engineering course at CMU, I&nbsp;completed a number of projects that were both fun and technically interesting.
+                    One such project was an extended version of Scrabble with a number of interesting features.
+                    Another was a general-purpose data visualization framework that allowed plugins to supply data from arbitrary sources and visualize it in arbitrary ways.
+                    Both of these had some interesting technical challenges.
+                </p>
+            </Blurb>
+            <Blurb
                 name="Automated grading"
                 linkTo="/projects/aufbau"
                 image={require('./aufbau.png')}
@@ -38,6 +52,7 @@ export default class ProjectsPage extends Component {
                     My system is used in CS&nbsp;102 classes at Cal&nbsp;Poly.
                 </p>
             </Blurb>
+            {/*
             <Blurb
                 name="Physics simulations"
                 linkTo="/projects/physbam"
@@ -49,6 +64,7 @@ export default class ProjectsPage extends Component {
                     I&nbsp;developed an application capable of performing various types of physically accurate simulations in real time, including articulated rigid body, cloth, smoke, and dynamic paint simulations. See <Link href={urls.ahpcrcPaper}>my research paper</Link> for more information.
                 </p>
             </Blurb>
+            */}
             <Blurb
                 name="Kiosk"
                 linkTo="/projects/kiosk"
