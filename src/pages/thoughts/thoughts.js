@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 
 import {Heading, Link} from '../../Components';
 
+import autoincrementingIdTable from './data/autoincrementingIdTable';
 import gitWorkflow from './data/gitWorkflow';
 
 const rawThoughts = [
+    autoincrementingIdTable,
     gitWorkflow,
 ];
 
