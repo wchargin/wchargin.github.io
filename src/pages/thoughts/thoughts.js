@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 
 import {Heading, Link} from '../../Components';
 
+import gitWorkflow from './data/gitWorkflow';
 
 const rawThoughts = [
+    gitWorkflow,
 ];
 
 function articleSourceUrl(filename) {
