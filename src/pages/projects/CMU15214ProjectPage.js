@@ -61,24 +61,24 @@ export default class CMU15214ProjectPage extends Component {
                 </p></li>
                 <li><p>
                     The core logic is written with an immutable state object.
-                    This immutability proivdes strong guarantees, and makes implementations of certain features much easier than they would otherwise be—in particular, challenges are simply a matter of rolling back to a previous game state, which does not require reversing the effects of mutations but rather simply updating the value of the state reference.
+                    This immutability provides strong guarantees, and makes implementations of certain features much easier than they would otherwise be—in particular, challenges are simply a matter of rolling back to a previous game state, which does not require reversing the effects of mutations but rather simply updating the value of the state reference.
                     (In fact, it’s possible to roll back to <em>any</em> previous state, for the purposes of replaying the history of a game!)
                 </p></li>
                 <li><p>
-                    The GUI is written in a functinoally reactive style.
-                    Unlike the traditional technique of using heavy events that contain information about the new state as instructions about mutations, my design uses a single source of truth (the&nbsp;<Code code="GameState" />), and simply asks components to update themselves whenver an action is performed.
+                    The GUI is written in a functionally reactive style.
+                    Unlike the traditional technique of using heavy events that contain information about the new state as instructions about mutations, my design uses a single source of truth (the&nbsp;<Code code="GameState" />), and simply asks components to update themselves whenever an action is performed.
                     This design helps tremendously with encapsulation: components only need to know how to render themselves, and controllers don’t need to worry about what data to pass to what component.
                     Most importantly, it is much easier to show that the views are correct, as they depend only on a single state object and not on a history of past mutations.
                 </p></li>
                 <li><p>
                     All icons are drawn programmatically with the AWT graphics facilities; there are no external resources (except for a dictionary file).
-                    This was fun for copmlex shapes like the bomb tile and the intricate details of the fringes around the board squares.
+                    This was fun for complex shapes like the bomb tile and the intricate details of the fringes around the board squares.
                     I&nbsp;even have code to draw a perfectly pixel-aligned <i>n</i>-pointed star!
                 </p></li>
                 <li><p>
                     I’ve written tests for the GUI in the form of <em>fixtures</em> for various important components.
                     Each fixture show the component in its most important states, so that I&nbsp;can easily iterate on the design and also so that I&nbsp;can easily identify regressions.
-                    Here are some sample fixtures: <Link href={urls.fixtureBoard}>all the possible states for a board square </Link> (the bottom three rows are pulsing because the tiles there are only tentatively placed), and <Link href={urls.fixtureSpecialTiles}>the icons for all the specila tiles, at various sizes</Link>.
+                    Here are some sample fixtures: <Link href={urls.fixtureBoard}>all the possible states for a board square </Link> (the bottom three rows are pulsing because the tiles there are only tentatively placed), and <Link href={urls.fixtureSpecialTiles}>the icons for all the special tiles, at various sizes</Link>.
                 </p></li>
             </ul>
         </div>;
@@ -95,9 +95,9 @@ export default class CMU15214ProjectPage extends Component {
         return <div>
             <Heading level={2}>Data visualization framework</Heading>
             <p>
-                With a partner, I&nbsp;wrote a geaneral-purpose data visualization framework.
+                With a partner, I&nbsp;wrote a general-purpose data visualization framework.
                 The framework allows clients to supply <em>data source plugins</em> and <em>data view plugins</em>.
-                An arbitrary data source plugin can be used with any data view plugin, as long as it provides data of the right type (e.g., two numeric coolumns for a scatter plot).
+                An arbitrary data source plugin can be used with any data view plugin, as long as it provides data of the right type (e.g., two numeric columns for a scatter plot).
             </p>
             <p>
                 This framework was selected as one of the four best in the class (out of about fifty total), so I&nbsp;provided support for the twenty students who chose to write source and visualization plugins for it.
@@ -117,7 +117,7 @@ export default class CMU15214ProjectPage extends Component {
                     When selecting a JAR&nbsp;file, the framework will scan it for all implementations of the plugin interfaces, and will register them automatically; on subsequent launches, the selected JAR&nbsp;files and plugins will be remembered and loaded.
                 </p></li>
                 <li><p>
-                    The sample plugins that I&nbsp;provided with the framework include basic readers like CSV&nbsp;file input, as well as more interesting algorithms, like an <i>s</i>-expression evaluator for arbitrary parameterized functions and different approaches for <i>k</i>-dimensional randomness (a uniform distribution vs.&nbsp;Bridson's algorithm).
+                    The sample plugins that I&nbsp;provided with the framework include basic readers like CSV&nbsp;file input, as well as more interesting algorithms, like an <i>s</i>-expression evaluator for arbitrary parameterized functions and different approaches for <i>k</i>-dimensional randomness (a uniform distribution vs.&nbsp;Bridson’s algorithm).
                     The latter allows for an interesting visualization comparing <Link href={urls.randomUniform}>the uniform distribution</Link> with <Link href={urls.randomBridson}>the Poisson-disc sampling</Link> (open in new tabs for best comparison).
                     This is, of course, inspired by <Link href={urls.bostock}>“Visualizing Algorithms.”</Link>
                 </p></li>
