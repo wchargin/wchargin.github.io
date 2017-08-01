@@ -31,11 +31,7 @@ export default class EducationPage extends Component {
                 imagePosition={alternator()}
             >
                 <p>
-                    I&nbsp;currently attend
-                    {" "}<Link href={urls.cmuSCS}>
-                        Carnegie Mellon's School of Computer Science
-                    </Link>, seeking a degree in Computer Science with a minor
-                    in Mathematics.
+                    I&nbsp;currently attend <Link href={urls.cmuSCS}>Carnegie Mellon's School of Computer Science</Link>, seeking a degree in Computer Science with a minor in Mathematics.
                 </p>
                 <p>
                     Relevant coursework:
@@ -69,11 +65,8 @@ export default class EducationPage extends Component {
                 imagePosition={alternator()}
             >
                 <p>
-                    I&nbsp;previously attended
-                    {" "}<Link href={urls.calPoly}>Cal Poly SLO</Link>, where
-                    I&nbsp;sought a degree in Computer Science with a minor in
-                    Mathematics. I&nbsp;was a member of the University Honors
-                    Program.
+                    I&nbsp;previously attended <Link href={urls.calPoly}>Cal Poly SLO</Link>, where I&nbsp;sought a degree in Computer Science with a minor in Mathematics.
+                    I&nbsp;was a member of the University Honors Program.
                 </p>
                 <p>
                     Relevant coursework:
@@ -110,13 +103,10 @@ export default class EducationPage extends Component {
                 imagePosition={alternator()}
             >
                 <p>
-                I&nbsp;attended Woodside High School in Woodside,&nbsp;CA. In
-                addition to my own academics, I&nbsp;served as a peer tutor for
-                AP&nbsp;Calculus&nbsp;BC and for special ed students.
-                I&nbsp;also privately tutored one CS teacher during his prep
-                period, at his request. Most recently, I&nbsp;was a teaching
-                assistant for an introductory computer science course, helping
-                students in class and creating resources and labs.
+                I&nbsp;attended Woodside High School in Woodside,&nbsp;CA.
+                In addition to my own academics, I&nbsp;served as a peer tutor for AP&nbsp;Calculus&nbsp;BC and for special ed students.
+                I&nbsp;also privately tutored one CS teacher during his prep period, at his request.
+                Most recently, I&nbsp;was a teaching assistant for an introductory computer science course, helping students in class and creating resources and labs.
                 </p>
                 <p>
                     Some awards and honors:
@@ -127,21 +117,11 @@ export default class EducationPage extends Component {
                         <ul>
                             <li>National Merit Scholar</li>
                             <li>Valedictorian</li>
-                            <li>
-                                Inter-Departmental Award
-                                (first ever; created specifically for me)
-                            </li>
-                            <li>National AP Scholar
-                                (score of&nbsp;5 on nine AP exams)
-                            </li>
-                            <li>
-                                CA&nbsp;Department of Education Award
-                                for Exemplary Mathematics Achievement
-                            </li>
+                            <li>Inter-Departmental Award (first ever; created specifically for me)</li>
+                            <li>National AP Scholar (score of&nbsp;5 on nine AP exams)</li>
+                            <li>CA&nbsp;Department of Education Award for Exemplary Mathematics Achievement</li>
                             <li>Best Mandarin&nbsp;I Student</li>
-                            <li>
-                                California Scholarship Federation Sealbearer
-                            </li>
+                            <li>California Scholarship Federation Sealbearer</li>
                         </ul>
                     </li>
                     <li>

@@ -93,9 +93,7 @@ class SkillsMasterDetailView extends Component {
         const skills = this.skills;
         return <div {...this.props}>
             <p>
-                Please select a programming language, computer system, or
-                miscellaneous skill below to get a brief description of my
-                experience.
+                Please select a programming language, computer system, or miscellaneous skill below to get a brief description of my experience.
             </p>
             {skills.map((group, i) =>
                 <div key={i}>
