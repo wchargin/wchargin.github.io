@@ -221,7 +221,7 @@ class GitHubIcon extends Component {
 
 }
 
-const useHamburgerMediaQuery = '@media(max-width:600px)';
+const useHamburgerMediaQuery = '@media(max-width:700px)';
 
 const styles = StyleSheet.create({
     base: {
