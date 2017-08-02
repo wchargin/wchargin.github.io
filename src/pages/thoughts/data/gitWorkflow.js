@@ -229,7 +229,7 @@ function render(Title, Section) {
                 This solution does not address this issue, but the issue is not too big of a deal—although it is annoying, to be sure, and I&nbsp;would be much relieved were it to be fixed.
             </li>
             <li>
-                My goal has always been to optimize the amount of work that the <em>developer</em> has to do, but it is worth noting that this solution will create O(<i>n</i>)&nbsp;commits a commit in an <i>n</i>-deep stack.
+                My goal has always been to optimize the amount of work that the <em>developer</em> has to do, but it is worth noting that this solution requires O(<i>n</i>)&nbsp;new commits to edit a commit in an <i>n</i>-deep stack.
                 When all these branches are pushed to the remote so that their various pull requests can stay in sync, it’s possible for many post-push hooks, such as continuous integration jobs, to be triggered.
                 To some degree, this makes sense: if a commit changes, then later commits in theory need to be retested.
                 However, due to the nature of reviews, such changes are often non-functional (documentation clarifications, minor linewise refactorings, small changes to test cases) and in these cases the extra builds feel wasteful.
