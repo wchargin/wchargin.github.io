@@ -99,7 +99,7 @@ function render(Title, Section) {
                 7574aa6:refs/heads/show-display-name-and-description
         `} />
         <p>
-            This instructs git to push our commit <Code code="a2cc9d8" /> to a remote branch called <Code code="markdown-to-safe-html" />; using <Code code="refs/heads/" /> ensures that it's created if it doesn't yet exist.
+            This instructs git to push our commit <Code code="7574aa6" /> to a remote branch called <Code code="show-display-name-and-description" />; using <Code code="refs/heads/" /> ensures that it's created if it doesn't yet exist.
             So we could create the proper state on the remote by pushing each commit in turn:
         </p>
         <CodeBlock code={dedent`\
