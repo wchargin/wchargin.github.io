@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 import {Blurb, Heading, Link} from '../../Components';
 
 Link.registerPreloadResources('/experience', () => [
+    require('./tensorflow.png'),
     require('./khanacademy.png'),
     require('./ahpcrc.png'),
     require('./lcm.png'),
@@ -16,6 +17,9 @@ export default class ExperiencePage extends Component {
 
     render() {
         const urls = {
+            tensorboardRepoistory: 'https://github.com/tensorflow/tensorboard',
+            tensorboardReadme: 'https://github.com/tensorflow/tensorboard#readme',
+            tensorboardApi: 'https://research.googleblog.com/2017/09/build-your-own-machine-learning.html',
             ka: 'https://www.khanacademy.org/',
             chameleon: 'http://engineering.khanacademy.org/posts/evolving-our-content-infrastructure.htm',
             thumbnails: 'http://engineering.khanacademy.org/posts/making-thumbnails-fast.htm',
@@ -27,6 +31,20 @@ export default class ExperiencePage extends Component {
         const alternator = Blurb.makeAlternator();
         return <div>
             <Heading level={1}>Experience</Heading>
+            <Blurb
+                name="TensorBoard (2017)"
+                image={require('./tensorflow.png')}
+                imagePosition={alternator()}
+            >
+                <p>
+                    During the summer of 2017, I&nbsp;worked on <Link href={urls.tensorboardReadme}>TensorBoard</Link>, TensorFlow’s built-in data visualization and model debugging tool.
+                    I&nbsp;designed and implemented a flexible plugin system for TensorBoard: with this system, researchers can easily create and share domain-specific visualizations, enabling them to focus on the salient parts of their data and derive insights as productively as possible.
+                </p>
+                <p>
+                    Because <Link href={urls.tensorboardRepoistory}>TensorBoard is open-source</Link>, you can play with it yourself or directly look at my contributions.
+                    You can also read <Link href={urls.tensorboardApi}>a Google blog post about the new API</Link>, written by some of my teammates (after the end of my internship).
+                </p>
+            </Blurb>
             <Blurb
                 name="Khan Academy (2016)"
                 image={require('./khanacademy.png')}
