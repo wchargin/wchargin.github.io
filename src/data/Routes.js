@@ -21,7 +21,7 @@ import React from 'react';
 import {IndexRoute, Route} from 'react-router';
 
 import Page from '../components/Page';
-import thoughts from '../pages/thoughts/thoughts';
+import posts from '../pages/posts/posts';
 
 import HomePage from '../pages/home/HomePage';
 import SkillsPage from '../pages/skills/SkillsPage';
@@ -33,7 +33,7 @@ import JGameProjectPage from '../pages/projects/JGameProjectPage';
 import CMU15214ProjectPage from '../pages/projects/CMU15214ProjectPage';
 import ExperiencePage from '../pages/experience/ExperiencePage';
 import EducationPage from '../pages/education/EducationPage';
-import ThoughtsIndexPage from '../pages/thoughts/ThoughtsIndexPage';
+import PostsIndexPage from '../pages/posts/PostsIndexPage';
 
 /*
  * Create a route object, filling in default properties.
@@ -121,15 +121,15 @@ export const routeData = [
         navbarTitle: "Education",
     }),
     route({
-        path: '/thoughts',
-        component: ThoughtsIndexPage,
-        title: "Thoughts",
-        navbarTitle: "Thoughts",
+        path: '/posts',
+        component: PostsIndexPage,
+        title: "Posts",
+        navbarTitle: "Posts",
     }),
-    ...thoughts.map(thought => route({
-        path: thought.path,
-        component: thought.pageComponent,
-        title: thought.title,
+    ...posts.map(post => route({
+        path: post.path,
+        component: post.pageComponent,
+        title: post.title,
     })),
 ];
 
