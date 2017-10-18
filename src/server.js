@@ -9,20 +9,46 @@ import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 
 import dedent from './dedent';
+import {RedirectPage} from './components/Page';
 import {createRoutes, resolveTitleFromPath} from './data/Routes';
+
+
+const HOST = 'https://wchargin.github.io'
+
 
 export default function renderStaticPage(locals, callback) {
     const url = locals.path;
     const pathToBundle = "/bundle.js";
-    match({
-        routes: createRoutes(),
-        location: url,
-    }, (error, redirectLocation, renderProps) => {
+    const routes = createRoutes();
+    match({routes, location: url}, (error, redirectLocation, renderProps) => {
         if (error) {
             throw error;
         } else if (redirectLocation) {
-            throw new Error(
-                `unexpected redirect from ${url} to ${redirectLocation}`);
+            const canonical = HOST + redirectLocation.pathname;
+            const component = <RedirectPage targetUrl={canonical} />;
+            const {html, css} = StyleSheetServer.renderStatic(() =>
+                ReactDOMServer.renderToStaticMarkup(component));
+            const page = dedent`\
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <meta charset="utf-8">
+                <meta http-equiv="refresh" content="0;url=${canonical}" />
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <link rel="canonical" href="${canonical}" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <title>Redirecting</title>
+                <style>${require("normalize.css")}</style>
+                <style data-aphrodite>${css.content}</style>
+                <noscript><style>.yesscript{display:none;}</style></noscript>
+                </head>
+                <body style="overflow-y:scroll">
+                <div id="container">${html}</div>
+                <script>location.href = ${JSON.stringify(canonical)};</script>
+                </body>
+                </html>
+                `;
+            callback(null, page);
         } else if (renderProps) {
             const component = <RouterContext {...renderProps} />;
             const {html, css} = StyleSheetServer.renderStatic(() =>

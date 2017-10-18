@@ -18,7 +18,7 @@
  */
 
 import React from 'react';
-import {IndexRoute, Route} from 'react-router';
+import {IndexRoute, Redirect, Route} from 'react-router';
 
 import Page from '../components/Page';
 import posts from '../pages/posts/posts';
@@ -47,8 +47,8 @@ function route(data) {
     if (!data.path) {
         throw new Error("route missing path");
     }
-    if (!data.component) {
-        throw new Error("route missing component");
+    if (!!data.redirectTo === !!data.component) {
+        throw new Error("route must have exactly one of component, redirectTo");
     }
     if (!data.title) {
         throw new Error("route missing title");
@@ -131,14 +131,32 @@ export const routeData = [
         component: post.pageComponent,
         title: post.title,
     })),
+    //
+    // "Posts" used to be known as "thoughts"; preserve those
+    // permalinks.
+    route({
+        path: '/thoughts',
+        redirectTo: '/posts',
+        title: "Posts",
+    }),
+    ...posts.map(post => route({
+        path: post.path.replace(/^\/posts\//, '/thoughts/'),
+        redirectTo: post.path,
+        title: post.title,
+    })),
 ];
 
 export function createRoutes() {
     return <Route path="/" component={Page}>
-        {routeData.map(({isIndex, path, component}, i) =>
-            isIndex ?
-                <IndexRoute key={i} component={component} /> :
-                <Route key={i} path={path} component={component} />)}
+        {routeData.map(({redirectTo, isIndex, path, component}, i) => {
+            if (redirectTo !== undefined) {
+                return <Redirect key={i} from={path} to={redirectTo} />;
+            } else if (isIndex) {
+                return <IndexRoute key={i} component={component} />;
+            } else {
+                return <Route key={i} path={path} component={component} />;
+            }
+        })}
     </Route>;
 }
 

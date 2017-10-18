@@ -8,7 +8,7 @@ import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite/no-important';
 
 import Colors, {hexWithAlpha} from '../data/Colors';
-import {Link, LinkButton, MailLink} from '../Components';
+import {Heading, Link, LinkButton, MailLink} from '../Components';
 import {routeData} from '../data/Routes';
 
 export default class Page extends Component {
@@ -46,6 +46,42 @@ export default class Page extends Component {
                     <MailLink>Get my email address</MailLink>
                 </div>
             </footer>
+        </div>;
+    }
+
+}
+
+/**
+ * A barebones page that will be displayed while a meta-refresh is being
+ * processed. This component will be rendered as static HTML and
+ * instantiated without a React Router context, so we strip out all
+ * inessential functionality---but we can still preserve the general
+ * styling of the site.
+ */
+export class RedirectPage extends Component {
+
+    static propTypes = {
+        targetUrl: PropTypes.string.isRequired,
+    }
+
+    render() {
+        const target = this.props.targetUrl;
+        return <div className={css(styles.base)}>
+            <header className={css(styles.header)}>
+                <nav className={css(styles.centered, styles.nav)}>
+                    <Link href="/" className={css(styles.navTitle)}>
+                        William Chargin
+                    </Link>
+                </nav>
+            </header>
+            <article className={css(styles.centered)}>
+                <Heading level={1}>Redirecting…</Heading>
+                <p>
+                    This page has moved.
+                    If you are not redirected automatically, click the following link:
+                </p>
+                <p><Link href={target}>{target}</Link></p>
+            </article>
         </div>;
     }
 
