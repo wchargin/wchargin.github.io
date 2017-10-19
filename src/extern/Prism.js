@@ -5,6 +5,8 @@
 import Prism from 'prismjs/components/prism-core';
 
 import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-clike';  // dependency for Java
+import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-python';
 
 Prism.languages.gitrebase = {
@@ -30,6 +32,17 @@ Prism.languages.gitrebase = {
     'non-pick-action': {
         pattern: /^\w+/m,
         alias: 'keyword',
+    },
+};
+
+Prism.languages.shellSession = {
+    'input': {
+        pattern: /^\$.*/m,
+        alias: 'keyword',
+    },
+    'xxd': {
+        pattern: /^[0-9a-fA-F]{8}: .*/m,
+        alias: 'tt',
     },
 };
 

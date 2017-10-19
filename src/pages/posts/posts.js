@@ -3,10 +3,12 @@ import React, {Component} from 'react';
 import {Heading, Link} from '../../Components';
 
 import autoincrementingIdTable from './data/autoincrementingIdTable';
+import encodingsAndAssumptions from './data/encodingsAndAssumptions';
 import gitWorkflow from './data/gitWorkflow';
 
 const rawPosts = [
     autoincrementingIdTable,
+    encodingsAndAssumptions,
     gitWorkflow,
 ];
 

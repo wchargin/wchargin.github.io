@@ -10,3 +10,6 @@ code .important {
 code .keyword {
     font-weight: bold;
 }
+code .tt {
+    font-family: monospace;
+}
