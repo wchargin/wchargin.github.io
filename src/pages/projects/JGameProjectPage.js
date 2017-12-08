@@ -78,7 +78,7 @@ export default class JGameProjectPage extends Component {
             <Heading level={2}>Impact</Heading>
             <p>
                 Two classes at my high school currently use JGame to teach beginning programmers: a web design course and an animation course.
-                As an example, <Link href={urls.jgameGallery}>a gallery of student work work is available on my teacher’s website</Link>.
+                As an example, <Link href={urls.jgameGallery}>a gallery of student work is available on my teacher’s website</Link>.
             </p>
         </Project>;
     }

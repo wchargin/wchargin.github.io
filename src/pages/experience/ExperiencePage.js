@@ -112,7 +112,7 @@ export default class ExperiencePage extends Component {
                     I&nbsp;worked with the <Link href={urls.lcm}>League of Creative Minds</Link>, a <Link href={urls.mun}>Model&nbsp;UN</Link> debate organization, from&nbsp;2011 to&nbsp;2014, both as a student and as a secretariat member.
                 </p>
                 <p>
-                    As Undersecretary-General of Technology and Innovation, my worked included audio/visual setup, networking, communications, and the like.
+                    As Undersecretary-General of Technology and Innovation, my work included audio/visual setup, networking, communications, and the like.
                     {" "}<Link to="/projects/kiosk">I&nbsp;developed&nbsp;Kiosk</Link> to fix some of the problems that I&nbsp;observed, and earned the Model Diplomat award for its creation.
                     I&nbsp;also delivered scientific and technical presentations to students in preparation for debates.
                 </p>
