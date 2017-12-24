@@ -75,7 +75,7 @@ function process(post) {
                 <p>
                     <i>{post.date}</i>
                     {" "}·{" "}
-                    <i><Link to={sourceUrl}>view article source</Link></i>
+                    <i><Link href={sourceUrl}>view article source</Link></i>
                 </p>
             </div>;
             const Section = (props) => <Heading {...props} level={2} />;
