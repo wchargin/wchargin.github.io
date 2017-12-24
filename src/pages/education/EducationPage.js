@@ -37,6 +37,8 @@ export default class EducationPage extends Component {
                     Relevant coursework:
                 </p>
                 <ul>
+                    {course('10-601',
+                        'fundamentals of machine learning')}
                     {course('15-150',
                         'functional programming')}
                     {course('15-210',
@@ -53,6 +55,8 @@ export default class EducationPage extends Component {
                         'complexity theory')}
                     {course('15-816',
                         'substructural logics')}
+                    {course('21-301',
+                        'combinatorics (enumerative, probabilistic, extremal, spectral)')}
                     {course('21-355',
                         'real analysis')}
                     {course('21-484',
