@@ -61,8 +61,8 @@ function process(post) {
     const sourceUrl = articleSourceUrl(post.filename);
     const path = `/posts/${slug}`;
 
-    class ThoughtPage extends Component {
-        static displayName = `ThoughtPage(${slug})`;
+    class PostPage extends Component {
+        static displayName = `PostPage(${slug})`;
         render() {
             const renderBackLink = () => <Link
                 to="/posts"
@@ -92,7 +92,7 @@ function process(post) {
         slug,
         path,
         sourceUrl,
-        pageComponent: ThoughtPage,
+        pageComponent: PostPage,
     };
 
 }
