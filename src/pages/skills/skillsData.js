@@ -156,6 +156,9 @@ function renderJavaDescription() {
             (These days, I&nbsp;also use React for the same purpose.)
         </p>
         <p>
+            I&nbsp;was an editor on the third edition of <i>Effective Java</i> by Josh Bloch, published December&nbsp;2017.
+        </p>
+        <p>
             Some relevant projects include:
         </p>
         <ul>
