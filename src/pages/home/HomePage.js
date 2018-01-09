@@ -26,7 +26,7 @@ export default class HomePage extends Component {
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
-                    I’m pursuing a computer science major and math minor at <Link href={urls.cmu}>Carnegie Mellon</Link>.
+                    I’ve recently completed a computer science major and math minor at <Link href={urls.cmu}>Carnegie Mellon</Link>.
                     I&nbsp;love computer science because it unites math, logic, and critical thinking into a powerful toolset that I&nbsp;can use to solve real-world problems.
                     You’ve landed on my personal website and portfolio.
                 </p>
