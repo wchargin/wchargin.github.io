@@ -63,7 +63,7 @@ function render(Title, Section) {
             UTF-16 is a variable-length encoding.
             Each Unicode code point is represented as one or more 16-bit <em>code units</em> (i.e., <Code code="char" /> values).
             Code points with small values are represented by a <em>single</em> code unit with value equal to its code point.
-            Code points greater than&nbsp;U+FFFF are represented by a <em>surrogate pair</em>: two code units, one with value between&nbsp;0xD800 and&nbsp;0xDB99 (encoding the high bits of the code point), and one with value between&nbsp;0xDC00 and&nbsp;0xDFFF (encoding the low bits).
+            Code points greater than&nbsp;U+FFFF are represented by a <em>surrogate pair</em>: two code units, one with value between&nbsp;0xD800 and&nbsp;0xDBFF (encoding the high bits of the code point), and one with value between&nbsp;0xDC00 and&nbsp;0xDFFF (encoding the low bits).
         </p>
         <p>
             From this description, it’s not immediately clear why sorting the code units is problematic.
