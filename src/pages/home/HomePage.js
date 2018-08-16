@@ -17,6 +17,7 @@ export default class HomePage extends Component {
         const urls = {
             cmu: "https://www.cs.cmu.edu",
             resume: require("./resume.pdf"),
+            pgpKey: require("../../shared_files/wchargin_public_key.gpg"),
             github: "https://github.com/wchargin",
         };
         return <div>
@@ -35,13 +36,16 @@ export default class HomePage extends Component {
                 </p>
                 <ul>
                     <li>
-                        Pick up a copy of my <Link href={urls.resume}><strong>résumé!</strong></Link>
+                        My <Link href={urls.resume}>résumé</Link>
                     </li>
                     <li>
-                        Feel free to check out <Link href={urls.github}><strong>my GitHub profile!</strong></Link>
+                        My <Link href={urls.github}>GitHub profile</Link>
                     </li>
                     <li>
-                        If you’d like to contact me, <MailLink><strong>request my email!</strong></MailLink>
+                        My <Link href={urls.pgpKey}>PGP key</Link> (FB5CCEE9)
+                    </li>
+                    <li>
+                        My <MailLink>email address<noscript> (requires JavaScript)</noscript></MailLink>
                     </li>
                 </ul>
             </Blurb>

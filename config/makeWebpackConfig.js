@@ -49,7 +49,7 @@ function makeWebpackConfig(prod) {
                     loader: 'css!csso',
                 },
                 {
-                    test: /\.(?:jpg|png|gif|eot|svg|pdf|ttf|woff|woff2)$/,
+                    test: /\.(?:jpg|png|gif|eot|svg|pdf|gpg|ttf|woff|woff2)$/,
                     include: path.resolve("src/"),
                     exclude: /node_modules\//,
                     loader: 'file',
