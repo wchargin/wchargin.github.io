@@ -6,12 +6,14 @@ import autoincrementingIdTable from './data/autoincrementingIdTable';
 import abusingFlowComments from './data/abusingFlowComments';
 import encodingsAndAssumptions from './data/encodingsAndAssumptions';
 import gitWorkflow from './data/gitWorkflow';
+import pythonMemoryNavigation from './data/pythonMemoryNavigation';
 
 const rawPosts = [
     abusingFlowComments,
     autoincrementingIdTable,
     encodingsAndAssumptions,
     gitWorkflow,
+    pythonMemoryNavigation,
 ];
 
 function articleSourceUrl(filename) {
