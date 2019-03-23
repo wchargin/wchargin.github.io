@@ -8,7 +8,7 @@ import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite/no-important';
 
 import Colors, {hexWithAlpha} from '../data/Colors';
-import {Heading, Link, LinkButton, MailLink} from '../Components';
+import {Heading, Link, LinkButton} from '../Components';
 import {routeData} from '../data/Routes';
 
 export default class Page extends Component {
@@ -43,7 +43,7 @@ export default class Page extends Component {
                     <Link href={urls.github}>
                         <GitHubIcon />&nbsp;wchargin
                     </Link><br />
-                    <MailLink>Get my email address</MailLink>
+                    <span>email me @gmail.com</span>
                 </div>
             </footer>
         </div>;

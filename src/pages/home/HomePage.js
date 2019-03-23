@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 
 import {routeData} from '../../data/Routes';
-import {Blurb, Heading, Link, MailLink} from '../../Components';
+import {Blurb, Heading, Link} from '../../Components';
 
 Link.registerPreloadResources('/', () => [
     require('./me.png'),
@@ -45,7 +45,7 @@ export default class HomePage extends Component {
                         My <Link href={urls.pgpKey}>PGP key</Link> (FB5CCEE9)
                     </li>
                     <li>
-                        My <MailLink>email address<noscript> (requires JavaScript)</noscript></MailLink>
+                        My email address is at gmail.com
                     </li>
                 </ul>
             </Blurb>
