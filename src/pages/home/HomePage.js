@@ -18,7 +18,8 @@ export default class HomePage extends Component {
             ka: "https://www.khanacademy.org/",
             pgpKey: require("../../shared_files/wchargin_public_key.gpg"),
             sourcecred: "https://sourcecred.io/",
-            tensorboard: "https://github.com/tensorflow/tensorboard",
+            tensorboard: "https://www.tensorflow.org/tensorboard",
+            tensorboardGithub: "https://github.com/tensorflow/tensorboard",
         };
         return <div>
             <Heading level={1}>Hey!</Heading>
@@ -31,7 +32,8 @@ export default class HomePage extends Component {
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
                 </p>
                 <p>
-                    I&nbsp;currently work full time on <Link href={urls.tensorboard}>TensorBoard</Link> at <Link href={urls.brain}>Google Brain</Link>, and on <Link href={urls.sourcecred}>SourceCred</Link> in my free time.
+                    I’m currently at <Link href={urls.brain}>Google Brain</Link> working full time on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
+                    In my free time, I&nbsp;work on <Link href={urls.sourcecred}>SourceCred</Link>.
                     In the past, I&nbsp;worked at <Link href={urls.ka}>Khan Academy</Link>.
                 </p>
                 <p>
