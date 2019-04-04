@@ -4,7 +4,6 @@
 
 import React, {Component} from 'react';
 
-import {routeData} from '../../data/Routes';
 import {Blurb, Heading, Link} from '../../Components';
 
 Link.registerPreloadResources('/', () => [
@@ -15,10 +14,11 @@ export default class HomePage extends Component {
 
     render() {
         const urls = {
-            cmu: "https://www.cs.cmu.edu",
-            resume: require("./resume.pdf"),
+            brain: "https://ai.google/research/teams/brain",
+            ka: "https://www.khanacademy.org/",
             pgpKey: require("../../shared_files/wchargin_public_key.gpg"),
-            github: "https://github.com/wchargin",
+            sourcecred: "https://sourcecred.io/",
+            tensorboard: "https://github.com/tensorflow/tensorboard",
         };
         return <div>
             <Heading level={1}>Hey!</Heading>
@@ -27,49 +27,33 @@ export default class HomePage extends Component {
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
-                    I’ve recently completed a computer science major and math minor at <Link href={urls.cmu}>Carnegie Mellon</Link>.
-                    I&nbsp;love computer science because it unites math, logic, and critical thinking into a powerful toolset that I&nbsp;can use to solve real-world problems.
-                    You’ve landed on my personal website and portfolio.
+                    I’m William.
+                    I&nbsp;enjoy creating software that is correct, efficient, and useful.
                 </p>
                 <p>
-                    Helpful info and links:
+                    I&nbsp;currently work full time on <Link href={urls.tensorboard}>TensorBoard</Link> at <Link href={urls.brain}>Google Brain</Link>, and on <Link href={urls.sourcecred}>SourceCred</Link> in my free time.
+                    In the past, I&nbsp;worked at <Link href={urls.ka}>Khan Academy</Link>.
+                </p>
+                <p>
+                    Miscellanea about me:
                 </p>
                 <ul>
                     <li>
-                        My <Link href={urls.resume}>résumé</Link>
+                        My email address is at gmail.com.
+                        (You can figure it out.)
                     </li>
                     <li>
-                        My <Link href={urls.github}>GitHub profile</Link>
+                        <Link href={urls.pgpKey}>My PGP key</Link>’s ID is 9ADC5E04<span style={{width: "0.25em", display: "inline-block"}} />FB5CCEE9.
                     </li>
                     <li>
-                        My <Link href={urls.pgpKey}>PGP key</Link> (FB5CCEE9)
-                    </li>
-                    <li>
-                        My email address is at gmail.com
+                        Sometimes <Link to="/posts">I&nbsp;write things</Link>.
                     </li>
                 </ul>
+                <p>
+                    My surname is pronounced /'ʧɑɹgɪn/, with a hard&nbsp;<i>g</i>.
+                    It rhymes with&nbsp;<i>bargain</i>, not&nbsp;<i>barge&nbsp;in</i>.
+                </p>
             </Blurb>
-            <Heading level={2}>What do you want to know?</Heading>
-            <ul>
-                <li>
-                    My surname is pronounced /'ʧɑɹgɪn/, with a hard&nbsp;<i>g</i>: it rhymes with&nbsp;<i>bargain</i>, not&nbsp;<i>barge&nbsp;in</i>.
-                </li>
-                <li>
-                    My hobbies include learning Greek and the game of Go.
-                </li>
-                <li>
-                    Here are some more pages with information about me:
-                    <ul>
-                        {routeData.map(route =>
-                            !route.isIndex && route.navbarTitle &&
-                                <li key={route.path}>
-                                    <Link to={route.path}>
-                                        {route.navbarTitle}
-                                    </Link>
-                                </li>)}
-                    </ul>
-                </li>
-            </ul>
         </div>;
     }
 
