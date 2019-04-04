@@ -75,13 +75,11 @@ export const routeData = [
         path: '/skills',
         component: SkillsPage,
         title: "Skills",
-        navbarTitle: "Skills",
     }),
     route({
         path: '/projects',
         component: ProjectsPage,
         title: "Projects",
-        navbarTitle: "Projects",
     }),
     route({
         path: '/projects/aufbau',
@@ -112,13 +110,11 @@ export const routeData = [
         path: '/experience',
         component: ExperiencePage,
         title: "Experience",
-        navbarTitle: "Experience",
     }),
     route({
         path: '/education',
         component: EducationPage,
         title: "Education",
-        navbarTitle: "Education",
     }),
     route({
         path: '/posts',
