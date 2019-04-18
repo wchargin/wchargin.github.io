@@ -37,7 +37,7 @@ export default class HomePage extends Component {
                     In the past, I&nbsp;worked at <Link href={urls.ka}>Khan Academy</Link>.
                 </p>
                 <p>
-                    Miscellanea about me:
+                    About me:
                 </p>
                 <ul>
                     <li>
