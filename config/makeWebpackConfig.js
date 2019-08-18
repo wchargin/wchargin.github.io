@@ -20,78 +20,55 @@ export function makeProdConfig() {
 
 function makeWebpackConfig(prod) {
     return {
+        mode: prod ? 'production' : 'development',
         entry: {
             main: './src/index.js',
         },
         output: {
-            path: 'dist',
+            path: path.join(path.dirname(__dirname), 'dist'),
             filename: 'bundle.js',
             libraryTarget: 'umd',
             sourcePrefix: '',  // don't bork template strings
             publicPath: '/',
+            globalObject: 'this',  // static-site-generator-webpack-plugin#130
+        },
+        devServer: {
+            inline: false,  // for ssg: https://stackoverflow.com/a/41492420
         },
         module: {
-            preLoaders: [
+            rules: [
                 {
                     test: /\.js$/,
                     include: path.resolve("src/"),
-                    loader: 'eslint',
+                    loader: 'eslint-loader',
+                    enforce: 'pre',
                 },
-            ],
-            loaders: [
                 {
                     test: /\.js$/,
                     include: path.resolve("src/"),
-                    loader: 'babel',
+                    loader: 'babel-loader',
                 },
                 {
                     test: /\.css$/,
-                    loader: 'css!csso',
+                    loader: 'css-loader!csso-loader',
                 },
                 {
                     test: /\.(?:jpg|png|gif|eot|svg|pdf|gpg|ttf|woff|woff2)$/,
                     include: path.resolve("src/"),
                     exclude: /node_modules\//,
-                    loader: 'file',
+                    loader: 'file-loader',
                     query: {
                         name: 'static/[name].[sha256:hash:hex:12].[ext]',
                     },
                 },
             ],
         },
-        plugins: plugins(prod),
+        plugins: [
+            new CopyPlugin([{from: 'favicon.ico'}]),
+            new StaticSiteGeneratorPlugin('main', staticPaths, {}),
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': prod ? '"production"' : '"development"',
+            }),
+        ],
     };
-}
-
-function plugins(prod) {
-    return [
-        new CopyPlugin([{from: 'favicon.ico'}]),
-        new StaticSiteGeneratorPlugin('main', staticPaths, {}),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': prod ? '"production"' : '"development"',
-        }),
-    ].concat(prod ? prodOnlyPlugins() : devOnlyPlugins());
-}
-
-function prodOnlyPlugins() {
-    return [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                screw_ie8: true,
-                warnings: false,
-            },
-            mangle: {
-                screw_ie8: true,
-            },
-            output: {
-                comments: false,
-                screw_ie8: true,
-            },
-        }),
-    ];
-}
-
-function devOnlyPlugins() {
-    return [
-    ];
 }

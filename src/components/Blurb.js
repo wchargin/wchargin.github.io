@@ -85,6 +85,7 @@ export default class Blurb extends Component {
                 className={css(styles.icon)}
                 src={this.props.image}
                 role="presentation"
+                alt=""
                 onDragStart={e => e.preventDefault()}
             />)}
         </div>;
