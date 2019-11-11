@@ -4,6 +4,7 @@ import {Heading, Link} from '../../Components';
 
 import autoincrementingIdTable from './data/autoincrementingIdTable';
 import abusingFlowComments from './data/abusingFlowComments';
+import dubiousDynamicDelegation from './data/dubiousDynamicDelegation';
 import encodingsAndAssumptions from './data/encodingsAndAssumptions';
 import gitWorkflow from './data/gitWorkflow';
 import pythonMemoryNavigation from './data/pythonMemoryNavigation';
@@ -11,6 +12,7 @@ import pythonMemoryNavigation from './data/pythonMemoryNavigation';
 const rawPosts = [
     abusingFlowComments,
     autoincrementingIdTable,
+    dubiousDynamicDelegation,
     encodingsAndAssumptions,
     gitWorkflow,
     pythonMemoryNavigation,

@@ -59,4 +59,31 @@ Prism.languages.shellSession = {
     },
 };
 
+const {python} = Prism.languages;
+
+// Hack to fix highlighting for `not`. Not observable given that we don't
+// highlight operators specially. Would be obviated by updating past:
+// <https://github.com/PrismJS/prism/pull/1617>
+delete python.operator;
+python['logical'] = {
+    pattern: /\b(?:and|or|not)\b/,
+    alias: 'keyword',
+};
+
+Prism.languages.pythonRepl = Object.assign({}, Prism.languages.python);
+const {pythonRepl} = Prism.languages;
+pythonRepl.comment = Object.assign({}, python.comment);
+pythonRepl.comment.pattern = new RegExp(
+    `(?:^[^>.\\n].*)|(?:${pythonRepl.comment.pattern.source})`,
+    "m"
+);
+pythonRepl['repl-marker'] = {
+    pattern: /^(?:>>>|\.\.\.) /m,
+    alias: 'prompt',
+};
+// Hack to avoid matching repl-marker `>>>` as a `>>` operator. Not observable
+// given that we don't highlight operators or punctuation specially.
+delete pythonRepl.operator;
+delete pythonRepl.punctuation;
+
 export {Prism as default};

@@ -13,3 +13,7 @@ code .keyword {
 code .tt {
     font-family: monospace;
 }
+code .prompt {
+    font-family: monospace;  /* for alignment */
+    user-select: none;
+}
