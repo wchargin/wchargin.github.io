@@ -9,5 +9,5 @@ import App from './App';
 
 export default function initializeClient() {
     const container = document.getElementById("container");
-    ReactDOM.render(<App />, container);
+    ReactDOM.hydrate(<App />, container);
 }
