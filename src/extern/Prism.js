@@ -86,4 +86,37 @@ pythonRepl['repl-marker'] = {
 delete pythonRepl.operator;
 delete pythonRepl.punctuation;
 
+// Delete unused highlighting groups to reduce bundle size.
+delete Prism.languages.java['generics'];
+delete Prism.languages.java['class-name'];
+delete Prism.languages.java['function'];
+delete Prism.languages.java['number'];
+delete Prism.languages.java['operator'];
+delete Prism.languages.java['punctuation'];
+
+delete Prism.languages.flow['class-name'];
+delete Prism.languages.flow['constant'];
+delete Prism.languages.flow['function'];
+delete Prism.languages.flow['function-variable'];
+delete Prism.languages.flow['number'];
+delete Prism.languages.flow['operator'];
+delete Prism.languages.flow['punctuation'];
+
+for (const py of [python, pythonRepl]) {
+    delete py['boolean'];
+    delete py['function'];
+    delete py['builtin'];
+    delete py['class-name'];
+    delete py['number'];
+    delete py['punctuation'];
+    // Rename 'triple-quoted-string' to 'tqs', but it has to come before
+    // 'string' on the object.
+    const tqs = py['triple-quoted-string'];
+    const string = py['string'];
+    delete py['triple-quoted-string'];
+    delete py['string'];
+    py.tqs = tqs;
+    py.string = string;
+}
+
 export {Prism as default};
