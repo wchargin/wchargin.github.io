@@ -10,6 +10,11 @@ import Link from './components/Link';
 
 export default class App extends Component {
 
+    constructor() {
+        super();
+        this._initialUpdate = true;
+    }
+
     render() {
         const app = this;
         return <Router
@@ -23,7 +28,11 @@ export default class App extends Component {
     }
 
     _handleUpdate(path) {
-        window.scrollTo(0, 0);
+        if (!this._initialUpdate) {
+            // Don't scroll when we're just rehydrating.
+            window.scrollTo(0, 0);
+        }
+        this._initialUpdate = false;
         document.title = resolveTitleFromPath(path);
         Link.preloadResourcesFor(path);
     }
