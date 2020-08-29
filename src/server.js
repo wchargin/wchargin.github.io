@@ -9,6 +9,7 @@ import ReactDOMServer from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 
 import dedent from './dedent';
+import {listenForKatex} from './components/Katex';
 import {RedirectPage} from './components/Page';
 import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
@@ -39,6 +40,7 @@ export default function renderStaticPage(locals, callback) {
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <title>Redirecting</title>
                 <style>${require("normalize.css")}</style>
+                <style>${require("katex/dist/katex.min.css")}</style>
                 <style data-aphrodite>${css.content}</style>
                 <noscript><style>.yesscript{display:none;}</style></noscript>
                 </head>
@@ -50,9 +52,18 @@ export default function renderStaticPage(locals, callback) {
                 `;
             callback(null, page);
         } else if (renderProps) {
-            const component = <RouterContext {...renderProps} />;
+            const {component, usesKatex} =
+                listenForKatex(<RouterContext {...renderProps} />);
             const {html, css} = StyleSheetServer.renderStatic(() =>
                 ReactDOMServer.renderToString(component));
+            let katexStyleElement = '';
+            if (usesKatex()) {
+                katexStyleElement = [
+                    '<style data-katex>',
+                    require('katex/dist/katex.min.css'),
+                    '</style>\n',
+                ].join('');
+            }
             const page = dedent`\
                 <!DOCTYPE html>
                 <html>
@@ -62,7 +73,7 @@ export default function renderStaticPage(locals, callback) {
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <title>${resolveTitleFromPath(url)}</title>
                 <style>${require("normalize.css")}</style>
-                <style>${require("./extern/prism-styles.css")}</style>
+                ${katexStyleElement}<style>${require("./extern/prism-styles.css")}</style>
                 <style data-aphrodite>${css.content}</style>
                 <noscript><style>.yesscript{display:none;}</style></noscript>
                 </head>

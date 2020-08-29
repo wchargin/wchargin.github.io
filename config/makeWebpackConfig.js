@@ -54,8 +54,7 @@ function makeWebpackConfig(prod) {
                 },
                 {
                     test: /\.(?:jpg|png|gif|eot|svg|pdf|gpg|ttf|woff|woff2)$/,
-                    include: path.resolve("src/"),
-                    exclude: /node_modules\//,
+                    include: [path.resolve("src/"), path.resolve("node_modules/katex/")],
                     loader: 'file-loader',
                     query: {
                         name: 'static/[name].[sha256:hash:hex:12].[ext]',
