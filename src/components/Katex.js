@@ -23,6 +23,13 @@ export default function katex(options) {
     };
 }
 
+const inlineCache = new Map();
+const displayCache = new Map();
+
+function cacheMap(display) {
+    return display ? displayCache : inlineCache;
+}
+
 class Katex extends Component {
 
     static propTypes = {
@@ -43,18 +50,28 @@ class Katex extends Component {
         </Context.Consumer>;
     }
 
+    _html() {
+        const cache = cacheMap(this.props.display);
+        const cachedResult = cache.get(this.props.tex);
+        if (cachedResult != null) {
+            return cachedResult;
+        }
+        const options = {
+            displayMode: this.props.display,
+            fleqn: true,
+        };
+        const html = katexSync(this.props.tex, options);
+        cache.set(this.props.tex, html);
+        return html;
+    }
+
     _render() {
         // We use `dangerouslySetInnerHTML`, which should be safe
         // because KaTeX is meant to be injection-safe [1] and also
         // because all the inputs are static text written by me.
         //
         // [1]: https://katex.org/docs/security.html
-        const options = {
-            displayMode: this.props.display,
-            fleqn: true,
-        }
-        const html = katexSync(this.props.tex, options);
-        return <span dangerouslySetInnerHTML={{__html: html}} />;
+        return <span dangerouslySetInnerHTML={{__html: this._html()}} />;
     }
 
 }
