@@ -7,14 +7,27 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {renderToString as katexSync} from 'katex';
 
+import {dedentRaw} from '../dedent';
+
 // Rendering context that detects whether `Katex` appears in the tree.
 const Context = React.createContext(() => {});
 
-export default class Katex extends Component {
+export default function katex(options) {
+    options = {
+        display: false,
+        ...(options || {}),
+    };
+    return function katexTag(template, ...args) {
+        const tex = dedentRaw(template, ...args);
+        return <Katex tex={tex} display={options.display} />;
+    };
+}
+
+class Katex extends Component {
 
     static propTypes = {
         tex: PropTypes.string.isRequired,
-        display: PropTypes.bool,
+        display: PropTypes.bool.isRequired,
     }
 
     render() {
@@ -37,7 +50,7 @@ export default class Katex extends Component {
         //
         // [1]: https://katex.org/docs/security.html
         const options = {
-            displayMode: this.props.display || false,
+            displayMode: this.props.display,
             fleqn: true,
         }
         const html = katexSync(this.props.tex, options);

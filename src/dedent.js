@@ -36,3 +36,7 @@ export default function dedent(strings, ...values) {
     }
     return parts.join("");
 }
+
+export function dedentRaw(strings, ...values) {
+    return dedent(strings.raw, ...values);
+}
