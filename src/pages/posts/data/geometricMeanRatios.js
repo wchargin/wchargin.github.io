@@ -1,4 +1,5 @@
 import React from 'react';
+import {StyleSheet, css} from 'aphrodite/no-important';
 
 import dedent from '../../../dedent';
 import {Katex, Link} from '../../../Components';
@@ -111,24 +112,65 @@ function render(Title, Section) {
             Moreover, since the logarithm is invertible (via the exponential function), and its inverse likewise preserves this structure, it is an <em>isomorphism</em>, which means that these two spaces are really just different characterizations of the same thing.
             Thus, another way to think about the geometric mean is that it uses the logarithm to bring the ratios into “linear space”, takes their arithmetic mean, and then returns them to their natural habitat:
         </p>
-        <Katex display={true} tex={dedent`\
-              \\exp(\\overline{\\log z_1, \\dotsc, \\log z_n})
-              = \\exp\\Biggl( \\frac{1}{n} \\sum_{i=1}^{n} \\log z_i \\Biggr)
-              = \\Biggl( \\,\\prod_{i=1}^{n} z_i \\Biggr)^{\\mskip-3mu 1/n}
-              = \\widetilde{z_1, \\dotsc, z_n}.
-        `} />
+        <div className={css(styles.wideEquation)}>
+            <Katex display={true} tex={dedent`\
+                \\exp(\\overline{\\log z_1, \\dotsc, \\log z_n})
+                = \\exp\\Biggl( \\frac{1}{n} \\sum_{i=1}^{n} \\log z_i \\Biggr)
+                = \\Biggl( \\,\\prod_{i=1}^{n} z_i \\Biggr)^{\\mskip-3mu 1/n}
+                = \\widetilde{z_1, \\dotsc, z_n}.
+            `} />
+        </div>
+        <div className={css(styles.tallEquation)}>
+            <Katex display={true} tex={dedent`\
+                \\begin{aligned}
+                    &\\mathrel{\\hphantom=} \\exp(\\overline{\\log z_1, \\dotsc, \\log z_n}) \\\\[1.2ex]
+                    &= \\exp\\Biggl( \\frac{1}{n} \\sum_{i=1}^{n} \\log z_i \\Biggr) \\\\[3ex]
+                    &= \\Biggl( \\,\\prod_{i=1}^{n} z_i \\Biggr)^{\\mskip-3mu 1/n} \\\\[3ex]
+                    &= \\widetilde{z_1, \\dotsc, z_n}.
+                \\end{aligned}
+            `} />
+        </div>
         <p>
             This also suggests that if we wanted to, say, summarize the distribution of a random variable representing ratios, we should probably not take its expectation.
             We would get a more meaningful result by taking the exponential of the expectation of its logarithm, <Katex tex="\exp(\mathbb{E}[\log Z])" />.
             And this in turn brings to mind <Link href={urls.jensen}>Jensen’s inequality</Link>, with which we immediately obtain a nice proof of the <Link href={urls.amgm}>AM–GM inequality</Link> by taking <Katex tex="Z" /> to be a uniform random variable over a set <Katex tex="z_1, \dotsc, z_n" />:
         </p>
-        <Katex display={true} tex="\widetilde{z_1, \dotsc, z_n} = \exp(\mathbb{E}[\log Z]) \leq \exp(\log(\mathbb{E}[Z])) = \mathbb{E}[Z] = \overline{z_1, \dotsc, z_n}," />
+        <div className={css(styles.wideEquation)}>
+            <Katex display={true} tex="\widetilde{z_1, \dotsc, z_n} = \exp(\mathbb{E}[\log Z]) \leq \exp(\log(\mathbb{E}[Z])) = \mathbb{E}[Z] = \overline{z_1, \dotsc, z_n}," />
+        </div>
+        <div className={css(styles.tallEquation)}>
+            <Katex display={true} tex={dedent`
+                \\begin{aligned}
+                    &\\mathrel{\\hphantom=} \\widetilde{z_1, \\dotsc, z_n} \\\\
+                    &= \\exp(\\mathbb{E}[\\log Z]) \\\\
+                    &\\leq \\exp(\\log(\\mathbb{E}[Z])) \\\\
+                    &= \\mathbb{E}[Z] \\\\
+                    &= \\overline{z_1, \\dotsc, z_n},
+                \\end{aligned}
+            `} />
+        </div>
         <p>
             with the second step due to Jensen’s inequality, the concavity of the logarithm, and the monotonicity of the exponential.
             All the pieces fit nicely together… one connection at a time.
         </p>
     </article>;
 }
+
+const tallEquationsMediaQuery = '@media(max-width:700px)';
+
+const styles = StyleSheet.create({
+    wideEquation: {
+        [tallEquationsMediaQuery]: {
+            display: 'none',
+        },
+    },
+    tallEquation: {
+        display: 'none',
+        [tallEquationsMediaQuery]: {
+            display: 'unset',
+        },
+    },
+});
 
 export default {
     id: 7,
