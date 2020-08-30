@@ -4,7 +4,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {renderToString as katexSync} from 'katex';
 
 import {dedentRaw} from '../dedent';
@@ -30,7 +30,7 @@ function cacheMap(display) {
     return display ? displayCache : inlineCache;
 }
 
-class Katex extends Component {
+class Katex extends PureComponent {
 
     static propTypes = {
         tex: PropTypes.string.isRequired,
