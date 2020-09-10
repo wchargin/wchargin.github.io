@@ -19,7 +19,6 @@ const HOST = 'https://wchargin.github.io'
 
 export default function renderStaticPage(locals, callback) {
     const url = locals.path;
-    const pathToBundle = "/bundle.js";
     const routes = createRoutes();
     match({routes, location: url}, (error, redirectLocation, renderProps) => {
         if (error) {
@@ -79,7 +78,6 @@ export default function renderStaticPage(locals, callback) {
                 </head>
                 <body style="overflow-y:scroll">
                 <div id="container">${html}</div>
-                <script src="${pathToBundle}"></script>
                 </body>
                 </html>
                 `;
