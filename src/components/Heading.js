@@ -23,17 +23,20 @@ export default class Heading extends Component {
 
 const styles = StyleSheet.create({
     h1: {
-        marginTop: 18,
+        marginTop: 30,
+        marginBottom: 10,
         fontSize: 32,
         fontWeight: 'normal',
     },
     h2: {
-        marginTop: 14,
+        marginTop: 26,
+        marginBottom: 8,
         fontSize: 24,
         fontWeight: 'normal',
     },
     h3: {
-        marginTop: 12,
+        marginTop: 18,
+        marginBottom: 6,
         fontSize: 20,
         fontWeight: 'normal',
     },
