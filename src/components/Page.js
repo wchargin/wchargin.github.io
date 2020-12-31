@@ -23,16 +23,7 @@ export default class Page extends Component {
                     <Link to="/" className={css(styles.navTitle)}>
                         William Chargin
                     </Link>
-                    {/*
-                      * One of the following navbars will be hidden by
-                      * a media query.
-                      */}
-                    <HorizontalNav
-                        currentPath={this.props.location.pathname}
-                    />
-                    <VerticalNav
-                        currentPath={this.props.location.pathname}
-                    />
+                    <HorizontalNav currentPath={this.props.location.pathname} />
                 </nav>
             </header>
             <article className={css(styles.centered)}>
@@ -134,58 +125,6 @@ class HorizontalNav extends Component {
 }
 
 /*
- * A navbar that shows its entries in a vertical column.
- */
-class VerticalNav extends Component {
-
-    static propTypes = {
-        currentPath: PropTypes.string.isRequired,
-    }
-
-    constructor() {
-        super();
-        this.state = {
-            open: false,
-        };
-    }
-
-    render() {
-        return <div className={css(styles.navColumnContainer)}>
-            <LinkButton onClick={this._toggle.bind(this)}>
-                <HamburgerIcon />
-            </LinkButton>
-            {this.state.open && <div className={css(styles.navColumn)}>
-                {routeData
-                    .filter(x => x.navbarTitle)
-                    .map(({path, navbarTitle}) =>
-                        this._renderNavItem(path, navbarTitle))}
-            </div>}
-        </div>;
-    }
-
-    _renderNavItem(linkPath, linkText) {
-        const here = isSubroute(this.props.currentPath, linkPath);
-        return <Link
-            to={linkPath}
-            key={linkPath}
-            className={css(styles.navColumnLink, here && styles.activeNavLink)}
-            onClick={this._close.bind(this)}
-        >
-            {linkText}
-        </Link>;
-    }
-
-    _close() {
-        this.setState({open: false});
-    }
-
-    _toggle() {
-        this.setState({open: !this.state.open});
-    }
-
-}
-
-/*
  * A simple home icon component. This icon is by Timothy Miller and is
  * released under CC-BY-SA [1] [2].
  *
@@ -206,29 +145,6 @@ class HomeIcon extends Component {
             aria-label="Home"
         >
             <path fill="currentColor" d={HomeIcon.svgPath} />
-        </svg>;
-    }
-
-}
-
-/*
- * A simple hamburger menu icon component.
- */
-class HamburgerIcon extends Component {
-
-    static svgPath = 'm2 0c-1.11 0-2 0.892-2 2s0.892 2 2 2h12c1.1 0 2-0.89 2-2s-0.9-2-2-2h-12zm0 6c-1.11 0-2 0.89-2 2s0.892 2 2 2h12c1.1 0 2-0.89 2-2s-0.9-2-2-2h-12zm0 6c-1.11 0-2 0.9-2 2s0.892 2 2 2h12c1.1 0 2-0.9 2-2s-0.9-2-2-2h-12z';
-
-    render() {
-        const size = 16;
-        return <svg
-            width={size}
-            height={size}
-            viewBox="0 0 16 16"
-            alt="Open navigation"
-            aria-label="Open navigation"
-        >
-            <path fill="currentColor" d={HamburgerIcon.svgPath} />
-
         </svg>;
     }
 
@@ -256,8 +172,6 @@ class GitHubIcon extends Component {
     }
 
 }
-
-const useHamburgerMediaQuery = '@media(max-width:700px)';
 
 const styles = StyleSheet.create({
     base: {
@@ -290,27 +204,6 @@ const styles = StyleSheet.create({
         listStyle: 'none',
         paddingLeft: 0,
         margin: 0,
-        [useHamburgerMediaQuery]: {
-            display: 'none',
-        },
-    },
-    navColumnContainer: {
-        position: 'relative',
-        display: 'none',
-        [useHamburgerMediaQuery]: {
-            display: 'unset',
-        },
-    },
-    navColumn: {
-        background: 'white',
-        listStyle: 'none',
-        paddingLeft: 0,
-        margin: 0,
-        position: 'absolute',
-        border: `0.5px ${Colors.gray.medium} solid`,
-        top: '100%',
-        right: 0,
-        zIndex: 1,
     },
     navTitle: {
         fontSize: 24,
