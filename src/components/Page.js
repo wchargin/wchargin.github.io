@@ -8,7 +8,7 @@ import React, {Component} from 'react';
 import {StyleSheet, css} from 'aphrodite/no-important';
 
 import Colors, {hexWithAlpha} from '../data/Colors';
-import {Heading, Link, LinkButton} from '../Components';
+import {Heading, Link} from '../Components';
 import {routeData} from '../data/Routes';
 
 export default class Page extends Component {
