@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 
 import {Heading, Link} from '../../Components';
 
-import autoincrementingIdTable from './data/autoincrementingIdTable';
 import abusingFlowComments from './data/abusingFlowComments';
+import autoincrementingIdTable from './data/autoincrementingIdTable';
 import dubiousDynamicDelegation from './data/dubiousDynamicDelegation';
 import encodingsAndAssumptions from './data/encodingsAndAssumptions';
 import geometricMeanRatios from './data/geometricMeanRatios';
 import gitWorkflow from './data/gitWorkflow';
+import iphoneTen from './data/iphoneTen';
 import pythonMemoryNavigation from './data/pythonMemoryNavigation';
 
 const rawPosts = [
@@ -17,6 +18,7 @@ const rawPosts = [
     encodingsAndAssumptions,
     geometricMeanRatios,
     gitWorkflow,
+    iphoneTen,
     pythonMemoryNavigation,
 ];
 
