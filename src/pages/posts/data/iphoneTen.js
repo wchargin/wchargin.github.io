@@ -31,6 +31,7 @@ function render(Title, Section) {
                 width={408}
                 height={600}
                 alt="A black iPhone 4 in a hard shell case, powered on at the lock screen. There are some smudges and light cosmetic scratches on the bezel, but the phone appears to be in good condition overall."
+                className={css(styles.figureImg)}
             />
             <figcaption className={css(styles.caption)}>
                 My old phone, as photographed by my new phone.
@@ -103,6 +104,7 @@ function render(Title, Section) {
                 width={650}
                 height={409}
                 alt="The back of the iPhone 4 case. Printed on the case sits a dog with salt-and-pepper coloring, lying on a grass field and holding a yellow tennis ball. The grass and tennis ball are both bright, not faded."
+                className={css(styles.figureImg)}
             />
             <figcaption className={css(styles.caption)}>
                 <strong>Left:</strong> The back of the phone case, still vivid after ten years.<br />
@@ -188,6 +190,10 @@ function render(Title, Section) {
 const styles = StyleSheet.create({
     figure: {
         textAlign: 'center',
+    },
+    figureImg: {
+        maxWidth: '100%',
+        height: 'auto',
     },
     caption: {
         fontStyle: 'italic',
