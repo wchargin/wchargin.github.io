@@ -147,15 +147,15 @@ function render(Title, Section) {
                 Of course, no updated version of the app is available for my OS.
                 A shame: this was useful and dependable while it lasted, much easier than emailing photos to myself.
             </p></li>
-            <p><li>
+            <li><p>
                 Around 2015, <strong>Uber</strong>’s app had latency on the order of <em>20&nbsp;minutes</em> to get past the splash screen, at which point it would sometimes crash.
                 I&nbsp;find this especially egregious, since the phone wasn’t very old at the time.
                 This was before most of the scandals; I&nbsp;happily uninstalled it and now use Lyft exclusively.
-            </li></p>
-            <p><li>
+            </p></li>
+            <li><p>
                 Plain old <strong>web pages</strong> (like this one!) work great!
                 Massive bundles of JavaScript generally have a hard time.
-            </li></p>
+            </p></li>
         </ul>
         <p>
             It might sound like I’m displeased with some of the third-party apps listed above, but note the survivorship bias: these are the ones that still work!
