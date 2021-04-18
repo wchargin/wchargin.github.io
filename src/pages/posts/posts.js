@@ -69,7 +69,7 @@ function process(post) {
         post.slug :
         post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     const sourceUrl = articleSourceUrl(post.filename);
-    const path = `/posts/${slug}`;
+    const path = `/posts/${slug}/`;
 
     class PostPage extends Component {
         static displayName = `PostPage(${slug})`;

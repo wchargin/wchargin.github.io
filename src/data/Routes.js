@@ -72,52 +72,52 @@ export const routeData = [
         isIndex: true,
     }),
     route({
-        path: '/skills',
+        path: '/skills/',
         component: SkillsPage,
         title: "Skills",
     }),
     route({
-        path: '/projects',
+        path: '/projects/',
         component: ProjectsPage,
         title: "Projects",
     }),
     route({
-        path: '/projects/aufbau',
+        path: '/projects/aufbau/',
         component: AufbauProjectPage,
         title: "Automated grading",
     }),
     route({
-        path: '/projects/physbam',
+        path: '/projects/physbam/',
         component: PhysBAMProjectPage,
         title: "Physics simulations",
     }),
     route({
-        path: '/projects/kiosk',
+        path: '/projects/kiosk/',
         component: KioskProjectPage,
         title: "Kiosk",
     }),
     route({
-        path: '/projects/jgame',
+        path: '/projects/jgame/',
         component: JGameProjectPage,
         title: "JGame",
     }),
     route({
-        path: '/projects/cmu-15-214',
+        path: '/projects/cmu-15-214/',
         component: CMU15214ProjectPage,
         title: "CMU 15-214 projects",
     }),
     route({
-        path: '/experience',
+        path: '/experience/',
         component: ExperiencePage,
         title: "Experience",
     }),
     route({
-        path: '/education',
+        path: '/education/',
         component: EducationPage,
         title: "Education",
     }),
     route({
-        path: '/posts',
+        path: '/posts/',
         component: PostsIndexPage,
         title: "Posts",
         navbarTitle: "Posts",
@@ -131,7 +131,7 @@ export const routeData = [
     // "Posts" used to be known as "thoughts"; preserve those
     // permalinks.
     route({
-        path: '/thoughts',
+        path: '/thoughts/',
         redirectTo: '/posts',
         title: "Posts",
     }),
