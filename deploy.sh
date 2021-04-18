@@ -5,6 +5,7 @@ set -e
 : "${SOURCE_BRANCH:=source}"
 : "${TARGET_BRANCH:=master}"
 : "${ORIGIN:=origin}"
+: "${CNAME_URL:=wchargin.com}"
 
 # Disable this if you've already run 'npm build'.
 : "${BUILD:=true}"
@@ -85,6 +86,11 @@ else
 fi
 cp -r "$EXPLODE"/* "$TMPDIR"
 pushd "$TMPDIR"
+if [ -e CNAME ]; then
+    printf >&2 'CNAME file would conflict with build output. Aborting.\n'
+    exit 1
+fi
+printf '%s\n' "${CNAME_URL}" >CNAME
 STAGE=( * )
 popd
 
