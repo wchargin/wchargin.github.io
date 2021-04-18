@@ -14,7 +14,7 @@ import {RedirectPage} from './components/Page';
 import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
 
-const HOST = 'https://wchargin.github.io'
+const HOST = 'https://wchargin.com'
 
 
 export default function renderStaticPage(locals, callback) {

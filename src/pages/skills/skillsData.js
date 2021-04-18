@@ -106,12 +106,12 @@ function renderPythonDescription() {
 
 function renderJSReactDescription() {
     const urls = {
-        lc3App: "https://wchargin.github.io/lc3web/",
-        lc3Source: "https://wchargin.github.io/lc3web/",
-        lc3ReactSource: "https://wchargin.github.io/lc3/",
-        vareseApp: "https://wchargin.github.io/varese/",
+        lc3App: "https://wchargin.com/lc3web/",
+        lc3Source: "https://wchargin.com/lc3web/",
+        lc3ReactSource: "https://github.com/wchargin/lc3/",
+        vareseApp: "https://wchargin.com/varese/",
         vareseSource: "https://github.com/wchargin/varese",
-        vareseTreeView: "https://wchargin.github.io/varese/#/infinite-tree",
+        vareseTreeView: "https://wchargin.com/varese/#/infinite-tree",
         vareseTreeSource: "https://github.com/wchargin/varese/blob/master/src/core/CanvasCore.js",
         vareseTreeTest: "https://github.com/wchargin/varese/blob/master/test/core/CanvasCoreTest.js",
         siteSource: "https://github.com/wchargin/wchargin.github.io",

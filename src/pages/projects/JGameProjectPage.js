@@ -17,7 +17,7 @@ export default class JGameProjectPage extends Component {
     render() {
         const urls = {
             jgameGithub: 'https://github.com/wchargin/JGame',
-            jgameDocumentation: 'https://wchargin.github.io/JGame/',
+            jgameDocumentation: 'https://wchargin.com/JGame/',
             jgameGallery: 'http://mrumrocks.org/portfolio/#java-games',
         };
         return <Project

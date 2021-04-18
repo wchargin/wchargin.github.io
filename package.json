@@ -15,7 +15,7 @@
     },
     "author": "William Chargin",
     "license": "MIT",
-    "homepage": "https://wchargin.github.io/",
+    "homepage": "https://wchargin.com/",
     "devDependencies": {
         "@babel/cli": "^7.5.5",
         "@babel/core": "^7.5.5",

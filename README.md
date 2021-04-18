@@ -11,7 +11,7 @@ At time of writing, each page is under 15&thinsp;KB gzipped, anyway.
 
 I'm pleased to report that it took me **fewer than one thousand hours** to configure webpack, babel, and friends to do what I wanted.
 
-[my website]: https://wchargin.github.io/
+[my website]: https://wchargin.com/
 [React]: https://facebook.github.io/react/
 [Aphrodite]: https://github.com/Khan/aphrodite
 

@@ -86,8 +86,8 @@ export default class CMU15214ProjectPage extends Component {
 
     renderDataVisualizationDescription() {
         const urls = {
-            gettingStarted: "https://wchargin.github.io/cmu-15214-team9/",
-            documentation: "https://wchargin.github.io/cmu-15214-team9/javadoc/",
+            gettingStarted: "https://wchargin.com/cmu-15214-team9/",
+            documentation: "https://wchargin.com/cmu-15214-team9/javadoc/",
             bostock: "https://bost.ocks.org/mike/algorithms/",
             randomUniform: require("./cmu-15-214/random_uniform.png"),
             randomBridson: require("./cmu-15-214/random_bridson.png"),
