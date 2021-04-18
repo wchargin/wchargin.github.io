@@ -33,7 +33,7 @@ export default class CMU15214ProjectPage extends Component {
                 However, I&nbsp;do have screenshots, and, in some cases, documentation!
             </p>
             {this.renderScrabbleDescription()}
-            {this.renderDataVizualiationDescription()}
+            {this.renderDataVisualizationDescription()}
         </Project>;
     }
 
@@ -84,7 +84,7 @@ export default class CMU15214ProjectPage extends Component {
         </div>;
     }
 
-    renderDataVizualiationDescription() {
+    renderDataVisualizationDescription() {
         const urls = {
             gettingStarted: "https://wchargin.github.io/cmu-15214-team9/",
             documentation: "https://wchargin.github.io/cmu-15214-team9/javadoc/",
