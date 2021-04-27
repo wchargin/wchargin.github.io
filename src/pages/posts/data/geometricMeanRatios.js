@@ -69,7 +69,7 @@ function render(Title, Section) {
         </p>
         <p>
             But that’s not how ratios compose.
-            If you make a program {katex()`1.2`}&nbsp;times faster, and then make it {katex()`1.2`}&nbsp;times faster again, you haven’t made it {katex()`1.2 + 1.2 = 1.4`}&nbsp;times faster—you’ve made it {katex()`1.2 \times 1.2 = 1.44`}&nbsp;times faster.
+            If you make a program {katex()`1.2`}&nbsp;times faster, and then make it {katex()`1.2`}&nbsp;times faster again, you haven’t made it {katex()`1.2 + 1.2 = 2.4`}&nbsp;times faster—you’ve made it {katex()`1.2 \times 1.2 = 1.44`}&nbsp;times faster.
             Thus, to take an average in the same <em>spirit</em> as the arithmetic mean, we should combine our three ratios <em>by multiplying them together</em>, and then scale them down <em>by a third root</em> to counteract the change in magnitude.
             And this is precisely the geometric mean.
         </p>
