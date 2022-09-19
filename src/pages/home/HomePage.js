@@ -30,11 +30,11 @@ export default class HomePage extends Component {
                 <p>
                     I’m William.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
+                    These days, I&nbsp;work on interesting projects with a small team of close friends.
                 </p>
                 <p>
-                    I’m currently at <Link href={urls.brain}>Google Brain</Link> working full time on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
-                    In my free time, I&nbsp;work on <Link href={urls.sourcecred}>SourceCred</Link>.
-                    In the past, I&nbsp;worked at <Link href={urls.ka}>Khan Academy</Link>.
+                    Previously, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
+                    Prior to that, I&nbsp;co-founded <Link href={urls.sourcecred}>SourceCred</Link>; earlier still, I&nbsp;worked at <Link href={urls.ka}>Khan&nbsp;Academy</Link>.
                 </p>
                 <p>
                     About me:
