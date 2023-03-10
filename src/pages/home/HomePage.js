@@ -28,7 +28,7 @@ export default class HomePage extends Component {
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
-                    I’m William.
+                    I’m wchargin.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
                     These days, I&nbsp;work on interesting projects with a small team of close friends.
                 </p>

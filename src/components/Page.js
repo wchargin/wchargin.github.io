@@ -21,7 +21,7 @@ export default class Page extends Component {
             <header className={css(styles.header)}>
                 <nav className={css(styles.centered, styles.nav)}>
                     <Link to="/" className={css(styles.navTitle)}>
-                        William Chargin
+                        wchargin
                     </Link>
                     <HorizontalNav currentPath={this.props.location.pathname} />
                 </nav>
@@ -61,7 +61,7 @@ export class RedirectPage extends Component {
             <header className={css(styles.header)}>
                 <nav className={css(styles.centered, styles.nav)}>
                     <Link href="/" className={css(styles.navTitle)}>
-                        William Chargin
+                        wchargin
                     </Link>
                 </nav>
             </header>

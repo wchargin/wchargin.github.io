@@ -67,7 +67,7 @@ export const routeData = [
     route({
         path: '/',
         component: HomePage,
-        title: "William Chargin",
+        title: "wchargin",
         navbarTitle: "Home",
         isIndex: true,
     }),
@@ -168,7 +168,7 @@ export function resolveRouteFromPath(path) {
 
 export function resolveTitleFromPath(path) {
     const route = resolveRouteFromPath(path);
-    const fallback = "William Chargin";
+    const fallback = "wchargin";
     return (route && route.title) || fallback;
 }
 

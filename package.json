@@ -13,7 +13,7 @@
         "type": "git",
         "url": "git+https://github.com/wchargin/wchargin.github.io.git"
     },
-    "author": "William Chargin",
+    "author": "wchargin",
     "license": "MIT",
     "homepage": "https://wchargin.com/",
     "devDependencies": {
