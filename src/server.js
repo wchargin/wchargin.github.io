@@ -16,6 +16,12 @@ import {createRoutes, resolveTitleFromPath} from './data/Routes';
 
 const HOST = 'https://wchargin.com'
 
+const favicon = dedent`\
+    <link rel="shortcut icon" href="/favicon.png" sizes="16x16" />
+    <link rel="shortcut icon" href="/favicon-256.png" sizes="256x256" />
+    <link rel="apple touch icon" href="/favicon-256.png" />
+`.trim();
+
 
 export default function renderStaticPage(locals, callback) {
     const url = locals.path;
@@ -36,7 +42,7 @@ export default function renderStaticPage(locals, callback) {
                 <meta http-equiv="refresh" content="0;url=${canonical}" />
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <link rel="canonical" href="${canonical}" />
-                <link rel="shortcut icon" href="/favicon.ico" />
+                ${favicon}
                 <title>Redirecting</title>
                 <style>${require("normalize.css")}</style>
                 <style>${require("./base.css")}</style>
@@ -70,7 +76,7 @@ export default function renderStaticPage(locals, callback) {
                 <head>
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
-                <link rel="shortcut icon" href="/favicon.ico" />
+                ${favicon}
                 <title>${resolveTitleFromPath(url)}</title>
                 <style>${require("normalize.css")}</style>
                 <style>${require("./base.css")}</style>

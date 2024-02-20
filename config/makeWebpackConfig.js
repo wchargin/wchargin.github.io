@@ -63,7 +63,7 @@ function makeWebpackConfig(prod) {
             ],
         },
         plugins: [
-            new CopyPlugin([{from: 'favicon.ico'}]),
+            new CopyPlugin([{from: 'src/favicon/*', flatten: true}]),
             new StaticSiteGeneratorPlugin('main', staticPaths, {}),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': prod ? '"production"' : '"development"',
