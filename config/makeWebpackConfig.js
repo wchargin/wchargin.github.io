@@ -34,6 +34,7 @@ function makeWebpackConfig(prod) {
         },
         devServer: {
             inline: false,  // for ssg: https://stackoverflow.com/a/41492420
+            port: 9292,
         },
         module: {
             rules: [
