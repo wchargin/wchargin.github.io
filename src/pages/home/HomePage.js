@@ -20,6 +20,7 @@ export default class HomePage extends Component {
             sourcecred: "https://sourcecred.io/",
             tensorboard: "https://www.tensorflow.org/tensorboard",
             tensorboardGithub: "https://github.com/tensorflow/tensorboard",
+            climbing: "https://wchargin.com/climbing",
         };
         return <div>
             <Heading level={1}>Hey!</Heading>
@@ -49,7 +50,7 @@ export default class HomePage extends Component {
                     </li>
                     <li>
                         Sometimes <Link to="/posts">I&nbsp;write things</Link>.
-                        Other times <Link href="https://wchargin.com/climbing">I&nbsp;climb rocks</Link>.
+                        Other times <Link href={urls.climbing}>I&nbsp;climb rocks</Link>.
                     </li>
                 </ul>
                 <p>
