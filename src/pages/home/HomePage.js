@@ -14,6 +14,7 @@ export default class HomePage extends Component {
 
     render() {
         const urls = {
+            carbon: "https://carbonrobotics.com",
             brain: "https://ai.google/research/teams/brain",
             ka: "https://www.khanacademy.org/",
             pgpKey: require("../../shared_files/wchargin_public_key.gpg"),
@@ -31,11 +32,13 @@ export default class HomePage extends Component {
                 <p>
                     I’m wchargin.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
-                    These days, I&nbsp;work on interesting projects with a small team of close friends.
+                    These days, I&nbsp;build robots that kill weeds using lasers at <Link href={urls.carbon}>Carbon Robotics</Link>.
                 </p>
                 <p>
-                    Previously, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
-                    Prior to that, I&nbsp;co-founded <Link href={urls.sourcecred}>SourceCred</Link>; earlier still, I&nbsp;worked at <Link href={urls.ka}>Khan&nbsp;Academy</Link>.
+                    In the past, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
+                    Prior to that, I&nbsp;co-founded <Link href={urls.sourcecred}>SourceCred</Link>.
+                    Earlier still, I&nbsp;worked at <Link href={urls.ka}>Khan&nbsp;Academy</Link>.
+                    And along the way, I&nbsp;worked on a variety of independent projects with close friends.
                 </p>
                 <p>
                     About me:
