@@ -27,14 +27,14 @@ export default class Page extends Component {
                     className="page-bg-gradient"
                     style={{backgroundImage: `url(${assets.skyGradient})`}}
                 />
-                <img
-                    className="page-bg-leaves"
-                    src={assets.leaves}
-                    width={226}
-                    height={400}
-                    alt=""
-                ></img>
             </div>
+            <img
+                className="page-bg-leaves"
+                src={assets.leaves}
+                width={226}
+                height={400}
+                alt=""
+            ></img>
             <header className={css(styles.header)}>
                 <nav className={css(styles.centered, styles.nav)}>
                     <Link to="/" className={css(styles.navTitle)}>

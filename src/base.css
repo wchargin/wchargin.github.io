@@ -24,7 +24,8 @@ p {
 
 .page-bg-leaves {
     position: absolute;
+    z-index: -1;
     top: 0;
-    right: 0;
+    right: calc(50vw + 420px);
     opacity: 0.25;
 }
