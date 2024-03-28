@@ -18,23 +18,21 @@ export default class Page extends Component {
             github: "https://github.com/wchargin",
         };
         const assets = {
-            skyGradient: require("../shared_files/skygradopaque.jpg"),
+            sky: require("../shared_files/skygradopaque.jpg"),
             leaves: require("../shared_files/leaves.png"),
-        }
+        };
         return <div className={css(styles.base)}>
-            <div className="page-bg">
-                <div
-                    className="page-bg-gradient"
-                    style={{backgroundImage: `url(${assets.skyGradient})`}}
-                />
-            </div>
+            <div
+                className={css(styles.sky)}
+                style={{backgroundImage: `url(${assets.sky})`}}
+            />
             <img
-                className="page-bg-leaves"
+                className={css(styles.leaves)}
                 src={assets.leaves}
                 width={226}
                 height={400}
                 alt=""
-            ></img>
+            />
             <header className={css(styles.header)}>
                 <nav className={css(styles.centered, styles.nav)}>
                     <Link to="/" className={css(styles.navTitle)}>
@@ -190,12 +188,36 @@ class GitHubIcon extends Component {
 
 }
 
+const contentWidthPx = 800;
+const contentPaddingPx = 20;
+const halfContentBoxPx = (contentWidthPx + 2 * contentPaddingPx) / 2;
+const minSkyWidthPx = 400;
+
 const styles = StyleSheet.create({
     base: {
         fontFamily: "Helvetica, Arial, sans-serif",
         fontSize: 16,
         color: Colors.primary,
         lineHeight: 1.5,
+    },
+    sky: {
+        position: 'fixed',
+        zIndex: -1,
+        top: 0,
+        bottom: 0,
+        width: `calc(max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
+        left: `calc(50vw - ${halfContentBoxPx}px - max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
+        // `background` set in JSX so that we don't need to `require` an image
+        // file at module load time
+        backgroundSize: '100% 100%',
+        maskImage: 'linear-gradient(to right, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%) 25%, transparent)',
+    },
+    leaves: {
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        right: `calc(50vw + ${halfContentBoxPx}px)`,
+        opacity: 0.25,
     },
     header: {
         borderTop: `${Colors.accentBlue.dark} 5px solid`,
@@ -205,10 +227,10 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     centered: {
-        maxWidth: 800,
+        maxWidth: contentWidthPx,
         margin: 'auto',
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: contentPaddingPx,
+        paddingRight: contentPaddingPx,
     },
     nav: {
         display: 'flex',
