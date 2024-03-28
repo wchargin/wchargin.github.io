@@ -32,7 +32,7 @@ export default class HomePage extends Component {
                 <p>
                     I’m wchargin.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
-                    These days, I&nbsp;build robots that kill weeds using lasers at <Link href={urls.carbon}>Carbon Robotics</Link>.
+                    These days, I’m&nbsp;at <Link href={urls.carbon}>Carbon Robotics</Link> building robots that kill weeds using lasers.
                 </p>
                 <p>
                     In the past, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
