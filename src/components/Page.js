@@ -17,7 +17,24 @@ export default class Page extends Component {
         const urls = {
             github: "https://github.com/wchargin",
         };
+        const assets = {
+            skyGradient: require("../shared_files/skygradopaque.jpg"),
+            leaves: require("../shared_files/leaves.png"),
+        }
         return <div className={css(styles.base)}>
+            <div className="page-bg">
+                <div
+                    className="page-bg-gradient"
+                    style={{backgroundImage: `url(${assets.skyGradient})`}}
+                />
+                <img
+                    className="page-bg-leaves"
+                    src={assets.leaves}
+                    width={226}
+                    height={400}
+                    alt=""
+                ></img>
+            </div>
             <header className={css(styles.header)}>
                 <nav className={css(styles.centered, styles.nav)}>
                     <Link to="/" className={css(styles.navTitle)}>
