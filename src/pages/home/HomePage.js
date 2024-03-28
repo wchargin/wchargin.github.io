@@ -49,6 +49,7 @@ export default class HomePage extends Component {
                     </li>
                     <li>
                         Sometimes <Link to="/posts">I&nbsp;write things</Link>.
+                        Other times <Link href="https://wchargin.com/climbing">I&nbsp;climb rocks</Link>.
                     </li>
                 </ul>
                 <p>
