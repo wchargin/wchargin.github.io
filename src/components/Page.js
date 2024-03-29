@@ -11,6 +11,8 @@ import Colors, {hexWithAlpha} from '../data/Colors';
 import {Heading, Link} from '../Components';
 import {routeData} from '../data/Routes';
 
+const SKY_GRADIENT = 'linear-gradient(to bottom, #9eabbc 0%, #aebbc3 47%, #c1c0b4 73%, #c3af97 89%, #bd987e 100%)';
+
 export default class Page extends Component {
 
     render() {
@@ -24,7 +26,7 @@ export default class Page extends Component {
         return <div className={css(styles.base)}>
             <div
                 className={css(styles.sky)}
-                style={{backgroundImage: `url(${assets.sky})`}}
+                style={{backgroundImage: `url(${assets.sky}), ${SKY_GRADIENT}`}}
             />
             <img
                 className={css(styles.leaves)}
@@ -209,6 +211,7 @@ const styles = StyleSheet.create({
         left: `calc(50vw - ${halfContentBoxPx}px - max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
         // `background` set in JSX so that we don't need to `require` an image
         // file at module load time
+        background: SKY_GRADIENT,
         backgroundSize: '100% 100%',
         maskImage: 'linear-gradient(to right, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%) 25%, transparent)',
     },
