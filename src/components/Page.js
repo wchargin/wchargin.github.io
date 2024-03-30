@@ -11,26 +11,23 @@ import Colors, {hexWithAlpha} from '../data/Colors';
 import {Heading, Link} from '../Components';
 import {routeData} from '../data/Routes';
 
-const SKY_GRADIENT = 'linear-gradient(to bottom, #9eabbc 0%, #aebbc3 47%, #c1c0b4 73%, #c3af97 89%, #bd987e 100%)';
+const assets = {
+    sky: () => require("../shared_files/skygradopaque.jpg"),
+    leaves: () => require("../shared_files/leaves.png"),
+};
 
 export default class Page extends Component {
 
     render() {
+        const styles = getStyles();
         const urls = {
             github: "https://github.com/wchargin",
         };
-        const assets = {
-            sky: require("../shared_files/skygradopaque.jpg"),
-            leaves: require("../shared_files/leaves.png"),
-        };
         return <div className={css(styles.base)}>
-            <div
-                className={css(styles.sky)}
-                style={{backgroundImage: `url(${assets.sky}), ${SKY_GRADIENT}`}}
-            />
+            <div className={css(styles.sky)} />
             <img
                 className={css(styles.leaves)}
-                src={assets.leaves}
+                src={assets.leaves()}
                 width={226}
                 height={400}
                 alt=""
@@ -73,6 +70,7 @@ export class RedirectPage extends Component {
     }
 
     render() {
+        const styles = getStyles();
         const target = this.props.targetUrl;
         return <div className={css(styles.base)}>
             <header className={css(styles.header)}>
@@ -120,6 +118,7 @@ class HorizontalNav extends Component {
     }
 
     render() {
+        const styles = getStyles();
         return <ul className={css(styles.navList)}>
             {routeData
                 .filter(x => x.navbarTitle)
@@ -130,6 +129,7 @@ class HorizontalNav extends Component {
     }
 
     _renderNavItem(linkPath, linkText, isIndex) {
+        const styles = getStyles();
         const here = isSubroute(this.props.currentPath, linkPath);
         return <li
             key={linkPath}
@@ -190,91 +190,100 @@ class GitHubIcon extends Component {
 
 }
 
-const contentWidthPx = 800;
-const contentPaddingPx = 20;
-const halfContentBoxPx = (contentWidthPx + 2 * contentPaddingPx) / 2;
-const minSkyWidthPx = 400;
+// Lazy-construct styles so that we don't need to `require` image files at
+// module load time, so that this module can be loaded without Webpack support.
+let _styles;
+function getStyles() {
+    if (_styles != null) return _styles;
 
-const styles = StyleSheet.create({
-    base: {
-        fontFamily: "Helvetica, Arial, sans-serif",
-        fontSize: 16,
-        color: Colors.primary,
-        lineHeight: 1.5,
-    },
-    sky: {
-        position: 'fixed',
-        zIndex: -1,
-        top: 0,
-        bottom: 0,
-        width: `calc(max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
-        left: `calc(50vw - ${halfContentBoxPx}px - max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
-        // `background` set in JSX so that we don't need to `require` an image
-        // file at module load time
-        background: SKY_GRADIENT,
-        backgroundSize: '100% 100%',
-        maskImage: 'linear-gradient(to right, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%) 25%, transparent)',
-    },
-    leaves: {
-        position: 'absolute',
-        zIndex: -1,
-        top: 0,
-        right: `calc(50vw + ${halfContentBoxPx}px)`,
-        opacity: 0.25,
-    },
-    header: {
-        borderTop: `${Colors.accentBlue.dark} 5px solid`,
-        borderBottom: `0.5px ${Colors.gray.medium} solid`,
-        marginBottom: 24,
-        paddingTop: 10,
-        paddingBottom: 10,
-    },
-    centered: {
-        maxWidth: contentWidthPx,
-        margin: 'auto',
-        paddingLeft: contentPaddingPx,
-        paddingRight: contentPaddingPx,
-    },
-    nav: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-    },
-    navList: {
-        listStyle: 'none',
-        paddingLeft: 0,
-        margin: 0,
-    },
-    navTitle: {
-        fontSize: 24,
-        letterSpacing: -0.5,
-        color: '#222',
-    },
-    navLink: {
-        display: 'inline',
-        marginLeft: 20,
-    },
-    navColumnLink: {
-        display: 'block',
-        paddingLeft: 30,
-        paddingRight: 10,
-        paddingTop: 5,
-        paddingBottom: 5,
-        textAlign: 'right',
-        ':hover': {
-            background: hexWithAlpha(Colors.accentBlue.base, 0.1),
+    const skyImage = assets.sky();
+    const skyGradient = 'linear-gradient(to bottom, #9eabbc 0%, #aebbc3 47%, #c1c0b4 73%, #c3af97 89%, #bd987e 100%)';
+
+    const contentWidthPx = 800;
+    const contentPaddingPx = 20;
+    const halfContentBoxPx = (contentWidthPx + 2 * contentPaddingPx) / 2;
+    const minSkyWidthPx = 400;
+
+    _styles = StyleSheet.create({
+        base: {
+            fontFamily: "Helvetica, Arial, sans-serif",
+            fontSize: 16,
+            color: Colors.primary,
+            lineHeight: 1.5,
         },
-    },
-    activeNavLink: {
-        fontWeight: 'bold',
-    },
-    footer: {
-        color: Colors.gray.dark,
-        borderTop: `0.5px ${Colors.gray.medium} solid`,
-        marginTop: 24,
-        paddingTop: 24,
-        paddingBottom: 24,
-    },
-});
+        sky: {
+            position: 'fixed',
+            zIndex: -1,
+            top: 0,
+            bottom: 0,
+            width: `calc(max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
+            left: `calc(50vw - ${halfContentBoxPx}px - max(${minSkyWidthPx}px, 50vw - ${halfContentBoxPx}px))`,
+            background: `url(${skyImage}), ${skyGradient}`,
+            backgroundSize: '100% 100%',
+            maskImage: 'linear-gradient(to right, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%) 25%, transparent)',
+        },
+        leaves: {
+            position: 'absolute',
+            zIndex: -1,
+            top: 0,
+            right: `calc(50vw + ${halfContentBoxPx}px)`,
+            opacity: 0.25,
+        },
+        header: {
+            borderTop: `${Colors.accentBlue.dark} 5px solid`,
+            borderBottom: `0.5px ${Colors.gray.medium} solid`,
+            marginBottom: 24,
+            paddingTop: 10,
+            paddingBottom: 10,
+        },
+        centered: {
+            maxWidth: contentWidthPx,
+            margin: 'auto',
+            paddingLeft: contentPaddingPx,
+            paddingRight: contentPaddingPx,
+        },
+        nav: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginTop: 10,
+            marginBottom: 10,
+        },
+        navList: {
+            listStyle: 'none',
+            paddingLeft: 0,
+            margin: 0,
+        },
+        navTitle: {
+            fontSize: 24,
+            letterSpacing: -0.5,
+            color: '#222',
+        },
+        navLink: {
+            display: 'inline',
+            marginLeft: 20,
+        },
+        navColumnLink: {
+            display: 'block',
+            paddingLeft: 30,
+            paddingRight: 10,
+            paddingTop: 5,
+            paddingBottom: 5,
+            textAlign: 'right',
+            ':hover': {
+                background: hexWithAlpha(Colors.accentBlue.base, 0.1),
+            },
+        },
+        activeNavLink: {
+            fontWeight: 'bold',
+        },
+        footer: {
+            color: Colors.gray.dark,
+            borderTop: `0.5px ${Colors.gray.medium} solid`,
+            marginTop: 24,
+            paddingTop: 24,
+            paddingBottom: 24,
+        },
+    });
+    return _styles;
+}
