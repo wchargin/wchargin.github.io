@@ -6,6 +6,8 @@ import Prism from 'prismjs/components/prism-core';
 
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-clike';  // dependency for Java
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-markup'; // HTML
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-javascript';  // dependency for Flow (below)
 import 'prismjs/components/prism-python';

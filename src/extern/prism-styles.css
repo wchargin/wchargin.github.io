@@ -17,3 +17,19 @@ code .prompt {
     font-family: monospace;  /* for alignment */
     user-select: none;
 }
+
+/* CSS */
+code .property {
+    font-weight: bold;
+}
+code .property + .punctuation {
+    font-weight: bold;
+}
+
+/* HTML */
+code .tag .tag:first-child {
+    font-weight: bold;
+}
+code .punctuation {
+    font-weight: normal;
+}

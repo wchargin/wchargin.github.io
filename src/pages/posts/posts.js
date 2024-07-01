@@ -10,6 +10,7 @@ import geometricMeanRatios from './data/geometricMeanRatios';
 import gitWorkflow from './data/gitWorkflow';
 import iphoneTen from './data/iphoneTen';
 import pythonMemoryNavigation from './data/pythonMemoryNavigation';
+import widerOfTwoStates from './data/widerOfTwoStates';
 
 const rawPosts = [
     abusingFlowComments,
@@ -20,6 +21,7 @@ const rawPosts = [
     gitWorkflow,
     iphoneTen,
     pythonMemoryNavigation,
+    widerOfTwoStates,
 ];
 
 function articleSourceUrl(filename) {

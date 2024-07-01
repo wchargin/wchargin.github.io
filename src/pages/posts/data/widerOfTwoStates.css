@@ -1,0 +1,55 @@
+button {
+   border: none;
+}
+
+.sample-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 8px;
+    line-height: 1;
+    background: #eee;
+    border: thin #ccc solid;
+    border-radius: 2px;
+    font-size: 0.9em;
+}
+.sample-button:hover {
+    background: #f6f6f6;
+}
+.sample-button:focus {
+    background: #f6f6f6;
+}
+.sample-button:active {
+    background: #e0e0e0;
+}
+
+.sample-button.pressed {
+    border-color: #6d6;
+    background: #9e9;
+}
+.sample-button.pressed:hover {
+    background: #aaf6aa;
+}
+.sample-button.pressed:focus {
+    background: #aaf6aa;
+}
+.sample-button.pressed:active {
+    background: #90e090;
+}
+
+.smash.state-pressed, .pressed .smash.state-not-pressed {
+    height: 0;
+    visibility: hidden;
+}
+.pressed .smash.state-pressed {
+    height: auto;
+    visibility: visible;
+}
+
+.hide.state-pressed, .pressed .hide.state-not-pressed {
+    display: none;
+}
+.pressed .hide.state-pressed {
+    display: inline;
+}
