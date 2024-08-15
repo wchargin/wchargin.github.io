@@ -246,7 +246,7 @@ const gitPushToTarget = dedent`\
 # git-push-to-target: Push this commit to a branch specified in its
 # commit description.
 #
-# Copyright (c) 2017 wchargin. Released under the MIT license.
+# Copyright (c) 2017 Willow Chargin. Released under the MIT license.
 
 set -eu
 

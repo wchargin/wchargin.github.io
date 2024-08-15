@@ -67,7 +67,7 @@ export const routeData = [
     route({
         path: '/',
         component: HomePage,
-        title: "wchargin",
+        title: "Willow Chargin",
         navbarTitle: "Home",
         isIndex: true,
     }),
@@ -168,7 +168,7 @@ export function resolveRouteFromPath(path) {
 
 export function resolveTitleFromPath(path) {
     const route = resolveRouteFromPath(path);
-    const fallback = "wchargin";
+    const fallback = "Willow Chargin";
     return (route && route.title) || fallback;
 }
 

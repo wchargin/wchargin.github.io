@@ -30,7 +30,7 @@ export default class HomePage extends Component {
                 imagePosition={Blurb.IMAGE_RIGHT}
             >
                 <p>
-                    I’m wchargin.
+                    I’m Willow.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
                     These days, I’m&nbsp;at <Link href={urls.carbon}>Carbon Robotics</Link> building robots that kill weeds using lasers.
                 </p>
