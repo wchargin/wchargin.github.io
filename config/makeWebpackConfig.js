@@ -59,8 +59,10 @@ function makeWebpackConfig(prod) {
                 {
                     test: /\.(?:jpg|png|gif|eot|svg|pdf|gpg|ttf|woff|woff2)$/,
                     include: [path.resolve("src/"), path.resolve("node_modules/katex/")],
-                    loader: 'file-loader',
-                    options: 'static/[name].[sha256:hash:hex:12].[ext]',
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'static/[name].[contenthash:12][ext][query]'
+                    },
                 },
             ],
         },
