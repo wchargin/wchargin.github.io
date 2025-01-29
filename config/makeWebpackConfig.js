@@ -21,6 +21,7 @@ export function makeProdConfig() {
 function makeWebpackConfig(prod) {
     return {
         mode: prod ? 'production' : 'development',
+        target: 'node',  // static-site-generator-webpack-plugin#130
         entry: {
             main: './src/index.js',
         },
@@ -33,7 +34,6 @@ function makeWebpackConfig(prod) {
             globalObject: 'this',  // static-site-generator-webpack-plugin#130
         },
         devServer: {
-            inline: false,  // for ssg: https://stackoverflow.com/a/41492420
             port: 9292,
         },
         module: {
@@ -51,15 +51,16 @@ function makeWebpackConfig(prod) {
                 },
                 {
                     test: /\.css$/,
-                    loader: 'css-loader!csso-loader',
+                    use: [
+                        { loader: 'css-loader' },
+                        { loader: 'csso-loader' },
+                    ],
                 },
                 {
                     test: /\.(?:jpg|png|gif|eot|svg|pdf|gpg|ttf|woff|woff2)$/,
                     include: [path.resolve("src/"), path.resolve("node_modules/katex/")],
                     loader: 'file-loader',
-                    query: {
-                        name: 'static/[name].[sha256:hash:hex:12].[ext]',
-                    },
+                    options: 'static/[name].[sha256:hash:hex:12].[ext]',
                 },
             ],
         },
