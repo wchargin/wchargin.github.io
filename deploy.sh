@@ -95,7 +95,7 @@ STAGE=( * )
 popd
 
 git checkout --orphan "$TARGET_BRANCH" || git checkout "$TARGET_BRANCH"
-git rm -r --cached --ignore-unmatch .
+git rm -r --ignore-unmatch .
 cp -r "$TMPDIR"/* .
 git add "${STAGE[@]}"
 git commit --allow-empty --no-verify -m "Deploy: $SOURCE_COMMIT"
