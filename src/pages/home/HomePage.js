@@ -32,13 +32,16 @@ export default class HomePage extends Component {
                 <p>
                     I’m Willow.
                     I&nbsp;enjoy creating software that is correct, efficient, and useful.
-                    These days, I’m&nbsp;at <Link href={urls.carbon}>Carbon Robotics</Link> building robots that kill weeds using lasers.
                 </p>
                 <p>
-                    In the past, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
-                    Prior to that, I&nbsp;co-founded <Link href={urls.sourcecred}>SourceCred</Link>.
+                    I&nbsp;used to work at <Link href={urls.carbon}>Carbon Robotics</Link> building robots that kill weeds using lasers.
+                    Before that, I&nbsp;worked at <Link href={urls.brain}>Google Brain</Link> on <Link href={urls.tensorboard}>TensorBoard</Link>, which is <Link href={urls.tensorboardGithub}>fully open source</Link>.
+                    Before that, I&nbsp;co-founded <Link href={urls.sourcecred}>SourceCred</Link>.
                     Earlier still, I&nbsp;worked at <Link href={urls.ka}>Khan&nbsp;Academy</Link>.
                     And along the way, I&nbsp;worked on a variety of independent projects with close friends.
+                </p>
+                <p>
+                    These days, I&nbsp;work on software for access control at Google.
                 </p>
                 <p>
                     About me:
